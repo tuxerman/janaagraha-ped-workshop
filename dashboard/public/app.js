@@ -104,7 +104,6 @@ function render(tenders) {
       <td><span class="status-pill ${statusClass(t.status)}">${t.status}</span></td>
       <td>${currency.format(t.estimated_amount)}</td>
       <td>${t.contractor || '—'}</td>
-      <td>${t.closing_date}</td>
     </tr>`
     )
     .join('');
