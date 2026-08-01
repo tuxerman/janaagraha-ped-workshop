@@ -192,6 +192,12 @@ header h1 {
   border-radius: 50%;
 }
 
+.category-keywords {
+  font-size: 0.75rem;
+  font-weight: normal;
+  color: var(--muted);
+}
+
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;

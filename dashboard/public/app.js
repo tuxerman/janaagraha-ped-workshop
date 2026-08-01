@@ -311,7 +311,11 @@ function renderCategoryTotals(works) {
     .map(
       (category) => `
     <tr>
-      <td><span class="legend-dot" style="background:${category.color}"></span> ${escapeHtml(category.label)}</td>
+      <td><span class="legend-dot" style="background:${category.color}"></span> ${escapeHtml(category.label)}${
+        category.keywords
+          ? ` <span class="category-keywords">(${escapeHtml(category.keywords.join(', '))})</span>`
+          : ''
+      }</td>
       <td>${counts[category.key].toLocaleString('en-IN')}</td>
       <td>${currency.format(totals[category.key])}</td>
     </tr>`
