@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1",
+  "schema_file": "../../../data_schema.md",
+  "as_of_date": "2026-07-30",
+  "sources": [
+    "data_backend/csv/1. karnataka-tenders-2026-07-30.xlsx",
+    "data_backend/csv/2. payments-2026-07-30.xlsx",
+    "data_backend/csv/3. BBMP_job_codes_merged.xlsx"
+  ],
+  "record_count": 8203,
+  "shard_size": 500,
+  "shard_count": 17,
+  "shards": [
+    {
+      "file": "works-0001.json",
+      "records": 500,
+      "bytes": 8073772,
+      "sha256": "faf8fe99f60e58e5ef719ba80e3b0ce2a7dafb5412cc970ab18bd2fbd60e32c3"
+    },
+    {
+      "file": "works-0002.json",
+      "records": 500,
+      "bytes": 5685627,
+      "sha256": "9331314558813bd7f5f19d8778b1f48c862e95f8d8e1b644711efff0aece4f48"
+    },
+    {
+      "file": "works-0003.json",
+      "records": 500,
+      "bytes": 6503978,
+      "sha256": "e863b0a8fa190ee29a2dde9f472126c9bfc4ffe5b5a57e86d1e92dbe20c0ea7f"
+    },
+    {
+      "file": "works-0004.json",
+      "records": 500,
+      "bytes": 5955767,
+      "sha256": "e730dce4aad9fe52967c8dc2d001f0240502f25ebdcb56cd3496830671dbe98a"
+    },
+    {
+      "file": "works-0005.json",
+      "records": 500,
+      "bytes": 6350695,
+      "sha256": "6d32859eee351966ead96c7c64f1719633c2b0c38b5497c32199a0fd6bad62b6"
+    },
+    {
+      "file": "works-0006.json",
+      "records": 500,
+      "bytes": 5952977,
+      "sha256": "9146b125cd24206454aba3c171810cc58684e85581e7b925d96c6d86d0997713"
+    },
+    {
+      "file": "works-0007.json",
+      "records": 500,
+      "bytes": 5451601,
+      "sha256": "5ff5342ce3792c71ee7824ccd0cb3138b46ab1ccc88c836c7d6cdf4081cd94de"
+    },
+    {
+      "file": "works-0008.json",
+      "records": 500,
+      "bytes": 4820931,
+      "sha256": "3113a4a43f12969ca6b3ff4b31e306b67b35a1d8793f8cab344a37649b66fc5b"
+    },
+    {
+      "file": "works-0009.json",
+      "records": 500,
+      "bytes": 5196953,
+      "sha256": "d5cdbf6c991d3545ba21f83bd3c2a90c3d761f07eaa8cd0dc950ee82cd969edb"
+    },
+    {
+      "file": "works-0010.json",
+      "records": 500,
+      "bytes": 6039110,
+      "sha256": "97762c7ca37f3aa58f9c75450a9d72d6a8e194cc7e2fb7ba7a9cef99ca028917"
+    },
+    {
+      "file": "works-0011.json",
+      "records": 500,
+      "bytes": 6691714,
+      "sha256": "bc3f1a16207f97454e529244d709dcb4e74ad58fd063ce181f58c2251b4c18c1"
+    },
+    {
+      "file": "works-0012.json",
+      "records": 500,
+      "bytes": 5796972,
+      "sha256": "0b5006e67b8935e5f2e2a9db349e7f7a69a1feaf60a1c266fc290e2d25f944a3"
+    },
+    {
+      "file": "works-0013.json",
+      "records": 500,
+      "bytes": 5711090,
+      "sha256": "d3a0280a9a16fa506a2a462ebb089d5125b5619e60ed44042d19b3811d2c0756"
+    },
+    {
+      "file": "works-0014.json",
+      "records": 500,
+      "bytes": 5486329,
+      "sha256": "0289fcd8edab5e8557e201887159e40eac8f2925ee8ed95aad86e1e80ea801f7"
+    },
+    {
+      "file": "works-0015.json",
+      "records": 500,
+      "bytes": 11008183,
+      "sha256": "0ac681e470c437b5105585c1a6d53fcf4497a17d045f5d9e1e74b3f815554ce2"
+    },
+    {
+      "file": "works-0016.json",
+      "records": 500,
+      "bytes": 7166294,
+      "sha256": "5592c1cb9fc083a51330e9eaeff9b0d61cda78dde7fecbace0e6741ed4c955ba"
+    },
+    {
+      "file": "works-0017.json",
+      "records": 203,
+      "bytes": 1910636,
+      "sha256": "f1b97d879880cfc73d1e95343255f9715f222acc02a9ae4185dcd7731f15266f"
+    }
+  ],
+  "stats": {
+    "source_rows": 54032,
+    "deduplicated_bill_rows": 34860,
+    "work_count": 8203,
+    "work_description_conflicts": 363,
+    "work_contractor_conflicts": 1558,
+    "tender_corpus_rows": 130710,
+    "works_with_payment_metadata": 8196,
+    "works_without_payment_metadata": 7,
+    "payment_metadata_conflicts": 281,
+    "bills": 19172,
+    "documents": 494195,
+    "placeholders": 53934,
+    "status_completed": 7346,
+    "status_in_progress": 42,
+    "status_unknown": 815,
+    "tender_failure_blank_document": 420,
+    "tender_failure_no_attachment": 199,
+    "tender_failure_no_candidate_found": 7584
+  },
+  "methodology": {
+    "root": "One record per distinct WO in BBMP_job_codes_merged.xlsx.",
+    "bills": "Repeated snapshot rows are deduplicated by work, bill references, dates, contractor, type, and amounts before aggregation.",
+    "work_conflicts": "When a WO has multiple source descriptions or contractors, all distinct bills remain in the work totals; the description and contractor attached to the largest gross total become canonical.",
+    "ward_metadata": "Payments rows are matched on job_number; scheme collisions are resolved by similarity to the canonical description. Special schemes emit no ward number or name.",
+    "tenders": "No structured source field links a WO to a full KPPP tender number, so tender is null and link_failure_reason is explicit.",
+    "locations": "Source CSVs have no coordinates; locations are ward-level or precision none.",
+    "status": "A non-placeholder Completion Certificate means completed. Current-FY work without one is in_progress; all other cases are unknown.",
+    "amounts": "Decimal source amounts are rounded half-up to integer rupees; source and aggregate accounting identities are asserted."
+  }
+}
