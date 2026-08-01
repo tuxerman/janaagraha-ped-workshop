@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Civic Tenders Dashboard</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Civic Tenders Dashboard</h1>
+    <p class="subtitle">Local civic works tenders, ward by ward</p>
+  </header>
+
+  <div class="pseudo-banner">
+    ⚠️ Sample data only — figures below are placeholder/pseudo data, not real BBMP records.
+  </div>
+
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search title, tender ID or location…" />
+    <select id="ward-filter">
+      <option value="">All wards</option>
+    </select>
+    <select id="status-filter">
+      <option value="">All statuses</option>
+    </select>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <table id="tenders-table">
+    <thead>
+      <tr>
+        <th>Tender ID</th>
+        <th>Title</th>
+        <th>Ward</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Estimated Amount</th>
+        <th>Contractor</th>
+        <th>Closing Date</th>
+      </tr>
+    </thead>
+    <tbody id="tenders-body"></tbody>
+  </table>
+
+  <script src="/app.js"></script>
+</body>
+</html>
