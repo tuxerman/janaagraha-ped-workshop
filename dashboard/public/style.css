@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   max-width: 1100px;
@@ -17,6 +21,12 @@ body {
   padding: 1.5rem;
   color: #1a1a1a;
   background: #fff;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
 }
 
 header h1 {
@@ -101,10 +111,17 @@ header h1 {
   stroke: #fff;
   stroke-width: 1.5;
   cursor: pointer;
+  r: 7px;
 }
 
 .map-pin:hover {
   stroke: #333;
+}
+
+@media (pointer: coarse) {
+  .map-pin {
+    r: 10px;
+  }
 }
 
 .map-legend {
@@ -129,8 +146,14 @@ header h1 {
   display: inline-block;
 }
 
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
