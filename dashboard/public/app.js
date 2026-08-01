@@ -3,6 +3,9 @@ const summary = document.getElementById('summary');
 const searchInput = document.getElementById('search');
 const wardFilter = document.getElementById('ward-filter');
 const statusFilter = document.getElementById('status-filter');
+const categoryFilter = document.getElementById('category-filter');
+const categoryRulesList = document.getElementById('category-rules-list');
+const categoryTotalsBody = document.getElementById('category-totals-body');
 const mapElement = document.getElementById('map');
 const mapLegend = document.getElementById('map-legend');
 const dataBanner = document.getElementById('data-banner');
@@ -12,6 +15,63 @@ const STATUS_COLORS = {
   in_progress: '#e65100',
   unknown: '#616161',
 };
+
+// Ordered, first-match-wins keyword brackets used to tag each work's description.
+// A rough automatic sort, not a verified classification — see the "How are categories
+// assigned?" note in the UI. Anything matching none of these lands in Unassigned & Others.
+const CATEGORIES = [
+  {
+    key: 'health',
+    label: 'Health',
+    color: '#c62828',
+    keywords: ['hospital', 'hosp', 'dispensary', 'phc', 'clinic', 'ayush', 'ambulance', 'medical'],
+  },
+  {
+    key: 'education',
+    label: 'Education',
+    color: '#f9a825',
+    keywords: ['school', 'college', 'vidyalaya', 'anganwadi', 'student', 'books', 'book', 'shoe', 'sock', 'uniform'],
+  },
+  {
+    key: 'environment',
+    label: 'Environment',
+    color: '#2e7d32',
+    keywords: ['lake', 'kere', 'kalyani', 'pond', 'wetland', 'plantation', 'rainwater harvesting', 'tree', 'garden', 'dobhighat', 'biodiversity'],
+  },
+  {
+    key: 'mobility',
+    label: 'Physical Mobility Infrastructure',
+    color: '#1565c0',
+    keywords: ['road', 'footpath', 'foot path', 'pavement', 'asphalt', 'resurfac', 'storm water drain', 'swd', 'drain', 'culvert', 'bridge', 'kerb', 'underpass', 'flyover', 'junction', 'widening', 'pothole', 'pot hole', 'pathway', 'cross road', 'carpet', 'wmm', 'median', 'boulevard'],
+  },
+  {
+    key: 'amenities',
+    label: 'Public Amenities & Parks',
+    color: '#6a1b9a',
+    keywords: ['toilet', 'park', 'playground', 'auditorium', 'kalyana mantapa', 'community hall', 'samudaya bhavana', 'bhavana', 'hall', 'yoga', 'gym', 'compound wall', 'burial ground', 'crematorium', 'market', 'bus shelter', 'street light', 'streetlight', 'led light', 'bench', 'borewell', 'water tank', 'oht', 'water supply', 'water tanker', 'ro plant', 'building', 'vidhansouda'],
+  },
+];
+const UNASSIGNED_CATEGORY = { key: 'unassigned', label: 'Unassigned & Others', color: '#757575' };
+const ALL_CATEGORIES = [...CATEGORIES, UNASSIGNED_CATEGORY];
+
+function categorizeWork(description) {
+  const text = (description || '').toLowerCase();
+  for (const category of CATEGORIES) {
+    if (category.keywords.some((keyword) => text.includes(keyword))) return category.key;
+  }
+  return UNASSIGNED_CATEGORY.key;
+}
+
+function categoryMeta(key) {
+  return ALL_CATEGORIES.find((category) => category.key === key) || UNASSIGNED_CATEGORY;
+}
+
+function renderCategoryRules() {
+  categoryRulesList.innerHTML = ALL_CATEGORIES.map((category) => {
+    const keywords = category.keywords ? category.keywords.join(', ') : '(fallback — no keywords matched)';
+    return `<dt>${escapeHtml(category.label)}</dt><dd>${escapeHtml(keywords)}</dd>`;
+  }).join('');
+}
 const WARD_PALETTE = [
   '#1565c0',
   '#6a1b9a',
@@ -208,6 +268,48 @@ function renderWardDonut(works) {
   );
 }
 
+function renderCategoryDonut(works) {
+  const totals = {};
+  works.forEach((work) => {
+    totals[work.category] = (totals[work.category] || 0) + work.amount_gross;
+  });
+  const segments = ALL_CATEGORIES.filter((category) => totals[category.key]).map((category) => ({
+    label: category.label,
+    value: totals[category.key],
+    color: category.color,
+  }));
+  renderDonut('category-donut', segments);
+  renderDonutLegend(
+    'category-donut-legend',
+    segments.map((segment) => ({
+      label: `${segment.label} (${currency.format(segment.value)})`,
+      color: segment.color,
+    }))
+  );
+}
+
+function renderCategoryTotals(works) {
+  const totals = {};
+  const counts = {};
+  works.forEach((work) => {
+    totals[work.category] = (totals[work.category] || 0) + work.amount_gross;
+    counts[work.category] = (counts[work.category] || 0) + 1;
+  });
+  const ranked = ALL_CATEGORIES.filter((category) => counts[category.key]).sort(
+    (left, right) => totals[right.key] - totals[left.key]
+  );
+  categoryTotalsBody.innerHTML = ranked
+    .map(
+      (category) => `
+    <tr>
+      <td><span class="legend-dot" style="background:${category.color}"></span> ${escapeHtml(category.label)}</td>
+      <td>${counts[category.key].toLocaleString('en-IN')}</td>
+      <td>${currency.format(totals[category.key])}</td>
+    </tr>`
+    )
+    .join('');
+}
+
 function render(works) {
   const visible = works.slice(0, MAX_TABLE_ROWS);
   tbody.innerHTML = visible
@@ -233,11 +335,14 @@ function render(works) {
   renderMap(works);
   renderStatusDonut(works);
   renderWardDonut(works);
+  renderCategoryDonut(works);
+  renderCategoryTotals(works);
 }
 
 function populateFilters(works) {
   const wards = [...new Set(works.map(wardLabel))].sort();
   const statuses = [...new Set(works.map((work) => work.status))].sort();
+  const presentCategories = new Set(works.map((work) => work.category));
   wardFilter.innerHTML =
     '<option value="">All wards</option>' +
     wards.map((ward) => `<option value="${escapeHtml(ward)}">${escapeHtml(ward)}</option>`).join('');
@@ -249,15 +354,22 @@ function populateFilters(works) {
           `<option value="${escapeHtml(status)}">${escapeHtml(statusLabel(status))}</option>`
       )
       .join('');
+  categoryFilter.innerHTML =
+    '<option value="">All categories</option>' +
+    ALL_CATEGORIES.filter((category) => presentCategories.has(category.key))
+      .map((category) => `<option value="${category.key}">${escapeHtml(category.label)}</option>`)
+      .join('');
 }
 
 function applyFilters() {
   const needle = searchInput.value.trim().toLowerCase();
   const ward = wardFilter.value;
   const status = statusFilter.value;
+  const category = categoryFilter.value;
   const filtered = allWorks.filter((work) => {
     if (ward && wardLabel(work) !== ward) return false;
     if (status && work.status !== status) return false;
+    if (category && work.category !== category) return false;
     if (!needle) return true;
     return [
       work.job_number,
@@ -276,9 +388,13 @@ async function init() {
     if (!response.ok) throw new Error(`API returned ${response.status}`);
     const payload = await response.json();
     allWorks = payload.works;
+    allWorks.forEach((work) => {
+      work.category = categorizeWork(work.description);
+    });
     dataBanner.textContent =
       `Source data through ${payload.meta.as_of_date}: ${payload.meta.record_count.toLocaleString('en-IN')} works. Tender links and exact coordinates remain unavailable where the source cannot support them.`;
     initMap(allWorks);
+    renderCategoryRules();
     populateFilters(allWorks);
     render(allWorks);
   } catch (error) {
@@ -290,5 +406,6 @@ async function init() {
 searchInput.addEventListener('input', applyFilters);
 wardFilter.addEventListener('change', applyFilters);
 statusFilter.addEventListener('change', applyFilters);
+categoryFilter.addEventListener('change', applyFilters);
 
 init();

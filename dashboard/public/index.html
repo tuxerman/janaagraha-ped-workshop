@@ -24,6 +24,9 @@
 
   <div class="controls">
     <input type="search" id="search" placeholder="Search description, job number, contractor or location…" />
+    <select id="category-filter">
+      <option value="">All categories</option>
+    </select>
     <select id="ward-filter">
       <option value="">All wards</option>
     </select>
@@ -31,6 +34,17 @@
       <option value="">All statuses</option>
     </select>
   </div>
+
+  <details class="category-rules">
+    <summary>How are categories assigned?</summary>
+    <p class="map-note">
+      Each work is tagged by matching keywords in its description text against the brackets
+      below, top to bottom — the first bracket that matches wins. Works matching none of them
+      fall into <strong>Unassigned &amp; Others</strong>. This is a rough, automatic sort, not a
+      verified classification.
+    </p>
+    <dl id="category-rules-list"></dl>
+  </details>
 
   <div class="summary" id="summary"></div>
 
@@ -72,6 +86,25 @@
       <svg id="ward-donut" role="img" aria-label="Donut chart of gross payments by ward"></svg>
       <div class="chart-legend" id="ward-donut-legend"></div>
     </div>
+    <div class="chart-card">
+      <h2>Gross paid by category</h2>
+      <svg id="category-donut" role="img" aria-label="Donut chart of gross payments by category"></svg>
+      <div class="chart-legend" id="category-donut-legend"></div>
+    </div>
+  </section>
+
+  <section class="category-totals-section">
+    <h2>Spend by category</h2>
+    <table id="category-totals-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Works</th>
+          <th>Gross paid</th>
+        </tr>
+      </thead>
+      <tbody id="category-totals-body"></tbody>
+    </table>
   </section>
 
   <script
