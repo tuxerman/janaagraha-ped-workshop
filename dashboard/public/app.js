@@ -3,7 +3,6 @@ const summary = document.getElementById('summary');
 const searchInput = document.getElementById('search');
 const wardFilter = document.getElementById('ward-filter');
 const statusFilter = document.getElementById('status-filter');
-const map = document.getElementById('map');
 const mapLegend = document.getElementById('map-legend');
 
 const STATUS_COLORS = {
@@ -14,7 +13,7 @@ const STATUS_COLORS = {
   Cancelled: '#880e4f',
 };
 
-const MAP_PADDING = 40;
+const WARD_PALETTE = ['#1565c0', '#6a1b9a', '#00838f', '#ef6c00', '#2e7d32', '#ad1457', '#4527a0', '#00695c'];
 
 const currency = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -23,30 +22,58 @@ const currency = new Intl.NumberFormat('en-IN', {
 });
 
 let allTenders = [];
-let mapBounds = null;
+let leafletMap = null;
+let markerLayer = null;
 
 function statusClass(status) {
   return 'status-' + status.toLowerCase().replace(/\s+/g, '-');
 }
 
-function computeMapBounds(tenders) {
-  const lats = tenders.map((t) => t.lat);
-  const lngs = tenders.map((t) => t.lng);
-  return {
-    minLat: Math.min(...lats),
-    maxLat: Math.max(...lats),
-    minLng: Math.min(...lngs),
-    maxLng: Math.max(...lngs),
-  };
+function wardColor(ward, wards) {
+  return WARD_PALETTE[wards.indexOf(ward) % WARD_PALETTE.length];
 }
 
-function project(t) {
-  const { minLat, maxLat, minLng, maxLng } = mapBounds;
-  const w = map.viewBox.baseVal.width - MAP_PADDING * 2;
-  const h = map.viewBox.baseVal.height - MAP_PADDING * 2;
-  const x = MAP_PADDING + ((t.lng - minLng) / (maxLng - minLng || 1)) * w;
-  const y = MAP_PADDING + (1 - (t.lat - minLat) / (maxLat - minLat || 1)) * h;
-  return { x, y };
+function statusIcon(status) {
+  const color = STATUS_COLORS[status] || '#888';
+  return L.divIcon({
+    className: 'status-pin',
+    html: `<span style="background:${color}"></span>`,
+    iconSize: [16, 16],
+    iconAnchor: [8, 8],
+  });
+}
+
+function initMap(tenders) {
+  leafletMap = L.map('map', {
+    scrollWheelZoom: false,
+    dragging: !L.Browser.mobile,
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(leafletMap);
+
+  markerLayer = L.layerGroup().addTo(leafletMap);
+
+  const bounds = L.latLngBounds(tenders.map((t) => [t.lat, t.lng]));
+  leafletMap.fitBounds(bounds, { padding: [30, 30] });
+}
+
+function renderMap(tenders) {
+  markerLayer.clearLayers();
+
+  tenders.forEach((t) => {
+    const marker = L.marker([t.lat, t.lng], { icon: statusIcon(t.status) });
+    marker.bindPopup(
+      `<strong>${t.tender_id}</strong><br>${t.title}<br>${t.ward} &middot; ${t.status}<br>${currency.format(t.estimated_amount)}`
+    );
+    marker.on('click', () => {
+      searchInput.value = t.tender_id;
+      applyFilters();
+      document.getElementById('tenders-table').scrollIntoView({ behavior: 'smooth' });
+    });
+    marker.addTo(markerLayer);
+  });
 }
 
 function renderLegend() {
@@ -58,38 +85,95 @@ function renderLegend() {
     .join('');
 }
 
-function renderMap(tenders) {
+function renderDonut(svgId, segments) {
+  const svg = document.getElementById(svgId);
   const svgNS = 'http://www.w3.org/2000/svg';
-  map.innerHTML = '';
+  const size = 160;
+  const radius = 56;
+  const stroke = 26;
+  const cx = size / 2;
+  const cy = size / 2;
+  const circumference = 2 * Math.PI * radius;
+  const total = segments.reduce((sum, s) => sum + s.value, 0);
 
-  const background = document.createElementNS(svgNS, 'rect');
-  background.setAttribute('x', '0');
-  background.setAttribute('y', '0');
-  background.setAttribute('width', map.viewBox.baseVal.width);
-  background.setAttribute('height', map.viewBox.baseVal.height);
-  background.setAttribute('class', 'map-background');
-  map.appendChild(background);
+  svg.innerHTML = '';
+  svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
 
-  tenders.forEach((t) => {
-    const { x, y } = project(t);
+  if (total === 0) {
+    const empty = document.createElementNS(svgNS, 'circle');
+    empty.setAttribute('cx', cx);
+    empty.setAttribute('cy', cy);
+    empty.setAttribute('r', radius);
+    empty.setAttribute('fill', 'none');
+    empty.setAttribute('stroke', '#ccc');
+    empty.setAttribute('stroke-width', stroke);
+    svg.appendChild(empty);
+    return;
+  }
+
+  let offset = 0;
+  segments.forEach((s) => {
+    const fraction = s.value / total;
+    const dash = fraction * circumference;
     const circle = document.createElementNS(svgNS, 'circle');
-    circle.setAttribute('cx', x);
-    circle.setAttribute('cy', y);
-    circle.setAttribute('r', 7);
-    circle.setAttribute('fill', STATUS_COLORS[t.status] || '#888');
-    circle.setAttribute('class', 'map-pin');
-    circle.addEventListener('click', () => {
-      searchInput.value = t.tender_id;
-      applyFilters();
-      document.getElementById('tenders-table').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    const title = document.createElementNS(svgNS, 'title');
-    title.textContent = `${t.tender_id} — ${t.title}\n${t.ward} · ${t.status} · ${currency.format(t.estimated_amount)}`;
-    circle.appendChild(title);
-
-    map.appendChild(circle);
+    circle.setAttribute('cx', cx);
+    circle.setAttribute('cy', cy);
+    circle.setAttribute('r', radius);
+    circle.setAttribute('fill', 'none');
+    circle.setAttribute('stroke', s.color);
+    circle.setAttribute('stroke-width', stroke);
+    circle.setAttribute('stroke-dasharray', `${dash} ${circumference - dash}`);
+    circle.setAttribute('stroke-dashoffset', -offset);
+    circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
+    svg.appendChild(circle);
+    offset += dash;
   });
+}
+
+function renderDonutLegend(containerId, items) {
+  document.getElementById(containerId).innerHTML = items
+    .map(
+      (i) =>
+        `<span class="legend-item"><span class="legend-dot" style="background:${i.color}"></span>${i.label}</span>`
+    )
+    .join('');
+}
+
+function renderStatusDonut(tenders) {
+  const counts = {};
+  tenders.forEach((t) => {
+    counts[t.status] = (counts[t.status] || 0) + 1;
+  });
+
+  const segments = Object.keys(STATUS_COLORS)
+    .filter((status) => counts[status])
+    .map((status) => ({ label: status, value: counts[status], color: STATUS_COLORS[status] }));
+
+  renderDonut('status-donut', segments);
+  renderDonutLegend(
+    'status-donut-legend',
+    segments.map((s) => ({ label: `${s.label} (${s.value})`, color: s.color }))
+  );
+}
+
+function renderWardDonut(tenders) {
+  const totals = {};
+  tenders.forEach((t) => {
+    totals[t.ward] = (totals[t.ward] || 0) + t.estimated_amount;
+  });
+
+  const wards = Object.keys(totals).sort();
+  const segments = wards.map((ward) => ({
+    label: ward,
+    value: totals[ward],
+    color: wardColor(ward, wards),
+  }));
+
+  renderDonut('ward-donut', segments);
+  renderDonutLegend(
+    'ward-donut-legend',
+    segments.map((s) => ({ label: `${s.label} (${currency.format(s.value)})`, color: s.color }))
+  );
 }
 
 function render(tenders) {
@@ -112,6 +196,8 @@ function render(tenders) {
   summary.textContent = `${tenders.length} tender(s) — total estimated ${currency.format(total)}`;
 
   renderMap(tenders);
+  renderStatusDonut(tenders);
+  renderWardDonut(tenders);
 }
 
 function populateFilters(tenders) {
@@ -152,7 +238,7 @@ function applyFilters() {
 async function init() {
   const res = await fetch('/api/tenders');
   allTenders = await res.json();
-  mapBounds = computeMapBounds(allTenders);
+  initMap(allTenders);
   renderLegend();
   populateFilters(allTenders);
   render(allTenders);

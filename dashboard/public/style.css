@@ -98,29 +98,31 @@ header h1 {
 
 #map {
   width: 100%;
-  max-height: 340px;
+  height: 340px;
   border: 1px solid var(--border);
   border-radius: 8px;
+  background: #eef3f8;
 }
 
-.map-background {
-  fill: #eef3f8;
+@media (max-width: 600px) {
+  #map {
+    height: 260px;
+  }
 }
 
-.map-pin {
-  stroke: #fff;
-  stroke-width: 1.5;
-  cursor: pointer;
-  r: 7px;
-}
-
-.map-pin:hover {
-  stroke: #333;
+.status-pin span {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 @media (pointer: coarse) {
-  .map-pin {
-    r: 10px;
+  .status-pin span {
+    width: 18px;
+    height: 18px;
   }
 }
 
@@ -149,6 +151,41 @@ header h1 {
 .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.chart-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.chart-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.chart-card svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
 }
 
 table {
@@ -195,6 +232,6 @@ tr:hover td {
   tr:hover td { background: #1a1f26; }
   th, td { border-color: #333; }
   .controls input, .controls select { background: #1c1c1c; color: #eee; border-color: #444; }
-  .map-background { fill: #1c2733; }
-  #map { border-color: #333; }
+  #map { border-color: #333; background: #1c2733; }
+  .chart-card { border-color: #333; }
 }

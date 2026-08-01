@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Civic Tenders Dashboard</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -33,7 +39,7 @@
       <h2>Tender locations</h2>
       <span class="map-note">Illustrative, approximate positions — not exact GPS. Click a pin to isolate a tender.</span>
     </div>
-    <svg id="map" viewBox="0 0 600 400" role="img" aria-label="Map of tender locations"></svg>
+    <div id="map" role="img" aria-label="Map of tender locations"></div>
     <div class="map-legend" id="map-legend"></div>
   </section>
 
@@ -54,6 +60,24 @@
     </table>
   </div>
 
+  <section class="charts-section">
+    <div class="chart-card">
+      <h2>Tenders by status</h2>
+      <svg id="status-donut" role="img" aria-label="Donut chart of tenders by status"></svg>
+      <div class="chart-legend" id="status-donut-legend"></div>
+    </div>
+    <div class="chart-card">
+      <h2>Estimated amount by ward</h2>
+      <svg id="ward-donut" role="img" aria-label="Donut chart of estimated amount by ward"></svg>
+      <div class="chart-legend" id="ward-donut-legend"></div>
+    </div>
+  </section>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
   <script src="/app.js"></script>
 </body>
 </html>
