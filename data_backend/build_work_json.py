@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a work-centric ``works.json`` from the three source workbooks.
+"""Build work-centric JSON chunks from the three source workbooks.
 
 The output follows ``data_schema.md``. Tender links and point coordinates are left
 unset unless the source data supports them; the pipeline never fabricates either.
@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import tempfile
 import unicodedata
 from collections import Counter, defaultdict
@@ -26,12 +27,13 @@ from openpyxl import load_workbook
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = Path(__file__).resolve().parent / "csv"
-OUTPUT_FILE = Path(__file__).resolve().parent / "json" / "works.json"
+OUTPUT_DIR = Path(__file__).resolve().parent / "json" / "works"
 PAYMENTS_FILE = SOURCE_DIR / "2. payments-2026-07-30.xlsx"
 JOB_CODES_FILE = SOURCE_DIR / "3. BBMP_job_codes_merged.xlsx"
 TENDERS_FILE = SOURCE_DIR / "1. karnataka-tenders-2026-07-30.xlsx"
 SOURCE_AS_OF = date(2026, 7, 30)
 SCHEMA_VERSION = "0.1"
+DEFAULT_MAX_CHUNK_BYTES = 10_000_000
 DOCUMENT_BASE_URL = "https://account.bbmpgov.in/vssIFMS/Files1/"
 WARD_SCHEMES = {"198", "225", "243", "369", "special"}
 WORK_STATUSES = {"in_progress", "completed", "unknown"}
@@ -555,58 +557,97 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def manifest_path_for(output_file: Path) -> Path:
-    return output_file.with_name(f"{output_file.stem}.manifest.json")
+def manifest_path_for(output_dir: Path) -> Path:
+    return output_dir.with_name(f"{output_dir.name}.manifest.json")
 
 
 def write_output(
     records: Iterable[dict[str, Any]],
-    output_file: Path,
+    output_dir: Path,
+    max_chunk_bytes: int,
     build_stats: dict[str, int],
 ) -> dict[str, Any]:
-    output_file.parent.mkdir(parents=True, exist_ok=True)
+    output_dir.parent.mkdir(parents=True, exist_ok=True)
     stats = Counter()
     seen_jobs: set[str] = set()
-
-    temporary = tempfile.NamedTemporaryFile(
-        mode="w",
-        encoding="utf-8",
-        prefix="works-json-",
-        suffix=".tmp",
-        dir=output_file.parent,
-        delete=False,
+    temporary_dir = Path(
+        tempfile.mkdtemp(prefix="works-json-", dir=output_dir.parent)
     )
-    temporary_path = Path(temporary.name)
-    try:
-        with temporary as destination:
+    chunks: list[dict[str, Any]] = []
+    serialized_records: list[str] = []
+    serialized_bytes = 3  # Opening bracket, closing bracket, trailing newline.
+
+    def flush_chunk() -> None:
+        nonlocal serialized_bytes
+        if not serialized_records:
+            return
+        filename = f"works-{len(chunks) + 1:04d}.json"
+        chunk_path = temporary_dir / filename
+        with chunk_path.open("w", encoding="utf-8") as destination:
             destination.write("[")
-            first = True
-            for record in records:
-                validate_record(record)
-                if record["job_number"] in seen_jobs:
-                    raise ValueError(f"Duplicate job number: {record['job_number']}")
-                seen_jobs.add(record["job_number"])
-                stats[f"status_{record['status']}"] += 1
-                stats[f"tender_failure_{record['link_failure_reason']}"] += 1
-                stats["documents"] += len(record["documents"])
-                stats["bills"] += len(record["bills"])
-                stats["placeholders"] += sum(
-                    document["is_placeholder"] for document in record["documents"]
-                )
-                if not first:
-                    destination.write(",")
-                json.dump(
-                    record,
-                    destination,
-                    ensure_ascii=False,
-                    separators=(",", ":"),
-                )
-                first = False
+            destination.write(",".join(serialized_records))
             destination.write("]\n")
-        temporary_path.replace(output_file)
-        output_file.chmod(0o644)
+        chunk_size = chunk_path.stat().st_size
+        if chunk_size > max_chunk_bytes:
+            raise ValueError(
+                f"{filename} is {chunk_size:,} bytes; limit is {max_chunk_bytes:,}"
+            )
+        chunks.append(
+            {
+                "file": f"{output_dir.name}/{filename}",
+                "records": len(serialized_records),
+                "bytes": chunk_size,
+                "sha256": sha256(chunk_path),
+            }
+        )
+        serialized_records.clear()
+        serialized_bytes = 3
+
+    try:
+        for record in records:
+            validate_record(record)
+            if record["job_number"] in seen_jobs:
+                raise ValueError(f"Duplicate job number: {record['job_number']}")
+            encoded = json.dumps(
+                record,
+                ensure_ascii=False,
+                separators=(",", ":"),
+            )
+            encoded_bytes = len(encoded.encode("utf-8"))
+            separator_bytes = 1 if serialized_records else 0
+            if encoded_bytes + 3 > max_chunk_bytes:
+                raise ValueError(
+                    f"{record['job_number']} cannot fit in a "
+                    f"{max_chunk_bytes:,}-byte chunk"
+                )
+            if serialized_records and (
+                serialized_bytes + separator_bytes + encoded_bytes > max_chunk_bytes
+            ):
+                flush_chunk()
+                separator_bytes = 0
+            serialized_records.append(encoded)
+            serialized_bytes += separator_bytes + encoded_bytes
+
+            seen_jobs.add(record["job_number"])
+            stats[f"status_{record['status']}"] += 1
+            stats[f"tender_failure_{record['link_failure_reason']}"] += 1
+            stats["documents"] += len(record["documents"])
+            stats["bills"] += len(record["bills"])
+            stats["placeholders"] += sum(
+                document["is_placeholder"] for document in record["documents"]
+            )
+        flush_chunk()
+
+        backup_dir = output_dir.with_name(f".{output_dir.name}-previous")
+        if backup_dir.exists():
+            shutil.rmtree(backup_dir)
+        if output_dir.exists():
+            output_dir.replace(backup_dir)
+        temporary_dir.replace(output_dir)
+        if backup_dir.exists():
+            shutil.rmtree(backup_dir)
     except BaseException:
-        temporary_path.unlink(missing_ok=True)
+        shutil.rmtree(temporary_dir, ignore_errors=True)
         raise
 
     manifest = {
@@ -619,12 +660,12 @@ def write_output(
             str(JOB_CODES_FILE.relative_to(REPO_ROOT)),
         ],
         "record_count": len(seen_jobs),
-        "output": {
-            "file": output_file.name,
-            "records": len(seen_jobs),
-            "bytes": output_file.stat().st_size,
-            "sha256": sha256(output_file),
+        "chunking": {
+            "max_bytes": max_chunk_bytes,
+            "chunk_count": len(chunks),
+            "total_bytes": sum(chunk["bytes"] for chunk in chunks),
         },
+        "chunks": chunks,
         "stats": {**build_stats, **dict(sorted(stats.items()))},
         "methodology": {
             "root": "One record per distinct WO in BBMP_job_codes_merged.xlsx.",
@@ -661,13 +702,13 @@ def write_output(
             ),
         },
     }
-    manifest_path = manifest_path_for(output_file)
+    manifest_path = manifest_path_for(output_dir)
     with tempfile.NamedTemporaryFile(
         mode="w",
         encoding="utf-8",
         prefix="works-manifest-",
         suffix=".tmp",
-        dir=output_file.parent,
+        dir=output_dir.parent,
         delete=False,
     ) as destination:
         temporary_manifest = Path(destination.name)
@@ -678,40 +719,43 @@ def write_output(
     return manifest
 
 
-def validate_output(output_file: Path) -> dict[str, Any]:
-    manifest_path = manifest_path_for(output_file)
+def validate_output(output_dir: Path) -> dict[str, Any]:
+    manifest_path = manifest_path_for(output_dir)
     with manifest_path.open(encoding="utf-8") as source:
         manifest = json.load(source)
-    output_metadata = manifest["output"]
-    if output_metadata["file"] != output_file.name:
-        raise ValueError("Manifest output filename mismatch")
-    if (
-        output_file.stat().st_size != output_metadata["bytes"]
-        or sha256(output_file) != output_metadata["sha256"]
-    ):
-        raise ValueError(f"Checksum or size mismatch: {output_file}")
-    with output_file.open(encoding="utf-8") as source:
-        records = json.load(source)
-    if not isinstance(records, list):
-        raise ValueError(f"Expected a JSON array: {output_file}")
-    if len(records) != output_metadata["records"]:
-        raise ValueError("Output record count mismatch")
-
     seen: set[str] = set()
     stats = Counter()
-    for record in records:
-        validate_record(record)
-        job_number = record["job_number"]
-        if job_number in seen:
-            raise ValueError(f"Duplicate job number: {job_number}")
-        seen.add(job_number)
-        stats[f"status_{record['status']}"] += 1
-        stats[f"tender_failure_{record['link_failure_reason']}"] += 1
-        stats["documents"] += len(record["documents"])
-        stats["bills"] += len(record["bills"])
-        stats["placeholders"] += sum(
-            document["is_placeholder"] for document in record["documents"]
-        )
+    total_bytes = 0
+    max_chunk_bytes = manifest["chunking"]["max_bytes"]
+    if manifest["chunking"]["chunk_count"] != len(manifest["chunks"]):
+        raise ValueError("Manifest chunk_count mismatch")
+    for chunk in manifest["chunks"]:
+        chunk_path = manifest_path.parent / chunk["file"]
+        chunk_size = chunk_path.stat().st_size
+        if chunk_size > max_chunk_bytes:
+            raise ValueError(f"Chunk exceeds size limit: {chunk_path}")
+        if chunk_size != chunk["bytes"] or sha256(chunk_path) != chunk["sha256"]:
+            raise ValueError(f"Checksum or size mismatch: {chunk_path}")
+        with chunk_path.open(encoding="utf-8") as source:
+            records = json.load(source)
+        if not isinstance(records, list) or len(records) != chunk["records"]:
+            raise ValueError(f"Record count mismatch: {chunk_path}")
+        total_bytes += chunk_size
+        for record in records:
+            validate_record(record)
+            job_number = record["job_number"]
+            if job_number in seen:
+                raise ValueError(f"Duplicate job number: {job_number}")
+            seen.add(job_number)
+            stats[f"status_{record['status']}"] += 1
+            stats[f"tender_failure_{record['link_failure_reason']}"] += 1
+            stats["documents"] += len(record["documents"])
+            stats["bills"] += len(record["bills"])
+            stats["placeholders"] += sum(
+                document["is_placeholder"] for document in record["documents"]
+            )
+    if total_bytes != manifest["chunking"]["total_bytes"]:
+        raise ValueError("Manifest total_bytes mismatch")
     if len(seen) != manifest["record_count"]:
         raise ValueError("Manifest record_count mismatch")
     for key, value in stats.items():
@@ -720,7 +764,7 @@ def validate_output(output_file: Path) -> dict[str, Any]:
     return manifest
 
 
-def build(output_file: Path) -> dict[str, Any]:
+def build(output_dir: Path, max_chunk_bytes: int) -> dict[str, Any]:
     works, stats = collect_works()
     payment_metadata = load_payment_metadata(set(works))
     stats["tender_corpus_rows"] = count_tender_corpus()
@@ -738,12 +782,17 @@ def build(output_file: Path) -> dict[str, Any]:
         )
         for job_number in sorted(works)
     )
-    return write_output(records, output_file, stats)
+    return write_output(records, output_dir, max_chunk_bytes, stats)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=OUTPUT_FILE)
+    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
+    parser.add_argument(
+        "--max-chunk-bytes",
+        type=int,
+        default=DEFAULT_MAX_CHUNK_BYTES,
+    )
     parser.add_argument(
         "--check",
         action="store_true",
@@ -754,12 +803,17 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    if args.max_chunk_bytes <= 3:
+        raise SystemExit("--max-chunk-bytes must be greater than 3")
     manifest = (
-        validate_output(args.output)
+        validate_output(args.output_dir)
         if args.check
-        else build(args.output)
+        else build(args.output_dir, args.max_chunk_bytes)
     )
-    print(f"Validated {manifest['record_count']:,} work records in {args.output}.")
+    print(
+        f"Validated {manifest['record_count']:,} work records in "
+        f"{manifest['chunking']['chunk_count']} chunk(s)."
+    )
 
 
 if __name__ == "__main__":

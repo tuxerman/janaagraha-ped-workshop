@@ -8,12 +8,79 @@
     "data_backend/csv/3. BBMP_job_codes_merged.xlsx"
   ],
   "record_count": 8203,
-  "output": {
-    "file": "works.json",
-    "records": 8203,
-    "bytes": 103802597,
-    "sha256": "5d38eb2d65750bef25276367a13fd1304cce8c274808a58f1d6e15399ec52e13"
+  "chunking": {
+    "max_bytes": 10000000,
+    "chunk_count": 11,
+    "total_bytes": 103802617
   },
+  "chunks": [
+    {
+      "file": "works/works-0001.json",
+      "records": 655,
+      "bytes": 9953668,
+      "sha256": "39b92c7ea0b85029da7ffcbcedbb961e8d6672f32909ff07ff191dc4dfc913d7"
+    },
+    {
+      "file": "works/works-0002.json",
+      "records": 835,
+      "bytes": 9964328,
+      "sha256": "938276b30ab132bd6c49c55ffefc9bf9d92e3bf9fb35be13d74c93046700e461"
+    },
+    {
+      "file": "works/works-0003.json",
+      "records": 803,
+      "bytes": 9995977,
+      "sha256": "1abc173a101b858256cadc89651a4301ed6962b07bf462cf4a441a7c618859f4"
+    },
+    {
+      "file": "works/works-0004.json",
+      "records": 812,
+      "bytes": 9992366,
+      "sha256": "9c2dc095f4c2dcb0f4f0e1a4f1cef7c0a4b9400afd21b613cc766b287f099656"
+    },
+    {
+      "file": "works/works-0005.json",
+      "records": 1023,
+      "bytes": 9999052,
+      "sha256": "d9b4a8e78ba3353ca11fdca855edfed7609e66c72fa0ea0739cc6d20bf20aa55"
+    },
+    {
+      "file": "works/works-0006.json",
+      "records": 851,
+      "bytes": 9995350,
+      "sha256": "030d07f819a7a91c594e1f4ba0f775cdce5fd5f602528b763e332d4e511a07a7"
+    },
+    {
+      "file": "works/works-0007.json",
+      "records": 784,
+      "bytes": 9996130,
+      "sha256": "3d6c73fa262b768d292a33be4d28a021d5c08517cb35b905d228d751a8eece03"
+    },
+    {
+      "file": "works/works-0008.json",
+      "records": 879,
+      "bytes": 9999967,
+      "sha256": "16c9a938b72ba23b12f2fbbfa5bf8834336830fc61b8d3649d12787288fec8d3"
+    },
+    {
+      "file": "works/works-0009.json",
+      "records": 660,
+      "bytes": 9949618,
+      "sha256": "4ba7511ef4d90273b6cfc75685d409bb8e509db8084de782b9d77ff5d5e94bed"
+    },
+    {
+      "file": "works/works-0010.json",
+      "records": 600,
+      "bytes": 9976607,
+      "sha256": "d9394f87420359069539b39120a854ebc86e9155ee07792d8bd3338e378c6bf5"
+    },
+    {
+      "file": "works/works-0011.json",
+      "records": 301,
+      "bytes": 3979554,
+      "sha256": "4fce66f973d60a4a95f3024ae4500cc54f437c4e1dcdb0af8a0547ac342d45ce"
+    }
+  ],
   "stats": {
     "source_rows": 54032,
     "deduplicated_bill_rows": 34860,

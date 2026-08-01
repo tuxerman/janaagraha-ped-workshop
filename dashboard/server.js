@@ -1,11 +1,12 @@
 const http = require('http');
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
-const WORKS_FILE = path.join(__dirname, '..', 'data_backend', 'json', 'works.json');
 const MANIFEST_FILE = path.join(__dirname, '..', 'data_backend', 'json', 'works.manifest.json');
+const WORKS_DIR = path.join(__dirname, '..', 'data_backend', 'json', 'works');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -15,22 +16,34 @@ const MIME_TYPES = {
 };
 
 function readJson(filePath) {
-  const content = fs.readFileSync(filePath, 'utf-8');
-  if (content.startsWith('version https://git-lfs.github.com/spec/')) {
-    throw new Error(`${filePath} is a Git LFS pointer. Run "git lfs pull" first.`);
-  }
-  return JSON.parse(content);
+  return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
 function loadDataset() {
-  const works = readJson(WORKS_FILE);
   const manifest = readJson(MANIFEST_FILE);
-  if (!Array.isArray(works)) {
-    throw new Error(`${WORKS_FILE} must contain a JSON array`);
+  if (!Array.isArray(manifest.chunks) || manifest.chunks.length === 0) {
+    throw new Error(`${MANIFEST_FILE} does not list any chunks`);
   }
+  const works = [];
+  manifest.chunks.forEach((chunk) => {
+    const chunkPath = path.resolve(path.dirname(MANIFEST_FILE), chunk.file);
+    if (!chunkPath.startsWith(`${WORKS_DIR}${path.sep}`)) {
+      throw new Error(`Chunk path escapes the works directory: ${chunk.file}`);
+    }
+    const content = fs.readFileSync(chunkPath);
+    const digest = crypto.createHash('sha256').update(content).digest('hex');
+    if (content.length !== chunk.bytes || digest !== chunk.sha256) {
+      throw new Error(`Chunk checksum or size mismatch: ${chunkPath}`);
+    }
+    const records = JSON.parse(content.toString('utf-8'));
+    if (!Array.isArray(records) || records.length !== chunk.records) {
+      throw new Error(`Chunk record count mismatch: ${chunkPath}`);
+    }
+    works.push(...records);
+  });
   if (works.length !== manifest.record_count) {
     throw new Error(
-      `works.json has ${works.length} records; manifest expects ${manifest.record_count}`
+      `Work chunks have ${works.length} records; manifest expects ${manifest.record_count}`
     );
   }
   return { works, manifest };

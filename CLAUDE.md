@@ -30,10 +30,11 @@ Agree the shape of the JSON early, then work independently against it.
 
 The citizen-facing dashboard.
 
-The local server reads `data_backend/json/works.json`, generated from the source
-workbooks according to `data_schema.md`. It exposes compact work summaries to the
-browser rather than transferring the full document and bill arrays. Derived values,
-missing tender links and sparse locations must remain visibly qualified.
+The local server reads the chunk manifest at
+`data_backend/json/works.manifest.json`, generated from the source workbooks
+according to `data_schema.md`. It exposes compact work summaries to the browser
+rather than transferring the full document and bill arrays. Derived values, missing
+tender links and sparse locations must remain visibly qualified.
 
 ### The spec lives in a markdown file
 
