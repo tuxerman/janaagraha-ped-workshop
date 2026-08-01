@@ -3,6 +3,18 @@ const summary = document.getElementById('summary');
 const searchInput = document.getElementById('search');
 const wardFilter = document.getElementById('ward-filter');
 const statusFilter = document.getElementById('status-filter');
+const map = document.getElementById('map');
+const mapLegend = document.getElementById('map-legend');
+
+const STATUS_COLORS = {
+  Open: '#0d47a1',
+  Awarded: '#4527a0',
+  'In Progress': '#e65100',
+  Completed: '#1b5e20',
+  Cancelled: '#880e4f',
+};
+
+const MAP_PADDING = 40;
 
 const currency = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -11,9 +23,73 @@ const currency = new Intl.NumberFormat('en-IN', {
 });
 
 let allTenders = [];
+let mapBounds = null;
 
 function statusClass(status) {
   return 'status-' + status.toLowerCase().replace(/\s+/g, '-');
+}
+
+function computeMapBounds(tenders) {
+  const lats = tenders.map((t) => t.lat);
+  const lngs = tenders.map((t) => t.lng);
+  return {
+    minLat: Math.min(...lats),
+    maxLat: Math.max(...lats),
+    minLng: Math.min(...lngs),
+    maxLng: Math.max(...lngs),
+  };
+}
+
+function project(t) {
+  const { minLat, maxLat, minLng, maxLng } = mapBounds;
+  const w = map.viewBox.baseVal.width - MAP_PADDING * 2;
+  const h = map.viewBox.baseVal.height - MAP_PADDING * 2;
+  const x = MAP_PADDING + ((t.lng - minLng) / (maxLng - minLng || 1)) * w;
+  const y = MAP_PADDING + (1 - (t.lat - minLat) / (maxLat - minLat || 1)) * h;
+  return { x, y };
+}
+
+function renderLegend() {
+  mapLegend.innerHTML = Object.entries(STATUS_COLORS)
+    .map(
+      ([status, color]) =>
+        `<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${status}</span>`
+    )
+    .join('');
+}
+
+function renderMap(tenders) {
+  const svgNS = 'http://www.w3.org/2000/svg';
+  map.innerHTML = '';
+
+  const background = document.createElementNS(svgNS, 'rect');
+  background.setAttribute('x', '0');
+  background.setAttribute('y', '0');
+  background.setAttribute('width', map.viewBox.baseVal.width);
+  background.setAttribute('height', map.viewBox.baseVal.height);
+  background.setAttribute('class', 'map-background');
+  map.appendChild(background);
+
+  tenders.forEach((t) => {
+    const { x, y } = project(t);
+    const circle = document.createElementNS(svgNS, 'circle');
+    circle.setAttribute('cx', x);
+    circle.setAttribute('cy', y);
+    circle.setAttribute('r', 7);
+    circle.setAttribute('fill', STATUS_COLORS[t.status] || '#888');
+    circle.setAttribute('class', 'map-pin');
+    circle.addEventListener('click', () => {
+      searchInput.value = t.tender_id;
+      applyFilters();
+      document.getElementById('tenders-table').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const title = document.createElementNS(svgNS, 'title');
+    title.textContent = `${t.tender_id} — ${t.title}\n${t.ward} · ${t.status} · ${currency.format(t.estimated_amount)}`;
+    circle.appendChild(title);
+
+    map.appendChild(circle);
+  });
 }
 
 function render(tenders) {
@@ -35,6 +111,8 @@ function render(tenders) {
 
   const total = tenders.reduce((sum, t) => sum + t.estimated_amount, 0);
   summary.textContent = `${tenders.length} tender(s) — total estimated ${currency.format(total)}`;
+
+  renderMap(tenders);
 }
 
 function populateFilters(tenders) {
@@ -75,6 +153,8 @@ function applyFilters() {
 async function init() {
   const res = await fetch('/api/tenders');
   allTenders = await res.json();
+  mapBounds = computeMapBounds(allTenders);
+  renderLegend();
   populateFilters(allTenders);
   render(allTenders);
 }

@@ -10,7 +10,9 @@
     "publish_date": "2026-06-02",
     "closing_date": "2026-08-15",
     "contractor": null,
-    "location": "100ft Road, near CMH junction"
+    "location": "100ft Road, near CMH junction",
+    "lat": 12.9612,
+    "lng": 77.6389
   },
   {
     "tender_id": "BBMP/2026/RD-1043",
@@ -23,7 +25,9 @@
     "publish_date": "2026-04-10",
     "closing_date": "2026-05-01",
     "contractor": "Sri Venkateshwara Constructions",
-    "location": "12th Main Road"
+    "location": "12th Main Road",
+    "lat": 12.9605,
+    "lng": 77.6402
   },
   {
     "tender_id": "BBMP/2025/SW-0876",
@@ -36,7 +40,9 @@
     "publish_date": "2025-11-20",
     "closing_date": "2025-12-10",
     "contractor": "Karnataka Infra Works",
-    "location": "HAL 2nd Stage main drain"
+    "location": "HAL 2nd Stage main drain",
+    "lat": 12.9634,
+    "lng": 77.6478
   },
   {
     "tender_id": "BBMP/2025/RD-0754",
@@ -49,7 +55,9 @@
     "publish_date": "2025-01-15",
     "closing_date": "2025-02-05",
     "contractor": "Modern Roadways Pvt Ltd",
-    "location": "Airport Road service lane, HAL Gate"
+    "location": "Airport Road service lane, HAL Gate",
+    "lat": 12.9648,
+    "lng": 77.6465
   },
   {
     "tender_id": "BBMP/2026/PK-0221",
@@ -62,7 +70,9 @@
     "publish_date": "2026-07-05",
     "closing_date": "2026-08-20",
     "contractor": null,
-    "location": "Ulsoor Lake adjacent park"
+    "location": "Ulsoor Lake adjacent park",
+    "lat": 12.9822,
+    "lng": 77.6198
   },
   {
     "tender_id": "BBMP/2025/ST-0433",
@@ -75,7 +85,9 @@
     "publish_date": "2025-03-01",
     "closing_date": "2025-03-20",
     "contractor": "Bright City Electricals",
-    "location": "Old Madras Road stretch"
+    "location": "Old Madras Road stretch",
+    "lat": 12.9805,
+    "lng": 77.6225
   },
   {
     "tender_id": "BBMP/2026/RD-1055",
@@ -88,7 +100,9 @@
     "publish_date": "2026-05-18",
     "closing_date": "2026-06-08",
     "contractor": "Prime Civil Contractors",
-    "location": "Cambridge Layout main road"
+    "location": "Cambridge Layout main road",
+    "lat": 12.9718,
+    "lng": 77.6392
   },
   {
     "tender_id": "BBMP/2025/SW-0891",
@@ -101,7 +115,9 @@
     "publish_date": "2025-09-12",
     "closing_date": "2025-09-30",
     "contractor": null,
-    "location": "Behind Kensington Road"
+    "location": "Behind Kensington Road",
+    "lat": 12.9725,
+    "lng": 77.6378
   },
   {
     "tender_id": "BBMP/2026/RD-1061",
@@ -114,7 +130,9 @@
     "publish_date": "2026-07-22",
     "closing_date": "2026-08-25",
     "contractor": null,
-    "location": "100ft Road median, CMH to Old Airport Road"
+    "location": "100ft Road median, CMH to Old Airport Road",
+    "lat": 12.9622,
+    "lng": 77.6378
   },
   {
     "tender_id": "BBMP/2025/PK-0198",
@@ -127,7 +145,9 @@
     "publish_date": "2025-12-01",
     "closing_date": "2025-12-18",
     "contractor": "Little Champs Play Equipments",
-    "location": "HAL 2nd Stage community park"
+    "location": "HAL 2nd Stage community park",
+    "lat": 12.9629,
+    "lng": 77.6491
   },
   {
     "tender_id": "BBMP/2026/ST-0512",
@@ -140,7 +160,9 @@
     "publish_date": "2026-07-28",
     "closing_date": "2026-08-30",
     "contractor": null,
-    "location": "Ulsoor main road junctions"
+    "location": "Ulsoor main road junctions",
+    "lat": 12.9818,
+    "lng": 77.6212
   },
   {
     "tender_id": "BBMP/2025/RD-0699",
@@ -153,6 +175,8 @@
     "publish_date": "2024-11-10",
     "closing_date": "2024-12-01",
     "contractor": "Prime Civil Contractors",
-    "location": "Cambridge Layout 3rd Cross"
+    "location": "Cambridge Layout 3rd Cross",
+    "lat": 12.9712,
+    "lng": 77.6405
   }
 ]
