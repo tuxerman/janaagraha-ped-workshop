@@ -2,31 +2,26 @@
   color-scheme: light dark;
   --border: #d8d8d8;
   --muted: #666;
-  --banner-bg: #fff3cd;
-  --banner-text: #7a5c00;
+  --banner-bg: #e8f4fd;
+  --banner-text: #174b70;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
 body {
-  font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1.5rem;
   color: #1a1a1a;
   background: #fff;
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 1rem;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 header h1 {
@@ -38,54 +33,20 @@ header h1 {
   color: var(--muted);
 }
 
-.tabs {
-  display: flex;
-  gap: 0.5rem;
+.data-banner {
   margin-bottom: 1.2rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.tab-btn {
-  padding: 0.55rem 1rem;
-  border: none;
-  background: none;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: var(--muted);
-  border-bottom: 2px solid transparent;
-}
-
-.tab-btn.active {
-  color: #1a1a1a;
-  border-bottom-color: #0d47a1;
-  font-weight: 600;
-}
-
-.synthetic-badge {
-  display: inline-block;
-  padding: 0.05rem 0.4rem;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  background: #fce4ec;
-  color: #880e4f;
-}
-
-.muted-note {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.pseudo-banner {
-  background: var(--banner-bg);
-  color: var(--banner-text);
-  border: 1px solid #e0c36a;
+  padding: 0.7rem 1rem;
+  border: 1px solid #90caf9;
   border-radius: 6px;
-  padding: 0.6rem 1rem;
-  margin-bottom: 1.2rem;
+  color: var(--banner-text);
+  background: var(--banner-bg);
   font-size: 0.95rem;
+}
+
+.data-banner-error {
+  border-color: #ef9a9a;
+  color: #880e4f;
+  background: #fce4ec;
 }
 
 .controls {
@@ -105,7 +66,7 @@ header h1 {
 
 #search {
   flex: 1;
-  min-width: 220px;
+  min-width: 240px;
 }
 
 .summary {
@@ -136,8 +97,7 @@ header h1 {
   font-size: 0.85rem;
 }
 
-#map,
-#works-map {
+#map {
   width: 100%;
   height: 340px;
   border: 1px solid var(--border);
@@ -145,36 +105,31 @@ header h1 {
   background: #eef3f8;
 }
 
-@media (max-width: 600px) {
-  #map,
-  #works-map {
-    height: 260px;
-  }
+#map.map-empty {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  color: var(--muted);
+  text-align: center;
 }
 
 .status-pin span {
   display: block;
   width: 14px;
   height: 14px;
-  border-radius: 50%;
   border: 2px solid #fff;
+  border-radius: 50%;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-@media (pointer: coarse) {
-  .status-pin span {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-.map-legend {
+.map-legend,
+.chart-legend {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
   flex-wrap: wrap;
   margin-top: 0.5rem;
-  font-size: 0.85rem;
   color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .legend-item {
@@ -184,10 +139,10 @@ header h1 {
 }
 
 .legend-dot {
+  display: inline-block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  display: inline-block;
 }
 
 .table-scroll {
@@ -195,17 +150,66 @@ header h1 {
   -webkit-overflow-scrolling: touch;
 }
 
+table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #fafafa;
+}
+
+tr:hover td {
+  background: #f7f9fc;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-in-progress {
+  color: #e65100;
+  background: #fff3e0;
+}
+
+.status-completed {
+  color: #1b5e20;
+  background: #e8f5e9;
+}
+
+.status-unknown {
+  color: #424242;
+  background: #eee;
+}
+
 .charts-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .chart-card {
+  padding: 1rem;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1rem;
   text-align: center;
 }
 
@@ -221,62 +225,55 @@ header h1 {
 }
 
 .chart-legend {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 0.4rem 1rem;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--muted);
 }
 
-table {
-  width: 100%;
-  min-width: 720px;
-  border-collapse: collapse;
-  font-size: 0.9rem;
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  #map {
+    height: 260px;
+  }
 }
 
-th, td {
-  text-align: left;
-  padding: 0.55rem 0.6rem;
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
+@media (pointer: coarse) {
+  .status-pin span {
+    width: 18px;
+    height: 18px;
+  }
 }
-
-th {
-  background: #fafafa;
-  position: sticky;
-  top: 0;
-}
-
-tr:hover td {
-  background: #f7f9fc;
-}
-
-.status-pill {
-  display: inline-block;
-  padding: 0.15rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.status-open { background: #e3f2fd; color: #0d47a1; }
-.status-awarded { background: #ede7f6; color: #4527a0; }
-.status-in-progress { background: #fff3e0; color: #e65100; }
-.status-completed { background: #e8f5e9; color: #1b5e20; }
-.status-cancelled { background: #fce4ec; color: #880e4f; }
-.status-unknown { background: #eeeeee; color: #555; }
 
 @media (prefers-color-scheme: dark) {
-  body { background: #121212; color: #eee; }
-  th { background: #1c1c1c; }
-  tr:hover td { background: #1a1f26; }
-  th, td { border-color: #333; }
-  .controls input, .controls select { background: #1c1c1c; color: #eee; border-color: #444; }
-  #map, #works-map { border-color: #333; background: #1c2733; }
-  .chart-card { border-color: #333; }
-  .tabs { border-color: #333; }
-  .tab-btn.active { color: #eee; }
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  th {
+    background: #1c1c1c;
+  }
+
+  tr:hover td {
+    background: #1a1f26;
+  }
+
+  th,
+  td,
+  #map,
+  .chart-card {
+    border-color: #333;
+  }
+
+  .controls input,
+  .controls select {
+    color: #eee;
+    border-color: #444;
+    background: #1c1c1c;
+  }
+
+  #map {
+    background: #1c2733;
+  }
 }

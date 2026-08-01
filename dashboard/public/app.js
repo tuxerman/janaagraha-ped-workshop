@@ -1,31 +1,29 @@
-const tbody = document.getElementById('tenders-body');
+const tbody = document.getElementById('works-body');
 const summary = document.getElementById('summary');
 const searchInput = document.getElementById('search');
 const wardFilter = document.getElementById('ward-filter');
 const statusFilter = document.getElementById('status-filter');
+const mapElement = document.getElementById('map');
 const mapLegend = document.getElementById('map-legend');
-
-const worksTbody = document.getElementById('works-body');
-const worksSummary = document.getElementById('works-summary');
-const worksSearchInput = document.getElementById('works-search');
-const worksWardFilter = document.getElementById('works-ward-filter');
-const worksStatusFilter = document.getElementById('works-status-filter');
-const worksMapLegend = document.getElementById('works-map-legend');
+const dataBanner = document.getElementById('data-banner');
 
 const STATUS_COLORS = {
-  Open: '#0d47a1',
-  Awarded: '#4527a0',
-  'In Progress': '#e65100',
-  Completed: '#1b5e20',
-  Cancelled: '#880e4f',
-};
-
-const WORK_STATUS_COLORS = {
   completed: '#1b5e20',
-  unknown: '#888888',
+  in_progress: '#e65100',
+  unknown: '#616161',
 };
-
-const WARD_PALETTE = ['#1565c0', '#6a1b9a', '#00838f', '#ef6c00', '#2e7d32', '#ad1457', '#4527a0', '#00695c'];
+const WARD_PALETTE = [
+  '#1565c0',
+  '#6a1b9a',
+  '#00838f',
+  '#ef6c00',
+  '#2e7d32',
+  '#ad1457',
+  '#4527a0',
+  '#00695c',
+];
+const MAX_TABLE_ROWS = 500;
+const UNKNOWN_WARD = 'Centralised / unknown';
 
 const currency = new Intl.NumberFormat('en-IN', {
   style: 'currency',
@@ -33,25 +31,36 @@ const currency = new Intl.NumberFormat('en-IN', {
   maximumFractionDigits: 0,
 });
 
-let allTenders = [];
+let allWorks = [];
 let leafletMap = null;
 let markerLayer = null;
 
-let allWorks = [];
-let worksLoaded = false;
-let worksLeafletMap = null;
-let worksMarkerLayer = null;
-
-function statusClass(status) {
-  return 'status-' + status.toLowerCase().replace(/\s+/g, '-');
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 }
 
-function wardColor(ward, wards) {
-  return WARD_PALETTE[wards.indexOf(ward) % WARD_PALETTE.length];
+function statusLabel(status) {
+  return status
+    .split('_')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+function wardLabel(work) {
+  return work.ward_name || UNKNOWN_WARD;
+}
+
+function hasPoint(work) {
+  return Number.isFinite(work.lat) && Number.isFinite(work.lng);
 }
 
 function statusIcon(status) {
-  const color = STATUS_COLORS[status] || '#888';
+  const color = STATUS_COLORS[status] || STATUS_COLORS.unknown;
   return L.divIcon({
     className: 'status-pin',
     html: `<span style="background:${color}"></span>`,
@@ -60,34 +69,43 @@ function statusIcon(status) {
   });
 }
 
-function initMap(tenders) {
+function initMap(works) {
+  const locatedWorks = works.filter(hasPoint);
+  if (locatedWorks.length === 0) {
+    mapElement.classList.add('map-empty');
+    mapElement.textContent =
+      'No point coordinates are available in the current source data. Ward-level location labels are shown in the table.';
+    mapLegend.textContent = '0 works with point coordinates';
+    return;
+  }
+
   leafletMap = L.map('map', {
     scrollWheelZoom: false,
     dragging: !L.Browser.mobile,
   });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    attribution: '&copy; OpenStreetMap contributors',
   }).addTo(leafletMap);
-
   markerLayer = L.layerGroup().addTo(leafletMap);
-
-  const bounds = L.latLngBounds(tenders.map((t) => [t.lat, t.lng]));
+  const bounds = L.latLngBounds(locatedWorks.map((work) => [work.lat, work.lng]));
   leafletMap.fitBounds(bounds, { padding: [30, 30] });
+  renderLegend();
 }
 
-function renderMap(tenders) {
+function renderMap(works) {
+  if (!markerLayer) return;
   markerLayer.clearLayers();
 
-  tenders.forEach((t) => {
-    const marker = L.marker([t.lat, t.lng], { icon: statusIcon(t.status) });
+  works.filter(hasPoint).forEach((work) => {
+    const marker = L.marker([work.lat, work.lng], { icon: statusIcon(work.status) });
     marker.bindPopup(
-      `<strong>${t.tender_id}</strong><br>${t.title}<br>${t.ward} &middot; ${t.status}<br>${currency.format(t.estimated_amount)}`
+      `<strong>${escapeHtml(work.job_number)}</strong><br>${escapeHtml(work.description)}<br>${escapeHtml(wardLabel(work))} &middot; ${escapeHtml(statusLabel(work.status))}<br>${currency.format(work.amount_gross)}`
     );
     marker.on('click', () => {
-      searchInput.value = t.tender_id;
+      searchInput.value = work.job_number;
       applyFilters();
-      document.getElementById('tenders-table').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('works-table').scrollIntoView({ behavior: 'smooth' });
     });
     marker.addTo(markerLayer);
   });
@@ -97,7 +115,7 @@ function renderLegend() {
   mapLegend.innerHTML = Object.entries(STATUS_COLORS)
     .map(
       ([status, color]) =>
-        `<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${status}</span>`
+        `<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${statusLabel(status)}</span>`
     )
     .join('');
 }
@@ -108,40 +126,27 @@ function renderDonut(svgId, segments) {
   const size = 160;
   const radius = 56;
   const stroke = 26;
-  const cx = size / 2;
-  const cy = size / 2;
+  const center = size / 2;
   const circumference = 2 * Math.PI * radius;
-  const total = segments.reduce((sum, s) => sum + s.value, 0);
+  const total = segments.reduce((sum, segment) => sum + segment.value, 0);
 
   svg.innerHTML = '';
   svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
-
-  if (total === 0) {
-    const empty = document.createElementNS(svgNS, 'circle');
-    empty.setAttribute('cx', cx);
-    empty.setAttribute('cy', cy);
-    empty.setAttribute('r', radius);
-    empty.setAttribute('fill', 'none');
-    empty.setAttribute('stroke', '#ccc');
-    empty.setAttribute('stroke-width', stroke);
-    svg.appendChild(empty);
-    return;
-  }
+  if (total === 0) return;
 
   let offset = 0;
-  segments.forEach((s) => {
-    const fraction = s.value / total;
-    const dash = fraction * circumference;
+  segments.forEach((segment) => {
+    const dash = (segment.value / total) * circumference;
     const circle = document.createElementNS(svgNS, 'circle');
-    circle.setAttribute('cx', cx);
-    circle.setAttribute('cy', cy);
+    circle.setAttribute('cx', center);
+    circle.setAttribute('cy', center);
     circle.setAttribute('r', radius);
     circle.setAttribute('fill', 'none');
-    circle.setAttribute('stroke', s.color);
+    circle.setAttribute('stroke', segment.color);
     circle.setAttribute('stroke-width', stroke);
     circle.setAttribute('stroke-dasharray', `${dash} ${circumference - dash}`);
     circle.setAttribute('stroke-dashoffset', -offset);
-    circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
+    circle.setAttribute('transform', `rotate(-90 ${center} ${center})`);
     svg.appendChild(circle);
     offset += dash;
   });
@@ -150,318 +155,140 @@ function renderDonut(svgId, segments) {
 function renderDonutLegend(containerId, items) {
   document.getElementById(containerId).innerHTML = items
     .map(
-      (i) =>
-        `<span class="legend-item"><span class="legend-dot" style="background:${i.color}"></span>${i.label}</span>`
+      (item) =>
+        `<span class="legend-item"><span class="legend-dot" style="background:${item.color}"></span>${escapeHtml(item.label)}</span>`
     )
     .join('');
 }
 
-function renderStatusDonut(tenders) {
+function renderStatusDonut(works) {
   const counts = {};
-  tenders.forEach((t) => {
-    counts[t.status] = (counts[t.status] || 0) + 1;
+  works.forEach((work) => {
+    counts[work.status] = (counts[work.status] || 0) + 1;
   });
-
   const segments = Object.keys(STATUS_COLORS)
     .filter((status) => counts[status])
-    .map((status) => ({ label: status, value: counts[status], color: STATUS_COLORS[status] }));
-
+    .map((status) => ({
+      label: statusLabel(status),
+      value: counts[status],
+      color: STATUS_COLORS[status],
+    }));
   renderDonut('status-donut', segments);
   renderDonutLegend(
     'status-donut-legend',
-    segments.map((s) => ({ label: `${s.label} (${s.value})`, color: s.color }))
+    segments.map((segment) => ({
+      label: `${segment.label} (${segment.value.toLocaleString('en-IN')})`,
+      color: segment.color,
+    }))
   );
 }
 
-function renderWardDonut(tenders) {
+function renderWardDonut(works) {
   const totals = {};
-  tenders.forEach((t) => {
-    totals[t.ward] = (totals[t.ward] || 0) + t.estimated_amount;
+  works.forEach((work) => {
+    const ward = wardLabel(work);
+    totals[ward] = (totals[ward] || 0) + work.amount_gross;
   });
-
-  const wards = Object.keys(totals).sort();
-  const segments = wards.map((ward) => ({
+  const ranked = Object.entries(totals).sort((left, right) => right[1] - left[1]);
+  const top = ranked.slice(0, 7);
+  const other = ranked.slice(7).reduce((sum, [, amount]) => sum + amount, 0);
+  if (other > 0) top.push(['Other wards', other]);
+  const segments = top.map(([ward, amount], index) => ({
     label: ward,
-    value: totals[ward],
-    color: wardColor(ward, wards),
+    value: amount,
+    color: WARD_PALETTE[index % WARD_PALETTE.length],
   }));
-
   renderDonut('ward-donut', segments);
   renderDonutLegend(
     'ward-donut-legend',
-    segments.map((s) => ({ label: `${s.label} (${currency.format(s.value)})`, color: s.color }))
+    segments.map((segment) => ({
+      label: `${segment.label} (${currency.format(segment.value)})`,
+      color: segment.color,
+    }))
   );
 }
 
-function workStatusIcon(status) {
-  const color = WORK_STATUS_COLORS[status] || '#888';
-  return L.divIcon({
-    className: 'status-pin',
-    html: `<span style="background:${color}"></span>`,
-    iconSize: [16, 16],
-    iconAnchor: [8, 8],
-  });
-}
-
-function initWorksMap(works) {
-  const located = works.filter((w) => w.location && w.location.lat != null && w.location.lng != null);
-
-  worksLeafletMap = L.map('works-map', {
-    scrollWheelZoom: false,
-    dragging: !L.Browser.mobile,
-  });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(worksLeafletMap);
-
-  worksMarkerLayer = L.layerGroup().addTo(worksLeafletMap);
-
-  if (located.length) {
-    const bounds = L.latLngBounds(located.map((w) => [w.location.lat, w.location.lng]));
-    worksLeafletMap.fitBounds(bounds, { padding: [30, 30] });
-  } else {
-    worksLeafletMap.setView([12.9, 77.6], 12);
-  }
-}
-
-function renderWorksMap(works) {
-  worksMarkerLayer.clearLayers();
-
-  works
-    .filter((w) => w.location && w.location.lat != null && w.location.lng != null)
-    .forEach((w) => {
-      const marker = L.marker([w.location.lat, w.location.lng], { icon: workStatusIcon(w.status) });
-      marker.bindPopup(
-        `<strong>${w.job_number}</strong><br>${w.description}<br>${w.ward_name} &middot; ` +
-          `<span class="synthetic-badge">synthetic</span> ${w.status}<br>${currency.format(w.amount_gross)}` +
-          `<br><span class="muted-note">location confidence: ${w.location.confidence} (${w.location.precision})</span>`
-      );
-      marker.on('click', () => {
-        worksSearchInput.value = w.job_number;
-        applyWorksFilters();
-        document.getElementById('works-table').scrollIntoView({ behavior: 'smooth' });
-      });
-      marker.addTo(worksMarkerLayer);
-    });
-}
-
-function renderWorksLegend() {
-  worksMapLegend.innerHTML = Object.entries(WORK_STATUS_COLORS)
+function render(works) {
+  const visible = works.slice(0, MAX_TABLE_ROWS);
+  tbody.innerHTML = visible
     .map(
-      ([status, color]) =>
-        `<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${status}</span>`
-    )
-    .join('');
-}
-
-function renderWorksStatusDonut(works) {
-  const counts = {};
-  works.forEach((w) => {
-    counts[w.status] = (counts[w.status] || 0) + 1;
-  });
-
-  const segments = Object.keys(WORK_STATUS_COLORS)
-    .filter((status) => counts[status])
-    .map((status) => ({ label: status, value: counts[status], color: WORK_STATUS_COLORS[status] }));
-
-  renderDonut('works-status-donut', segments);
-  renderDonutLegend(
-    'works-status-donut-legend',
-    segments.map((s) => ({ label: `${s.label} (${s.value})`, color: s.color }))
-  );
-}
-
-function renderWorksWardDonut(works) {
-  const totals = {};
-  works.forEach((w) => {
-    totals[w.ward_name] = (totals[w.ward_name] || 0) + w.amount_gross;
-  });
-
-  const wards = Object.keys(totals).sort();
-  const segments = wards.map((ward) => ({
-    label: ward,
-    value: totals[ward],
-    color: wardColor(ward, wards),
-  }));
-
-  renderDonut('works-ward-donut', segments);
-  renderDonutLegend(
-    'works-ward-donut-legend',
-    segments.map((s) => ({ label: `${s.label} (${currency.format(s.value)})`, color: s.color }))
-  );
-}
-
-function renderWorks(works) {
-  worksTbody.innerHTML = works
-    .map((w) => {
-      const noTender = !w.tender;
-      const tenderNote = noTender
-        ? `<div class="muted-note">no tender match (${w.link_failure_reason || 'unknown reason'})</div>`
-        : '';
-      return `
+      (work) => `
     <tr>
-      <td>${w.job_number}</td>
-      <td>${w.description}${tenderNote}</td>
-      <td>${w.ward_name}</td>
-      <td>${w.contractor_name || '—'}</td>
-      <td><span class="status-pill ${statusClass(w.status)}">${w.status}</span> <span class="synthetic-badge">synthetic</span></td>
-      <td>${currency.format(w.amount_gross)}</td>
-      <td>${w.bill_count ?? 0}</td>
-      <td>${(w.documents || []).length}</td>
-    </tr>`;
-    })
-    .join('');
-
-  const total = works.reduce((sum, w) => sum + w.amount_gross, 0);
-  worksSummary.textContent = `${works.length} work(s) — total gross amount ${currency.format(total)}`;
-
-  renderWorksMap(works);
-  renderWorksStatusDonut(works);
-  renderWorksWardDonut(works);
-}
-
-function populateWorksFilters(works) {
-  const wards = [...new Set(works.map((w) => w.ward_name))].sort();
-  const statuses = [...new Set(works.map((w) => w.status))].sort();
-
-  worksWardFilter.innerHTML =
-    '<option value="">All wards</option>' +
-    wards.map((w) => `<option value="${w}">${w}</option>`).join('');
-  worksStatusFilter.innerHTML =
-    '<option value="">All statuses</option>' +
-    statuses.map((s) => `<option value="${s}">${s}</option>`).join('');
-}
-
-function applyWorksFilters() {
-  const q = worksSearchInput.value.toLowerCase();
-  const ward = worksWardFilter.value;
-  const status = worksStatusFilter.value;
-
-  const filtered = allWorks.filter((w) => {
-    if (ward && w.ward_name !== ward) return false;
-    if (status && w.status !== status) return false;
-    if (
-      q &&
-      !(
-        w.description.toLowerCase().includes(q) ||
-        w.job_number.toLowerCase().includes(q) ||
-        (w.contractor_name || '').toLowerCase().includes(q)
-      )
-    )
-      return false;
-    return true;
-  });
-
-  renderWorks(filtered);
-}
-
-async function initWorks() {
-  if (worksLoaded) return;
-  worksLoaded = true;
-
-  const res = await fetch('/api/works');
-  const data = await res.json();
-  allWorks = data.works;
-  initWorksMap(allWorks);
-  renderWorksLegend();
-  populateWorksFilters(allWorks);
-  renderWorks(allWorks);
-}
-
-function switchView(view) {
-  document.querySelectorAll('.tab-btn').forEach((btn) => {
-    btn.classList.toggle('active', btn.dataset.view === view);
-  });
-  document.getElementById('tenders-view').hidden = view !== 'tenders';
-  document.getElementById('works-view').hidden = view !== 'works';
-
-  if (view === 'works') {
-    initWorks().then(() => {
-      // Leaflet needs a size recalculation once its container becomes visible.
-      if (worksLeafletMap) worksLeafletMap.invalidateSize();
-    });
-  }
-}
-
-function render(tenders) {
-  tbody.innerHTML = tenders
-    .map(
-      (t) => `
-    <tr>
-      <td>${t.tender_id}</td>
-      <td>${t.title}</td>
-      <td>${t.ward}</td>
-      <td>${t.department}</td>
-      <td><span class="status-pill ${statusClass(t.status)}">${t.status}</span></td>
-      <td>${currency.format(t.estimated_amount)}</td>
-      <td>${t.contractor || '—'}</td>
+      <td>${escapeHtml(work.job_number)}</td>
+      <td>${escapeHtml(work.description)}</td>
+      <td>${escapeHtml(wardLabel(work))}</td>
+      <td>${escapeHtml(work.zone || '—')}</td>
+      <td><span class="status-pill status-${escapeHtml(work.status.replaceAll('_', '-'))}">${escapeHtml(statusLabel(work.status))}</span></td>
+      <td>${currency.format(work.amount_gross)}</td>
+      <td>${work.bill_count.toLocaleString('en-IN')}</td>
+      <td>${escapeHtml(work.contractor_name || '—')}</td>
     </tr>`
     )
     .join('');
 
-  const total = tenders.reduce((sum, t) => sum + t.estimated_amount, 0);
-  summary.textContent = `${tenders.length} tender(s) — total estimated ${currency.format(total)}`;
-
-  renderMap(tenders);
-  renderStatusDonut(tenders);
-  renderWardDonut(tenders);
+  const total = works.reduce((sum, work) => sum + work.amount_gross, 0);
+  const tableNote =
+    works.length > MAX_TABLE_ROWS ? ` Showing the first ${MAX_TABLE_ROWS.toLocaleString('en-IN')}.` : '';
+  summary.textContent = `${works.length.toLocaleString('en-IN')} work(s) — gross paid ${currency.format(total)}.${tableNote}`;
+  renderMap(works);
+  renderStatusDonut(works);
+  renderWardDonut(works);
 }
 
-function populateFilters(tenders) {
-  const wards = [...new Set(tenders.map((t) => t.ward))].sort();
-  const statuses = [...new Set(tenders.map((t) => t.status))].sort();
-
+function populateFilters(works) {
+  const wards = [...new Set(works.map(wardLabel))].sort();
+  const statuses = [...new Set(works.map((work) => work.status))].sort();
   wardFilter.innerHTML =
     '<option value="">All wards</option>' +
-    wards.map((w) => `<option value="${w}">${w}</option>`).join('');
+    wards.map((ward) => `<option value="${escapeHtml(ward)}">${escapeHtml(ward)}</option>`).join('');
   statusFilter.innerHTML =
     '<option value="">All statuses</option>' +
-    statuses.map((s) => `<option value="${s}">${s}</option>`).join('');
+    statuses
+      .map(
+        (status) =>
+          `<option value="${escapeHtml(status)}">${escapeHtml(statusLabel(status))}</option>`
+      )
+      .join('');
 }
 
 function applyFilters() {
-  const q = searchInput.value.toLowerCase();
+  const needle = searchInput.value.trim().toLowerCase();
   const ward = wardFilter.value;
   const status = statusFilter.value;
-
-  const filtered = allTenders.filter((t) => {
-    if (ward && t.ward !== ward) return false;
-    if (status && t.status !== status) return false;
-    if (
-      q &&
-      !(
-        t.title.toLowerCase().includes(q) ||
-        t.tender_id.toLowerCase().includes(q) ||
-        t.location.toLowerCase().includes(q)
-      )
-    )
-      return false;
-    return true;
+  const filtered = allWorks.filter((work) => {
+    if (ward && wardLabel(work) !== ward) return false;
+    if (status && work.status !== status) return false;
+    if (!needle) return true;
+    return [
+      work.job_number,
+      work.description,
+      work.contractor_name,
+      wardLabel(work),
+      work.zone || '',
+    ].some((value) => String(value).toLowerCase().includes(needle));
   });
-
   render(filtered);
 }
 
 async function init() {
-  const res = await fetch('/api/tenders');
-  allTenders = await res.json();
-  initMap(allTenders);
-  renderLegend();
-  populateFilters(allTenders);
-  render(allTenders);
+  try {
+    const response = await fetch('/api/works');
+    if (!response.ok) throw new Error(`API returned ${response.status}`);
+    const payload = await response.json();
+    allWorks = payload.works;
+    dataBanner.textContent =
+      `Source data through ${payload.meta.as_of_date}: ${payload.meta.record_count.toLocaleString('en-IN')} works. Tender links and exact coordinates remain unavailable where the source cannot support them.`;
+    initMap(allWorks);
+    populateFilters(allWorks);
+    render(allWorks);
+  } catch (error) {
+    dataBanner.textContent = `Could not load works data: ${error.message}`;
+    dataBanner.classList.add('data-banner-error');
+  }
 }
 
 searchInput.addEventListener('input', applyFilters);
 wardFilter.addEventListener('change', applyFilters);
 statusFilter.addEventListener('change', applyFilters);
-
-worksSearchInput.addEventListener('input', applyWorksFilters);
-worksWardFilter.addEventListener('change', applyWorksFilters);
-worksStatusFilter.addEventListener('change', applyWorksFilters);
-
-document.querySelectorAll('.tab-btn').forEach((btn) => {
-  btn.addEventListener('click', () => switchView(btn.dataset.view));
-});
 
 init();

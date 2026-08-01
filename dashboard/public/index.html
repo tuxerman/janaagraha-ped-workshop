@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Civic Tenders Dashboard</title>
+  <title>Civic Works Dashboard</title>
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -14,132 +14,64 @@
 </head>
 <body>
   <header>
-    <h1>Civic Tenders Dashboard</h1>
-    <p class="subtitle">Local civic works tenders, ward by ward</p>
+    <h1>Civic Works Dashboard</h1>
+    <p class="subtitle">BBMP works, payments and documents, ward by ward</p>
   </header>
 
-  <nav class="tabs" id="view-tabs">
-    <button type="button" class="tab-btn active" data-view="tenders">Tenders</button>
-    <button type="button" class="tab-btn" data-view="works">Works</button>
-  </nav>
+  <div class="data-banner" id="data-banner">
+    Loading the latest generated works data…
+  </div>
 
-  <section id="tenders-view" class="view">
-    <div class="pseudo-banner">
-      ⚠️ Sample data only — figures below are placeholder/pseudo data, not real BBMP records.
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search description, job number, contractor or location…" />
+    <select id="ward-filter">
+      <option value="">All wards</option>
+    </select>
+    <select id="status-filter">
+      <option value="">All statuses</option>
+    </select>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <section class="map-section">
+    <div class="map-header">
+      <h2>Work locations</h2>
+      <span class="map-note">Only source-supported coordinates are plotted; ward labels remain available when points are missing.</span>
     </div>
-
-    <div class="controls">
-      <input type="search" id="search" placeholder="Search title, tender ID or location…" />
-      <select id="ward-filter">
-        <option value="">All wards</option>
-      </select>
-      <select id="status-filter">
-        <option value="">All statuses</option>
-      </select>
-    </div>
-
-    <div class="summary" id="summary"></div>
-
-    <section class="map-section">
-      <div class="map-header">
-        <h2>Tender locations</h2>
-        <span class="map-note">Illustrative, approximate positions — not exact GPS. Click a pin to isolate a tender.</span>
-      </div>
-      <div id="map" role="img" aria-label="Map of tender locations"></div>
-      <div class="map-legend" id="map-legend"></div>
-    </section>
-
-    <div class="table-scroll">
-      <table id="tenders-table">
-        <thead>
-          <tr>
-            <th>Tender ID</th>
-            <th>Title</th>
-            <th>Ward</th>
-            <th>Department</th>
-            <th>Status</th>
-            <th>Estimated Amount</th>
-            <th>Contractor</th>
-          </tr>
-        </thead>
-        <tbody id="tenders-body"></tbody>
-      </table>
-    </div>
-
-    <section class="charts-section">
-      <div class="chart-card">
-        <h2>Tenders by status</h2>
-        <svg id="status-donut" role="img" aria-label="Donut chart of tenders by status"></svg>
-        <div class="chart-legend" id="status-donut-legend"></div>
-      </div>
-      <div class="chart-card">
-        <h2>Estimated amount by ward</h2>
-        <svg id="ward-donut" role="img" aria-label="Donut chart of estimated amount by ward"></svg>
-        <div class="chart-legend" id="ward-donut-legend"></div>
-      </div>
-    </section>
+    <div id="map" role="img" aria-label="Map of work locations"></div>
+    <div class="map-legend" id="map-legend"></div>
   </section>
 
-  <section id="works-view" class="view" hidden>
-    <div class="pseudo-banner">
-      ⚠️ Mixed provenance — job number, description, ward, contractor, budget head,
-      documents and location are <strong>real</strong> (jana-demo-5jun scrape). Status
-      and all tender/contract/bill figures are <strong>synthetic</strong> placeholders,
-      not real BBMP records. Fields marked <span class="synthetic-badge">synthetic</span>
-      below should not be quoted as fact.
+  <div class="table-scroll">
+    <table id="works-table">
+      <thead>
+        <tr>
+          <th>Job number</th>
+          <th>Description</th>
+          <th>Ward</th>
+          <th>Zone</th>
+          <th>Status</th>
+          <th>Gross paid</th>
+          <th>Bills</th>
+          <th>Contractor</th>
+        </tr>
+      </thead>
+      <tbody id="works-body"></tbody>
+    </table>
+  </div>
+
+  <section class="charts-section">
+    <div class="chart-card">
+      <h2>Works by status</h2>
+      <svg id="status-donut" role="img" aria-label="Donut chart of works by status"></svg>
+      <div class="chart-legend" id="status-donut-legend"></div>
     </div>
-
-    <div class="controls">
-      <input type="search" id="works-search" placeholder="Search job number, description or contractor…" />
-      <select id="works-ward-filter">
-        <option value="">All wards</option>
-      </select>
-      <select id="works-status-filter">
-        <option value="">All statuses</option>
-      </select>
+    <div class="chart-card">
+      <h2>Gross paid by ward</h2>
+      <svg id="ward-donut" role="img" aria-label="Donut chart of gross payments by ward"></svg>
+      <div class="chart-legend" id="ward-donut-legend"></div>
     </div>
-
-    <div class="summary" id="works-summary"></div>
-
-    <section class="map-section">
-      <div class="map-header">
-        <h2>Work locations</h2>
-        <span class="map-note">Real coordinates read from site-photo overlays — precision and confidence vary by work. Works without a readable location are omitted from the map. Click a pin to isolate a work.</span>
-      </div>
-      <div id="works-map" role="img" aria-label="Map of civic work locations"></div>
-      <div class="map-legend" id="works-map-legend"></div>
-    </section>
-
-    <div class="table-scroll">
-      <table id="works-table">
-        <thead>
-          <tr>
-            <th>Job Number</th>
-            <th>Description</th>
-            <th>Ward</th>
-            <th>Contractor</th>
-            <th>Status <span class="synthetic-badge">synthetic</span></th>
-            <th>Amount (Gross)</th>
-            <th>Bills</th>
-            <th>Documents</th>
-          </tr>
-        </thead>
-        <tbody id="works-body"></tbody>
-      </table>
-    </div>
-
-    <section class="charts-section">
-      <div class="chart-card">
-        <h2>Works by status <span class="synthetic-badge">synthetic</span></h2>
-        <svg id="works-status-donut" role="img" aria-label="Donut chart of works by status"></svg>
-        <div class="chart-legend" id="works-status-donut-legend"></div>
-      </div>
-      <div class="chart-card">
-        <h2>Gross amount by ward</h2>
-        <svg id="works-ward-donut" role="img" aria-label="Donut chart of gross amount by ward"></svg>
-        <div class="chart-legend" id="works-ward-donut-legend"></div>
-      </div>
-    </section>
   </section>
 
   <script

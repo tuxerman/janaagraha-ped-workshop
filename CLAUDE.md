@@ -16,7 +16,7 @@ This repo holds two efforts by **two teams working in parallel**. They are
 deliberately decoupled so neither blocks the other.
 
 ```
-dashboard/       What citizens see. Builds against LOCAL SAMPLE DATA ONLY.
+dashboard/       What citizens see. Reads the generated work summaries.
 data_backend/    Extraction scripts + the real data pipeline.
 ```
 
@@ -30,10 +30,10 @@ Agree the shape of the JSON early, then work independently against it.
 
 The citizen-facing dashboard.
 
-**Works only with local sample data in `dashboard/data/`.** No API calls, no database,
-no network. This is intentional and temporary: the real pipeline is being built in
-parallel and is not ready. Sample data is *pseudo data* — realistic in shape and
-plausible in values, but not authoritative. **Never present it as real figures.**
+The local server reads `data_backend/json/works.json`, generated from the source
+workbooks according to `data_schema.md`. It exposes compact work summaries to the
+browser rather than transferring the full document and bill arrays. Derived values,
+missing tender links and sparse locations must remain visibly qualified.
 
 ### The spec lives in a markdown file
 
@@ -54,9 +54,9 @@ Update `SPEC.md` when the plan changes. A stale spec is worse than none.
 
 ### Rules
 
-- Sample data stays in `dashboard/data/`, loaded from disk
-- **Label pseudo data visibly in the UI.** A dashboard about government transparency
-  must not itself show numbers that look official but aren't.
+- Generated data is loaded from disk; the browser makes no direct source-system calls
+- **Label uncertainty visibly in the UI.** A dashboard about government transparency
+  must not present missing or inferred fields as authoritative facts.
 - Keep the data-loading layer thin and in one place, so swapping sample → real is a
   small change
 - Design against the schema in `data_backend/`, not against whatever the sample
