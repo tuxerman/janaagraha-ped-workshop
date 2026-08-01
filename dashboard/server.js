@@ -5,6 +5,7 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const DATA_FILE = path.join(__dirname, 'data', 'tenders.json');
+const WORKS_FILE = path.join(__dirname, 'data', 'works.json');
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -15,6 +16,10 @@ const MIME_TYPES = {
 
 function loadTenders() {
   return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+}
+
+function loadWorks() {
+  return JSON.parse(fs.readFileSync(WORKS_FILE, 'utf-8'));
 }
 
 function serveStatic(req, res, pathname) {
@@ -62,11 +67,40 @@ function serveTenders(req, res, query) {
   res.end(JSON.stringify(tenders));
 }
 
+function serveWorks(req, res, query) {
+  const data = loadWorks();
+  let works = data.works;
+
+  if (query.ward) {
+    works = works.filter((w) => w.ward_name === query.ward);
+  }
+  if (query.status) {
+    works = works.filter((w) => w.status === query.status);
+  }
+  if (query.q) {
+    const needle = query.q.toLowerCase();
+    works = works.filter(
+      (w) =>
+        w.description.toLowerCase().includes(needle) ||
+        w.job_number.toLowerCase().includes(needle) ||
+        (w.contractor_name || '').toLowerCase().includes(needle)
+    );
+  }
+
+  res.writeHead(200, { 'Content-Type': MIME_TYPES['.json'] });
+  res.end(JSON.stringify({ meta: data._meta, works }));
+}
+
 const server = http.createServer((req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
 
   if (url.pathname === '/api/tenders') {
     serveTenders(req, res, Object.fromEntries(url.searchParams));
+    return;
+  }
+
+  if (url.pathname === '/api/works') {
+    serveWorks(req, res, Object.fromEntries(url.searchParams));
     return;
   }
 

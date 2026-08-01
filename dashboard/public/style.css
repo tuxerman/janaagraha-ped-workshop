@@ -38,6 +38,46 @@ header h1 {
   color: var(--muted);
 }
 
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-btn {
+  padding: 0.55rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+  color: #1a1a1a;
+  border-bottom-color: #0d47a1;
+  font-weight: 600;
+}
+
+.synthetic-badge {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: #fce4ec;
+  color: #880e4f;
+}
+
+.muted-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .pseudo-banner {
   background: var(--banner-bg);
   color: var(--banner-text);
@@ -96,7 +136,8 @@ header h1 {
   font-size: 0.85rem;
 }
 
-#map {
+#map,
+#works-map {
   width: 100%;
   height: 340px;
   border: 1px solid var(--border);
@@ -105,7 +146,8 @@ header h1 {
 }
 
 @media (max-width: 600px) {
-  #map {
+  #map,
+  #works-map {
     height: 260px;
   }
 }
@@ -225,6 +267,7 @@ tr:hover td {
 .status-in-progress { background: #fff3e0; color: #e65100; }
 .status-completed { background: #e8f5e9; color: #1b5e20; }
 .status-cancelled { background: #fce4ec; color: #880e4f; }
+.status-unknown { background: #eeeeee; color: #555; }
 
 @media (prefers-color-scheme: dark) {
   body { background: #121212; color: #eee; }
@@ -232,6 +275,8 @@ tr:hover td {
   tr:hover td { background: #1a1f26; }
   th, td { border-color: #333; }
   .controls input, .controls select { background: #1c1c1c; color: #eee; border-color: #444; }
-  #map { border-color: #333; background: #1c2733; }
+  #map, #works-map { border-color: #333; background: #1c2733; }
   .chart-card { border-color: #333; }
+  .tabs { border-color: #333; }
+  .tab-btn.active { color: #eee; }
 }
