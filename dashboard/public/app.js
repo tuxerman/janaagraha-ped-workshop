@@ -115,6 +115,15 @@ function wardLabel(work) {
   return work.ward_name || UNKNOWN_WARD;
 }
 
+// tendersir (v2.tendersir.pages.dev) exposes the same underlying BBMP payment records
+// but keys its own detail pages by an internal numeric id we have no way to predict.
+// It does support a `q=` search param that filters its list to the job number, which in
+// practice surfaces the matching record (verified by hand for several job numbers) — so
+// this is a search deep-link, not a guaranteed single-record match.
+function tendersirSourceUrl(work) {
+  return `https://v2.tendersir.pages.dev/?d=payments&q=${encodeURIComponent(work.job_number)}`;
+}
+
 function hasPoint(work) {
   return Number.isFinite(work.lat) && Number.isFinite(work.lng);
 }
@@ -324,6 +333,7 @@ function render(works) {
       <td>${currency.format(work.amount_gross)}</td>
       <td>${work.bill_count.toLocaleString('en-IN')}</td>
       <td>${escapeHtml(work.contractor_name || '—')}</td>
+      <td><a href="${tendersirSourceUrl(work)}" target="_blank" rel="noopener noreferrer" title="Searches tendersir by job number — not a guaranteed exact match">tendersir ↗</a></td>
     </tr>`
     )
     .join('');
