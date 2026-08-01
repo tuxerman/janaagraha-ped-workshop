@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "schema_file": "../../data_schema.md",
+  "as_of_date": "2026-07-30",
+  "sources": [
+    "data_backend/csv/1. karnataka-tenders-2026-07-30.xlsx",
+    "data_backend/csv/2. payments-2026-07-30.xlsx",
+    "data_backend/csv/3. BBMP_job_codes_merged.xlsx"
+  ],
+  "record_count": 8203,
+  "output": {
+    "file": "works.json",
+    "records": 8203,
+    "bytes": 103802597,
+    "sha256": "5d38eb2d65750bef25276367a13fd1304cce8c274808a58f1d6e15399ec52e13"
+  },
+  "stats": {
+    "source_rows": 54032,
+    "deduplicated_bill_rows": 34860,
+    "work_count": 8203,
+    "work_description_conflicts": 363,
+    "work_contractor_conflicts": 1558,
+    "tender_corpus_rows": 130710,
+    "works_with_payment_metadata": 8196,
+    "works_without_payment_metadata": 7,
+    "payment_metadata_conflicts": 281,
+    "bills": 19172,
+    "documents": 494195,
+    "placeholders": 53934,
+    "status_completed": 7346,
+    "status_in_progress": 42,
+    "status_unknown": 815,
+    "tender_failure_blank_document": 420,
+    "tender_failure_no_attachment": 199,
+    "tender_failure_no_candidate_found": 7584
+  },
+  "methodology": {
+    "root": "One record per distinct WO in BBMP_job_codes_merged.xlsx.",
+    "bills": "Repeated snapshot rows are deduplicated by work, bill references, dates, contractor, type, and amounts before aggregation.",
+    "work_conflicts": "When a WO has multiple source descriptions or contractors, all distinct bills remain in the work totals; the description and contractor attached to the largest gross total become canonical.",
+    "ward_metadata": "Payments rows are matched on job_number; scheme collisions are resolved by similarity to the canonical description. Special schemes emit no ward number or name.",
+    "tenders": "No structured source field links a WO to a full KPPP tender number, so tender is null and link_failure_reason is explicit.",
+    "locations": "Source CSVs have no coordinates; locations are ward-level or precision none.",
+    "status": "A non-placeholder Completion Certificate means completed. Current-FY work without one is in_progress; all other cases are unknown.",
+    "amounts": "Decimal source amounts are rounded half-up to integer rupees; source and aggregate accounting identities are asserted."
+  }
+}

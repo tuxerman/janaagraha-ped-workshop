@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build work-centric JSON shards from the three source workbooks.
+"""Build a work-centric ``works.json`` from the three source workbooks.
 
 The output follows ``data_schema.md``. Tender links and point coordinates are left
 unset unless the source data supports them; the pipeline never fabricates either.
@@ -11,7 +11,6 @@ import argparse
 import hashlib
 import json
 import re
-import shutil
 import tempfile
 import unicodedata
 from collections import Counter, defaultdict
@@ -27,13 +26,12 @@ from openpyxl import load_workbook
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = Path(__file__).resolve().parent / "csv"
-OUTPUT_DIR = Path(__file__).resolve().parent / "json" / "works"
+OUTPUT_FILE = Path(__file__).resolve().parent / "json" / "works.json"
 PAYMENTS_FILE = SOURCE_DIR / "2. payments-2026-07-30.xlsx"
 JOB_CODES_FILE = SOURCE_DIR / "3. BBMP_job_codes_merged.xlsx"
 TENDERS_FILE = SOURCE_DIR / "1. karnataka-tenders-2026-07-30.xlsx"
 SOURCE_AS_OF = date(2026, 7, 30)
 SCHEMA_VERSION = "0.1"
-DEFAULT_SHARD_SIZE = 500
 DOCUMENT_BASE_URL = "https://account.bbmpgov.in/vssIFMS/Files1/"
 WARD_SCHEMES = {"198", "225", "243", "369", "special"}
 WORK_STATUSES = {"in_progress", "completed", "unknown"}
@@ -557,57 +555,63 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def write_outputs(
+def manifest_path_for(output_file: Path) -> Path:
+    return output_file.with_name(f"{output_file.stem}.manifest.json")
+
+
+def write_output(
     records: Iterable[dict[str, Any]],
-    output_dir: Path,
-    shard_size: int,
+    output_file: Path,
     build_stats: dict[str, int],
 ) -> dict[str, Any]:
-    output_dir.parent.mkdir(parents=True, exist_ok=True)
-    temp_dir = Path(tempfile.mkdtemp(prefix="works-json-", dir=output_dir.parent))
-    shards: list[dict[str, Any]] = []
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     stats = Counter()
     seen_jobs: set[str] = set()
-    chunk: list[dict[str, Any]] = []
 
-    def flush() -> None:
-        if not chunk:
-            return
-        filename = f"works-{len(shards) + 1:04d}.json"
-        path = temp_dir / filename
-        with path.open("w", encoding="utf-8") as destination:
-            json.dump(chunk, destination, ensure_ascii=False, separators=(",", ":"))
-            destination.write("\n")
-        shards.append(
-            {
-                "file": filename,
-                "records": len(chunk),
-                "bytes": path.stat().st_size,
-                "sha256": sha256(path),
-            }
-        )
-        chunk.clear()
-
-    for record in records:
-        validate_record(record)
-        if record["job_number"] in seen_jobs:
-            raise ValueError(f"Duplicate job number: {record['job_number']}")
-        seen_jobs.add(record["job_number"])
-        stats[f"status_{record['status']}"] += 1
-        stats[f"tender_failure_{record['link_failure_reason']}"] += 1
-        stats["documents"] += len(record["documents"])
-        stats["bills"] += len(record["bills"])
-        stats["placeholders"] += sum(
-            document["is_placeholder"] for document in record["documents"]
-        )
-        chunk.append(record)
-        if len(chunk) >= shard_size:
-            flush()
-    flush()
+    temporary = tempfile.NamedTemporaryFile(
+        mode="w",
+        encoding="utf-8",
+        prefix="works-json-",
+        suffix=".tmp",
+        dir=output_file.parent,
+        delete=False,
+    )
+    temporary_path = Path(temporary.name)
+    try:
+        with temporary as destination:
+            destination.write("[")
+            first = True
+            for record in records:
+                validate_record(record)
+                if record["job_number"] in seen_jobs:
+                    raise ValueError(f"Duplicate job number: {record['job_number']}")
+                seen_jobs.add(record["job_number"])
+                stats[f"status_{record['status']}"] += 1
+                stats[f"tender_failure_{record['link_failure_reason']}"] += 1
+                stats["documents"] += len(record["documents"])
+                stats["bills"] += len(record["bills"])
+                stats["placeholders"] += sum(
+                    document["is_placeholder"] for document in record["documents"]
+                )
+                if not first:
+                    destination.write(",")
+                json.dump(
+                    record,
+                    destination,
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                )
+                first = False
+            destination.write("]\n")
+        temporary_path.replace(output_file)
+        output_file.chmod(0o644)
+    except BaseException:
+        temporary_path.unlink(missing_ok=True)
+        raise
 
     manifest = {
         "schema_version": SCHEMA_VERSION,
-        "schema_file": "../../../data_schema.md",
+        "schema_file": "../../data_schema.md",
         "as_of_date": SOURCE_AS_OF.isoformat(),
         "sources": [
             str(TENDERS_FILE.relative_to(REPO_ROOT)),
@@ -615,9 +619,12 @@ def write_outputs(
             str(JOB_CODES_FILE.relative_to(REPO_ROOT)),
         ],
         "record_count": len(seen_jobs),
-        "shard_size": shard_size,
-        "shard_count": len(shards),
-        "shards": shards,
+        "output": {
+            "file": output_file.name,
+            "records": len(seen_jobs),
+            "bytes": output_file.stat().st_size,
+            "sha256": sha256(output_file),
+        },
         "stats": {**build_stats, **dict(sorted(stats.items()))},
         "methodology": {
             "root": "One record per distinct WO in BBMP_job_codes_merged.xlsx.",
@@ -654,49 +661,58 @@ def write_outputs(
             ),
         },
     }
-    manifest_path = temp_dir / "manifest.json"
-    with manifest_path.open("w", encoding="utf-8") as destination:
+    manifest_path = manifest_path_for(output_file)
+    with tempfile.NamedTemporaryFile(
+        mode="w",
+        encoding="utf-8",
+        prefix="works-manifest-",
+        suffix=".tmp",
+        dir=output_file.parent,
+        delete=False,
+    ) as destination:
+        temporary_manifest = Path(destination.name)
         json.dump(manifest, destination, ensure_ascii=False, indent=2)
         destination.write("\n")
-
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
-    temp_dir.replace(output_dir)
+    temporary_manifest.replace(manifest_path)
+    manifest_path.chmod(0o644)
     return manifest
 
 
-def validate_outputs(output_dir: Path) -> dict[str, Any]:
-    manifest_path = output_dir / "manifest.json"
+def validate_output(output_file: Path) -> dict[str, Any]:
+    manifest_path = manifest_path_for(output_file)
     with manifest_path.open(encoding="utf-8") as source:
         manifest = json.load(source)
+    output_metadata = manifest["output"]
+    if output_metadata["file"] != output_file.name:
+        raise ValueError("Manifest output filename mismatch")
+    if (
+        output_file.stat().st_size != output_metadata["bytes"]
+        or sha256(output_file) != output_metadata["sha256"]
+    ):
+        raise ValueError(f"Checksum or size mismatch: {output_file}")
+    with output_file.open(encoding="utf-8") as source:
+        records = json.load(source)
+    if not isinstance(records, list):
+        raise ValueError(f"Expected a JSON array: {output_file}")
+    if len(records) != output_metadata["records"]:
+        raise ValueError("Output record count mismatch")
+
     seen: set[str] = set()
-    count = 0
     stats = Counter()
-    if manifest["shard_count"] != len(manifest["shards"]):
-        raise ValueError("Manifest shard_count mismatch")
-    for shard in manifest["shards"]:
-        path = output_dir / shard["file"]
-        if path.stat().st_size != shard["bytes"] or sha256(path) != shard["sha256"]:
-            raise ValueError(f"Checksum or size mismatch: {path}")
-        with path.open(encoding="utf-8") as source:
-            records = json.load(source)
-        if len(records) != shard["records"]:
-            raise ValueError(f"Record count mismatch: {path}")
-        for record in records:
-            validate_record(record)
-            job_number = record["job_number"]
-            if job_number in seen:
-                raise ValueError(f"Duplicate job number across shards: {job_number}")
-            seen.add(job_number)
-            count += 1
-            stats[f"status_{record['status']}"] += 1
-            stats[f"tender_failure_{record['link_failure_reason']}"] += 1
-            stats["documents"] += len(record["documents"])
-            stats["bills"] += len(record["bills"])
-            stats["placeholders"] += sum(
-                document["is_placeholder"] for document in record["documents"]
-            )
-    if count != manifest["record_count"]:
+    for record in records:
+        validate_record(record)
+        job_number = record["job_number"]
+        if job_number in seen:
+            raise ValueError(f"Duplicate job number: {job_number}")
+        seen.add(job_number)
+        stats[f"status_{record['status']}"] += 1
+        stats[f"tender_failure_{record['link_failure_reason']}"] += 1
+        stats["documents"] += len(record["documents"])
+        stats["bills"] += len(record["bills"])
+        stats["placeholders"] += sum(
+            document["is_placeholder"] for document in record["documents"]
+        )
+    if len(seen) != manifest["record_count"]:
         raise ValueError("Manifest record_count mismatch")
     for key, value in stats.items():
         if manifest["stats"].get(key) != value:
@@ -704,7 +720,7 @@ def validate_outputs(output_dir: Path) -> dict[str, Any]:
     return manifest
 
 
-def build(output_dir: Path, shard_size: int) -> dict[str, Any]:
+def build(output_file: Path) -> dict[str, Any]:
     works, stats = collect_works()
     payment_metadata = load_payment_metadata(set(works))
     stats["tender_corpus_rows"] = count_tender_corpus()
@@ -722,13 +738,12 @@ def build(output_dir: Path, shard_size: int) -> dict[str, Any]:
         )
         for job_number in sorted(works)
     )
-    return write_outputs(records, output_dir, shard_size, stats)
+    return write_output(records, output_file, stats)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, default=OUTPUT_DIR)
-    parser.add_argument("--shard-size", type=int, default=DEFAULT_SHARD_SIZE)
+    parser.add_argument("--output", type=Path, default=OUTPUT_FILE)
     parser.add_argument(
         "--check",
         action="store_true",
@@ -739,17 +754,12 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    if args.shard_size <= 0:
-        raise SystemExit("--shard-size must be positive")
     manifest = (
-        validate_outputs(args.output_dir)
+        validate_output(args.output)
         if args.check
-        else build(args.output_dir, args.shard_size)
+        else build(args.output)
     )
-    print(
-        f"Validated {manifest['record_count']:,} work records in "
-        f"{manifest['shard_count']} shard(s)."
-    )
+    print(f"Validated {manifest['record_count']:,} work records in {args.output}.")
 
 
 if __name__ == "__main__":
