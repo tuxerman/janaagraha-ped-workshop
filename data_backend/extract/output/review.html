@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Track 1/3/4 Extraction Review</title>
+<style>
+  :root {
+    --strong: #1a7f37;
+    --review: #9a6700;
+    --unclear: #cf222e;
+    --bg: #f6f8fa;
+    --panel: #ffffff;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --muted: #57606a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 48px 32px 80px;
+    line-height: 1.5;
+  }
+  .page { max-width: 1080px; margin: 0 auto; }
+
+  h1 { font-size: 24px; font-weight: 650; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 32px; line-height: 1.55; }
+  .subtitle code { background: #eef0f2; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+
+  .toolbar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .toolbar input[type=text] {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 13.5px;
+    min-width: 260px;
+    background: var(--panel);
+  }
+  .toolbar select {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 13.5px;
+    background: var(--panel);
+  }
+  .toolbar input[type=text]:focus, .toolbar select:focus {
+    outline: 2px solid #54aeff;
+    outline-offset: -1px;
+  }
+  .toolbar .count { color: var(--muted); font-size: 13px; margin-left: auto; }
+
+  .summary-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .summary-chip {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+  .summary-chip b { font-variant-numeric: tabular-nums; }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20,24,28,0.03);
+  }
+  .card-head {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-head:hover { background: #fafbfc; }
+  .card.collapsed .card-body { display: none; }
+  .card.collapsed .card-head { border-bottom: none; }
+
+  .job-id { font-weight: 650; font-size: 16px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: -0.01em; }
+  .job-desc { font-size: 13.5px; color: var(--text); margin-top: 8px; max-width: 620px; line-height: 1.5; }
+  .job-meta { font-size: 12.5px; color: var(--muted); margin-top: 10px; line-height: 1.7; }
+  .job-meta .sep { color: var(--border); margin: 0 8px; }
+
+  .badges { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .badge {
+    font-size: 10.5px;
+    font-weight: 650;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    letter-spacing: .01em;
+  }
+  .badge.STRONG { background: #dafbe1; color: var(--strong); border-color: #aceebb; }
+  .badge.NEEDS_REVIEW { background: #fff8c5; color: var(--review); border-color: #f5dd6e; }
+  .badge.UNCLEAR { background: #ffebe9; color: var(--unclear); border-color: #ffc1bc; }
+
+  .card-body { padding: 24px; }
+
+  .top-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+  .fact-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 5px; font-weight: 600; }
+  .fact-value { font-size: 15px; font-weight: 650; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-word; line-height: 1.4; }
+  .fact-value.empty { color: #8c959f; font-weight: 400; font-family: inherit; font-style: italic; }
+
+  .tracks { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-bottom: 8px; }
+  .track {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .track-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .kv { font-size: 13px; margin: 7px 0; display: flex; gap: 10px; line-height: 1.5; }
+  .kv .k { color: var(--muted); min-width: 88px; flex-shrink: 0; }
+  .kv .v { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-word; }
+  .reason {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    line-height: 1.55;
+  }
+  .reason.warn { color: #9a6700; }
+
+  .docs { margin-top: 28px; }
+  .docs-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-bottom: 12px; }
+  .doc-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #f0f2f4;
+  }
+  .doc-row:last-child { border-bottom: none; }
+  .doc-type { min-width: 140px; color: var(--muted); flex-shrink: 0; }
+  .doc-row a { color: #0969da; text-decoration: none; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+  .doc-row a:hover { text-decoration: underline; }
+  .tag { font-size: 10px; padding: 2px 8px; border-radius: 4px; font-weight: 650; flex-shrink: 0; }
+  .tag.pmc { background: #ffebe9; color: var(--unclear); }
+  .tag.vision { background: #ddf4ff; color: #0969da; }
+  .tag.text { background: #eef; color: #4b3ba0; }
+
+  .notes-box {
+    margin-top: 20px;
+    font-size: 13px;
+    background: #fffef0;
+    border: 1px solid #f5dd6e;
+    border-radius: 8px;
+    padding: 14px 16px;
+    line-height: 1.6;
+    color: #4d3800;
+  }
+  .notes-box b { color: #9a6700; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>Track 1 / 3 / 4 — Extraction Review</h1>
+<div class="subtitle">
+  Read-only. Loads <code>review_queue.json</code> directly &mdash; nothing here writes back to any datastore.
+</div>
+
+<div class="summary-bar" id="summaryBar"></div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="Search job number, description, contractor…">
+  <select id="filterTrack">
+    <option value="">All tracks</option>
+    <option value="track1_tender_link">Track 1 (tender link)</option>
+    <option value="track3_dlp">Track 3 (DLP)</option>
+    <option value="track4_amounts">Track 4 (amounts)</option>
+  </select>
+  <select id="filterConf">
+    <option value="">Any confidence</option>
+    <option value="STRONG">STRONG</option>
+    <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
+    <option value="UNCLEAR">UNCLEAR</option>
+  </select>
+  <span class="count" id="resultCount"></span>
+</div>
+
+<div id="cards"></div>
+
+</div>
+
+<script>
+const FILE_BASE = "https://account.bbmpgov.in/vssIFMS/Files1/";
+const DATA_URL = "review_queue.json";
+
+function fmtRupees(n) {
+  if (n === null || n === undefined) return null;
+  return "₹" + Number(n).toLocaleString("en-IN", {maximumFractionDigits: 2});
+}
+
+function badge(conf) {
+  return `<span class="badge ${conf}">${conf.replace('_',' ')}</span>`;
+}
+
+function fact(label, value, isMoney) {
+  const empty = value === null || value === undefined || value === "";
+  const shown = empty ? "—" : (isMoney ? fmtRupees(value) : value);
+  return `<div>
+    <div class="fact-label">${label}</div>
+    <div class="fact-value ${empty ? 'empty' : ''}">${shown}</div>
+  </div>`;
+}
+
+function trackBlock(title, t, rows) {
+  if (!t) return '';
+  const warn = t.confidence !== 'STRONG';
+  return `<div class="track">
+    <div class="track-title">${title} ${badge(t.confidence)}</div>
+    ${rows}
+    ${t.reason ? `<div class="reason ${warn?'warn':''}">${t.reason}</div>` : ''}
+    ${t.source_document ? `<div class="kv"><span class="k">source</span><span class="v">${t.source_document}</span></div>` : ''}
+  </div>`;
+}
+
+function docLink(filename) {
+  return FILE_BASE + encodeURIComponent(filename);
+}
+
+function renderCard(w) {
+  const t1 = w.track1_tender_link, t3 = w.track3_dlp, t4 = w.track4_amounts;
+
+  const t1rows = `
+    <div class="kv"><span class="k">value</span><span class="v">${t1.value ?? '—'}</span></div>
+    ${t1.form ? `<div class="kv"><span class="k">form</span><span class="v">${t1.form}</span></div>` : ''}
+    ${t1.corroborated_across_documents ? `<div class="kv"><span class="k">✓</span><span class="v">corroborated by 2+ documents</span></div>` : ''}
+  `;
+  const t3rows = `
+    <div class="kv"><span class="k">value</span><span class="v">${t3.value ?? '—'}</span></div>
+    ${t3.months ? `<div class="kv"><span class="k">months</span><span class="v">${t3.months}</span></div>` : ''}
+  `;
+  const t4rows = `
+    <div class="kv"><span class="k">estimate</span><span class="v">${fmtRupees(t4.estimate_rupees) ?? '—'}</span></div>
+    <div class="kv"><span class="k">put to tender</span><span class="v">${fmtRupees(t4.amount_put_to_tender_rupees) ?? '—'}</span></div>
+    <div class="kv"><span class="k">quoted</span><span class="v">${fmtRupees(t4.amount_quoted_rupees) ?? '—'}</span></div>
+    ${t4.variance_pct !== undefined ? `<div class="kv"><span class="k">variance</span><span class="v">${t4.variance_pct}%</span></div>` : ''}
+    ${t4.is_pmc_contract ? `<div class="kv"><span class="k">⚠</span><span class="v">PMC contract — not the civil work</span></div>` : ''}
+  `;
+
+  const docsHtml = (w.source_documents || []).map(d => {
+    const url = docLink(d.file);
+    return `<div class="doc-row">
+      <span class="doc-type">${d.doctype}</span>
+      <a href="${url}" target="_blank" rel="noopener">${d.file}</a>
+      <span class="tag ${d.method === 'vision' ? 'vision' : 'text'}">${d.method === 'vision' ? 'vision-read' : 'text-layer'}</span>
+      ${d.is_pmc ? '<span class="tag pmc">PMC</span>' : ''}
+    </div>`;
+  }).join('');
+
+  const badges = [t1.confidence, t3.confidence, t4.confidence];
+  const worst = badges.includes('UNCLEAR') ? 'UNCLEAR' : (badges.includes('NEEDS_REVIEW') ? 'NEEDS_REVIEW' : 'STRONG');
+
+  // Surface any free-text notes captured during vision extraction, if present
+  // on the source documents' fields (only exists on some rows).
+  const anyNote = (w._notes || []).filter(Boolean).join(' · ');
+
+  return `
+  <div class="card" data-job="${w.job_number}" data-desc="${(w.description||'').toLowerCase()}" data-contractor="${(w.contractor||'').toLowerCase()}"
+       data-t1="${t1.confidence}" data-t3="${t3.confidence}" data-t4="${t4.confidence}">
+    <div class="card-head" onclick="this.parentElement.classList.toggle('collapsed')">
+      <div>
+        <div class="job-id">${w.job_number}</div>
+        <div class="job-desc">${w.description || ''}</div>
+        <div class="job-meta">
+          ${w.contractor || ''}<span class="sep">&middot;</span>award ${w.award_fy || '?'}<span class="sep">&middot;</span>billing ${w.billing_fy || '?'}
+          <span class="sep">&middot;</span>paid gross ${fmtRupees(w.paid_gross_rupees)} (${w.bill_rows} bill row${w.bill_rows===1?'':'s'})
+          <span class="sep">&middot;</span>${w.documents_total} attachments, ${w.documents_extracted} read
+        </div>
+      </div>
+      <div class="badges">${badge(t1.confidence)}${badge(t3.confidence)}${badge(t4.confidence)}</div>
+    </div>
+    <div class="card-body">
+      <div class="top-facts">
+        ${fact("Tender / Indent ref", t1.value)}
+        ${fact("DLP", t3.value)}
+        ${fact("Contract (quoted) amount", t4.amount_quoted_rupees, true)}
+        ${fact("Estimate", t4.estimate_rupees, true)}
+      </div>
+      <div class="tracks">
+        ${trackBlock("Track 1 — Tender link", t1, t1rows)}
+        ${trackBlock("Track 3 — DLP", t3, t3rows)}
+        ${trackBlock("Track 4 — Amounts", t4, t4rows)}
+      </div>
+      ${anyNote ? `<div class="notes-box"><b>Notes:</b> ${anyNote}</div>` : ''}
+      <div class="docs">
+        <div class="docs-title">Source documents (${(w.source_documents||[]).length})</div>
+        ${docsHtml || '<div class="kv" style="color:#8c959f">No documents extracted for this work.</div>'}
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderSummary(data) {
+  const tally = {track1_tender_link: {}, track3_dlp: {}, track4_amounts: {}};
+  data.forEach(w => {
+    ['track1_tender_link','track3_dlp','track4_amounts'].forEach(k => {
+      const c = w[k].confidence;
+      tally[k][c] = (tally[k][c]||0) + 1;
+    });
+  });
+  const labels = {track1_tender_link: 'Track 1', track3_dlp: 'Track 3', track4_amounts: 'Track 4'};
+  let html = `<div class="summary-chip"><b>${data.length}</b> works total</div>`;
+  Object.keys(labels).forEach(k => {
+    const t = tally[k];
+    html += `<div class="summary-chip">${labels[k]}:
+      <b style="color:#1a7f37">${t.STRONG||0}</b> strong ·
+      <b style="color:#9a6700">${t.NEEDS_REVIEW||0}</b> review ·
+      <b style="color:#cf222e">${t.UNCLEAR||0}</b> unclear</div>`;
+  });
+  document.getElementById('summaryBar').innerHTML = html;
+}
+
+function applyFilters() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const track = document.getElementById('filterTrack').value;
+  const conf = document.getElementById('filterConf').value;
+  let shown = 0;
+  document.querySelectorAll('.card').forEach(card => {
+    const matchesText = !q || card.dataset.job.toLowerCase().includes(q)
+      || card.dataset.desc.includes(q) || card.dataset.contractor.includes(q);
+    let matchesConf = true;
+    if (conf) {
+      if (track) {
+        matchesConf = card.dataset[track === 'track1_tender_link' ? 't1' : track === 'track3_dlp' ? 't3' : 't4'] === conf;
+      } else {
+        matchesConf = card.dataset.t1 === conf || card.dataset.t3 === conf || card.dataset.t4 === conf;
+      }
+    }
+    const visible = matchesText && matchesConf;
+    card.style.display = visible ? '' : 'none';
+    if (visible) shown++;
+  });
+  document.getElementById('resultCount').textContent = `${shown} shown`;
+}
+
+fetch(DATA_URL).then(r => {
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  return r.json();
+}).then(data => {
+  renderSummary(data);
+  document.getElementById('cards').innerHTML = data.map(renderCard).join('');
+  applyFilters();
+  document.getElementById('search').addEventListener('input', applyFilters);
+  document.getElementById('filterTrack').addEventListener('change', applyFilters);
+  document.getElementById('filterConf').addEventListener('change', applyFilters);
+}).catch(err => {
+  document.getElementById('cards').innerHTML =
+    `<div class="card"><div class="card-body" style="padding-top:16px;color:#cf222e">
+      Could not load ${DATA_URL}: ${err.message}.<br>
+      Serve this folder over HTTP (e.g. <code>python3 -m http.server</code> from the <code>output/</code> dir) —
+      opening review.html directly via file:// blocks the fetch in most browsers.
+    </div></div>`;
+});
+</script>
+
+</body>
+</html>

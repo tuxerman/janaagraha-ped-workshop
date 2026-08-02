@@ -1,0 +1,8 @@
+# Bulky, regeneratable fetch/render artifacts -- not source, not analysis
+# output. Re-created by 2_fetch_docs.py / 3_prepare_pages.py.
+output/pdfs/
+output/pages/
+output/text/
+
+__pycache__/
+*.pyc

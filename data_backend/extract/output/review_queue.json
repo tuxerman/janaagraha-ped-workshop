@@ -1,0 +1,1013 @@
+[
+  {
+    "job_number": "040-21-000010",
+    "description": "Comprehensive  Development and other basic Infrastructures in  Doddabidarakallu and Surrounding areas in ward no 40",
+    "contractor": "023275 SUKESH RAI",
+    "ward_hint": "ddo013  Assistant Executive Engineer Herohalli Sub Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2021-22",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 18093260.0,
+    "bill_rows": 4,
+    "documents_total": 97,
+    "documents_extracted": 1,
+    "_notes": [
+      "Read directly from live PDF earlier in session, all 3 pages (page 1 e-stamp, page 2 contract body/amounts, page 3 clauses/signatures). '180Days' on page 2 is the COMPLETION period, not DLP -- the actual DLP clause ('Defects and Liability period shall be 24 months in case of civil works') is on page 3, which was missed on the first read and only caught after a user spot-check. Estimate Rs.90.00 Lakhs based on SR 2018-19."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KNG/TEN/13/2020-21",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--30069398-AGR-040-21-10.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "24 months",
+      "months": 24,
+      "confidence": "STRONG",
+      "source_document": "WO-6--30069398-AGR-040-21-10.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 9000000,
+      "amount_put_to_tender_rupees": 7574220.01,
+      "amount_quoted_rupees": 7951003.88,
+      "paid_gross_rupees": 18093260.0,
+      "source_document": "WO-6--30069398-AGR-040-21-10.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.97,
+      "payout_vs_contract_pct": 127.56,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--30069398-AGR-040-21-10.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "198-21-000008",
+    "description": "Improvements to Drains and Roads from Ambedkar Colony to HM Colony Connecting road in Thalaghattapura and Surrounding area in ward no 198",
+    "contractor": "023044 J J ENTERPRISES",
+    "ward_hint": "ddo012  Assistant Executive Engineer Kengeri Sub Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2021-22",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 9938064.0,
+    "bill_rows": 3,
+    "documents_total": 116,
+    "documents_extracted": 1,
+    "_notes": [
+      "Estimate Rs.100.00 Lakhs (SR 2018-19). Ward No-198, Kengeri division. DLP confirmed on page 3 (same Kengeri-division boilerplate as 040-21-000010): '180Days' on page 2 is the completion period, not DLP. Note: this work's OTHER Agreement PDF (WO-6--40963997-Agr-Pmc-198-21-008.pdf) is a separate PMC contract per its filename -- not read in this batch, but filename strongly suggests PMC (consistent with the pattern of two Agreements per work seen across this corpus)."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KNG/TEN/17/2020-21",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--14880672-Agr-198-21-0008.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "24 months civil works; 3 Years for Asphalt works",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--14880672-Agr-198-21-0008.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 10000000,
+      "amount_put_to_tender_rupees": 8407682.11,
+      "amount_quoted_rupees": 8825277.3,
+      "paid_gross_rupees": 9938064.0,
+      "source_document": "WO-6--14880672-Agr-198-21-0008.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.97,
+      "payout_vs_contract_pct": 12.61,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--14880672-Agr-198-21-0008.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "040-23-000012",
+    "description": "Improvements of Roads and Drains at Chennanayakanapalya, Bhavani Nagara and Doddabidarakallu  Surrounding area in Ward No-40 Doddabidarakallu",
+    "contractor": "022495 SIDDEGOWDA B",
+    "ward_hint": "ddo007  Executive Engineer Kengeri Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 831654948.0,
+    "bill_rows": 20,
+    "documents_total": 274,
+    "documents_extracted": 1,
+    "_notes": [
+      "Estimate Rs.2000.00 Lakhs (SR 2021-22). Tender number BBMP/EE/KEN/TEND/09/2022-23 dated 12.07.2022 is IDENTICAL to the tender number read for 072-23-000008 below (same division, same date). Two different works, two different job codes, two different estimates (Rs.2000L vs Rs.1900L) -- this looks like ONE tender notification covering multiple work packages, i.e. tender-to-work is legitimately one-to-many. Flag, do not treat as a duplicate-key error. DLP confirmed on page 3: '180Days' on page 2 is the completion period; the actual clause is 'DLP period 3 years from the date of Completion of Work as per Hon Commissioner Office Order No:Comm/PR/318/2020-21 Date:03.02.2021' -- a citywide order, not this agreement's own boilerplate, and it may supersede the per-office 24-month clause seen elsewhere in this corpus."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KEN/TEND/09/2022-23",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--21554613-Agr-040-23-012.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--21554613-Agr-040-23-012.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 200000000,
+      "amount_put_to_tender_rupees": 166098595.62,
+      "amount_quoted_rupees": 174348183.0,
+      "paid_gross_rupees": 831654948.0,
+      "source_document": "WO-6--21554613-Agr-040-23-012.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.97,
+      "payout_vs_contract_pct": 377.01,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--21554613-Agr-040-23-012.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "198-23-000005",
+    "description": "Improvements of Roads and Drains in Gnanakshi and Meenakshi Layout, Kodipalya, Saidatta Layout and LIC Layout and Sunkal Palya and Surrounding area in Ward No-198 Hemmigepura",
+    "contractor": "034150  SURESH BABU AND SON",
+    "ward_hint": "ddo007  Executive Engineer Kengeri Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 419329300.0,
+    "bill_rows": 10,
+    "documents_total": 359,
+    "documents_extracted": 2,
+    "_notes": [
+      "PMC agreement, same consultant firm and identical Rs.39,75,000 fee as seen on 040-23-000010 -- same 'PMC Package' template covering 2 works jointly (here: job codes 198-23-000005 and 198-23-000004, Kengeri/Yeshwanthapura).",
+      "This is the CIVIL contract for 198-23-000005 -- the previously-recorded Agreement (WO-6--26257686-Pk-06-Agr.pdf) for this job number is the PMC/consultancy contract, correctly excluded from Track 3/4. This PDF had been fetched and rendered earlier but was never actually opened/read until now -- a gap found by re-auditing which UNCLEAR entries had an unread page versus a genuine dead end. Fifth work in this sample sharing tender number BBMP/EE/KEN/TEND/09/2022-23 dated 12.07.2022 (alongside 040-23-000010, 040-23-000012, 072-23-000008, 130-23-000002) -- further confirmation this is one zone-wide tender notification covering many separate job codes. DLP confirmed on page 3: same Commissioner Office Order Comm/PR/318/2020-21, 3 years."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KEN/TEND/09/2022-23",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--77795196-agg 05.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--77795196-agg 05.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 200000000,
+      "amount_put_to_tender_rupees": 166100057.15,
+      "amount_quoted_rupees": 174321991.0,
+      "paid_gross_rupees": 419329300.0,
+      "source_document": "WO-6--77795196-agg 05.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.95,
+      "payout_vs_contract_pct": 140.55,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--26257686-Pk-06-Agr.pdf",
+        "method": "vision",
+        "is_pmc": true
+      },
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--77795196-agg 05.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "095-23-000001",
+    "description": "PACKAGE NO 01 Comprehensive Developments of Roads and Drains and other Allied works in Gandhinagar Samadhan Nagar Chuna lanes  Byrappa layout Govindapura village Subhash layout 2nd Block HBR layout Hilal Nagar 3rd Block HBR Layout 5th Block HBR layout Kuppuswamy Layout CMR garden and 4th Block HBR layout, Poornanjaneya layout Kaveri layout Chikkanna layout B M layout Venkateshpuram  Pillanna Garden and Arokyamma layout Sonnappa block in Ward No 23 24 30",
+    "contractor": "022689 MANJUNATH REDDY J V",
+    "ward_hint": "ddo071  Executive Engineer Sarvagnanagar East Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 792884370.0,
+    "bill_rows": 25,
+    "documents_total": 169,
+    "documents_extracted": 2,
+    "_notes": [
+      "Civil contract, PACKAGE NO. 01: 'Comprehensive Developments of Roads and Drains and other Allied works in Gandhinagar, Samadhan Nagar, Chuna lanes, Byrappa layout... Ward No-23,24,30', Sarvagnanagara Division, dated 07.12.2022. This work has THREE Agreement PDFs total, all now read: this civil one, plus TWO separate PMC/DPR consultancy agreements (WO-6--21602240-Agreement.pdf: Vimos Technocrats, Rs.12,80,000, already recorded; WO-6--86615458-Agree.pdf: also Vimos Technocrats but Rs.7,20,000 -- a second, smaller consultancy scope on the same work, not individually recorded). DLP explicit and unambiguous at clause 2: 'Defect liability period shall be 2 Years from the date of completion of work.' No tender/notification number found on the pages read; contract price extremely tight to estimate (-0.11% below SR 2021-22).",
+      "PMC agreement, not the civil works contract -- filename was plain 'Agreement.pdf' with zero PMC signal, same trap as 040-23-000010. Covers 'Comprehensive Developments of Roads and Drains... Package No: 01' across wards 23/24/30, negotiated fee Rs.12,80,000 inclusive of taxes, division Sarvagnanagara. Civil agreement for 095-23-000001 not located/read in this batch -- track1/3/4 remain UNCLEAR pending a second Agreement or Tender Documents read."
+    ],
+    "track1_tender_link": {
+      "value": null,
+      "confidence": "UNCLEAR",
+      "source_document": null,
+      "form": null,
+      "reason": "no Tender Document attached; agreement carried no reference"
+    },
+    "track3_dlp": {
+      "value": "2 years",
+      "months": 24,
+      "confidence": "STRONG",
+      "source_document": "WO-6-L3-ifms071-15787111-3-Agreement Copy.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 140745406.93,
+      "paid_gross_rupees": 792884370.0,
+      "source_document": "WO-6-L3-ifms071-15787111-3-Agreement Copy.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 463.35,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6-L3-ifms071-15787111-3-Agreement Copy.pdf",
+        "method": "vision",
+        "is_pmc": false
+      },
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--21602240-Agreement.pdf",
+        "method": "vision",
+        "is_pmc": true
+      }
+    ]
+  },
+  {
+    "job_number": "097-20-000014",
+    "description": "Construction of  Ambedkar Bhavan RKS Nagar Dayanand Nagar in ward no 97 Annexure 6 Sl No 225",
+    "contractor": "023269 Mr  MANJUNATH S V",
+    "ward_hint": "ddo197  Executive Engineer Project West Zone",
+    "award_fy": "2020-21",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 25512690.0,
+    "bill_rows": 6,
+    "documents_total": 38,
+    "documents_extracted": 1,
+    "_notes": [
+      "All 4 pages of this agreement now read (page 4 rendered and checked after initially stopping at the --max-pages 3 cap). No DLP clause found anywhere in the document -- Project (West) division's agreement template uses unnumbered bullet clauses, unlike the numbered-clause Kengeri-division template that reliably carries DLP at clause 5/7. Page 4 only lists the deemed-part documents (Letter of Acceptance, Contractor's Tender, etc.) and signatures; no defect liability period is stated. This is now a confirmed absence, not an unread gap. Work: Construction of Ambedkar Bhavan RKS Nagar, Dayanandanagar, Ward No.97. Contractor: M/s. Balaji Associates (Manjunath S.V.). 06-month completion period including monsoon (separate from, and not the same as, DLP)."
+    ],
+    "track1_tender_link": {
+      "value": "EE(P-W)/TEND/04/2022-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--40875074-agreement.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": null,
+      "months": null,
+      "confidence": "UNCLEAR",
+      "source_document": "WO-6--40875074-agreement.pdf",
+      "reason": "no DLP clause found"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 10000000,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 8893015.0,
+      "paid_gross_rupees": 25512690.0,
+      "source_document": "WO-6--40875074-agreement.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 186.88,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--40875074-agreement.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "130-23-000002",
+    "description": "Improvements of Roads and Drains in Ullal and Upkara Layout and Surrounding area in Ward NO-130 Ullal",
+    "contractor": "023038 CIVIL QUALITY CONSUL",
+    "ward_hint": "ddo007  Executive Engineer Kengeri Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 619349742.0,
+    "bill_rows": 21,
+    "documents_total": 283,
+    "documents_extracted": 1,
+    "_notes": [
+      "Third work sharing tender number BBMP/EE/KEN/TEND/09/2022-23 dated 12.07.2022, same Kengeri division as 040-23-000012 and 072-23-000008 (see notes there) -- confirms this is one tender notification covering multiple work packages, not a duplicate-key error. Read both page 2 (amounts, '180Days' completion clause) and page 3 (real DLP clause: 'DLP period 3 years from the date of Completion of Work as per Hon Commissioner Office Order No:Comm/PR/318/2020-21 Date:03.02.2021' -- identical order number to the other two works, confirming this is a citywide standard applied uniformly, not agreement-specific boilerplate). Work: 'Improvements of Roads and Drains in Ullal and Upkara Layout and Surrounding area in Ward NO-130 Ullal'. Two other Agreement PDFs exist for this job (WO-6--59019534-pk-4-agr.pdf, WO-6--52319864-aggPDF.pdf) not read in this pass."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KEN/TEND/09/2022-23",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--70777869-AGR - 130-23-0002.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--70777869-AGR - 130-23-0002.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 200000000,
+      "amount_put_to_tender_rupees": 166099667.21,
+      "amount_quoted_rupees": 174319199.0,
+      "paid_gross_rupees": 619349742.0,
+      "source_document": "WO-6--70777869-AGR - 130-23-0002.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.95,
+      "payout_vs_contract_pct": 255.3,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--70777869-AGR - 130-23-0002.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "072-23-000008",
+    "description": "Improvements of Roads and Drains in Kempegowda Nagara, Syndicate Layout, Thunga Nagara, Venkteshwara Layout and Surrounding area in Ward NO-72 Herohalli",
+    "contractor": "031685 GANAPATHISTONECRUSHE",
+    "ward_hint": "ddo007  Executive Engineer Kengeri Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 596990364.0,
+    "bill_rows": 21,
+    "documents_total": 453,
+    "documents_extracted": 1,
+    "_notes": [
+      "Same tender number and date as 040-23-000012 -- see note there. Ward No-72 Herohalli, Kengeri division. EMD Rs.19,00,000 (Rs.18,00,000 BG + Rs.1,00,000 e-portal). DLP confirmed on page 3, same Commissioner Office Order (Comm/PR/318/2020-21) as 040-23-000012 -- 3 years, not the 180-day completion period on page 2."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KEN/TEND/09/2022-23",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--44280908-AGR - 072-23-00008.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--44280908-AGR - 072-23-00008.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 190000000,
+      "amount_put_to_tender_rupees": 157795859.64,
+      "amount_quoted_rupees": 165623117.0,
+      "paid_gross_rupees": 596990364.0,
+      "source_document": "WO-6--44280908-AGR - 072-23-00008.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.96,
+      "payout_vs_contract_pct": 260.45,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--44280908-AGR - 072-23-00008.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "074-21-000006",
+    "description": "Interior and other development works to school building (Behind Rangamandira) in ward no 74 Shakthiganapathinagar",
+    "contractor": "021333 MECADEZ CORE TECHNOL",
+    "ward_hint": "ddo196  Executive Engineer Mahalakshmipuram West Zone",
+    "award_fy": "2021-22",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 25644517.0,
+    "bill_rows": 3,
+    "documents_total": 98,
+    "documents_extracted": 2,
+    "_notes": [
+      "Civil works agreement (distinct from the PMC/DPR agreement WO-6-L3-ifms196-97239221-3-AG.pdf read separately below). Read earlier this session from only 2 of the PDF's rendered pages -- not re-checked for a page 3 in this pass, so treat DLP/tender as possibly incomplete rather than exhaustively verified. A separate Notification PDF for this work (WO-9--50660288-NOTIFICAITON.pdf) additionally carries 'NO.EEIMLPITEND/E-PROC/09/2021_22' (OCR-damaged EE/MLP/TEND/E-PROC/09/2021-22) and '36 month(s)' DLP -- consistent with this entry (36mo = 3yr) and a stronger-form tender reference; not merged into this record's fields to keep each document's own read intact.",
+      "PMC/DPR consultancy agreement (Detailed Project Report preparation + Project Management), NOT the civil works contract -- same trap as 040-23-000010/095-23-000001. This work has TWO Agreement PDFs: this one (consultant) and WO-6-L3-ifms196-28464762-3-AGREE.pdf (civil, already read earlier this session: indent 49242, DLP 'Three year(s)', +8.10% above, read from only 2 rendered pages -- worth a page-3 check given the pattern of DLP/tender detail appearing later, but not done in this pass). Est. Cost Rs.250.00 Lakhs is the CONSULTANT's budgeted estimate for DPR+PMC services, not the civil contract estimate -- do not conflate with the civil agreement's own amount."
+    ],
+    "track1_tender_link": {
+      "value": "INDENTNO49242",
+      "form": "bare_indent",
+      "source_document": "WO-6-L3-ifms196-28464762-3-AGREE.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "bare indent number with no year or office; joins to ds1 only if indent numbers are globally unique -- verify before trusting"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6-L3-ifms196-28464762-3-AGREE.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 22572755.0,
+      "paid_gross_rupees": 25644517.0,
+      "source_document": "WO-6-L3-ifms196-28464762-3-AGREE.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 13.61,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6-L3-ifms196-28464762-3-AGREE.pdf",
+        "method": "vision",
+        "is_pmc": false
+      },
+      {
+        "doctype": "Agreement",
+        "file": "WO-6-L3-ifms196-97239221-3-AG.pdf",
+        "method": "vision",
+        "is_pmc": true
+      }
+    ]
+  },
+  {
+    "job_number": "143-23-000002",
+    "description": "Comprehensive Development and improvements to Roads, Drains, Footpaths and Parks in Parvathipura, V.V.Puram, Mavalli and surrounding area in Chickpet Assembly Constituency, Ward No. 143 - Package 2",
+    "contractor": "023605 SAGAR CONSULTANCY",
+    "ward_hint": "ddo499  Executive Engineer Chickpet South Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 1206367865.0,
+    "bill_rows": 40,
+    "documents_total": 253,
+    "documents_extracted": 1,
+    "_notes": [
+      "Civil contract: 'Comprehensive Development and improvements to Roads, Drains, Footpaths and Parks in Parvathipura, V.V.Puram, Mavalli and surrounding area in Chickpet Assembly Constituency, Ward No. 143 Package 2'. Contractor M/S SMLP Asphalts (Sri B B Umesha). DLP explicit at clause 4: 'defect liability period 36 months will commence from the date of completion of the work.' This work has 4 Agreement PDFs total: this civil one, two DPR/consultancy (PMC) agreements (WO-6--16217376-Agree_0001.pdf: Sagar Consultants, Rs.4,96,000; WO-6--50808049-Agree_0001.pdf: flagged PMC by content detector, not individually read), and WO-6--50182455-agreement.pdf which was read earlier this session showing DLP '1 year(s)' and variance '-13.10% Below' with DIFFERENT smaller amounts (Rs.4,43,950 / Rs.2,94,477 range) -- those figures do not reconcile with this civil agreement's Rs.21+ crore contract, so that document is likely a separate sub-package or an unrelated smaller work bundled under the same job number's document set. Flagging the discrepancy rather than picking one; needs reviewer attention."
+    ],
+    "track1_tender_link": {
+      "value": "EE/CKP/E-Procu/06/2022-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--76194742-Agre_0001.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "36 months",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--76194742-Agre_0001.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 240000000,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 211022132.0,
+      "paid_gross_rupees": 1206367865.0,
+      "source_document": "WO-6--76194742-Agre_0001.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 471.68,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--76194742-Agre_0001.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "159-17-000057",
+    "description": "Construction of Dialysis Center at Kengeri Yeshwanthapura Asembly ward no 159",
+    "contractor": "M/s. Mecadez  Core Technologies Pvt. Ltd",
+    "ward_hint": "ddo012  Assistant Executive Engineer Kengeri Sub Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2017-18",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 92863504.0,
+    "bill_rows": 16,
+    "documents_total": 372,
+    "documents_extracted": 1,
+    "_notes": [
+      "All 3 Agreement PDFs and the Tender Documents PDF for this work returned HTTP 404 at fetch time (confirmed in fetch_log.json) -- the files are listed in ds3's documents_detail but no longer served by the portal. This is a genuine dead-link case, not an extraction failure: Track 1/3/4 are UNCLEAR because the source documents are unavailable, not because reading them failed. Only an Estimate and a Work Order PDF were actually fetchable; the single rendered Work Order page (1 of however many) was checked and carries no tender number, DLP or contract-amount fields of its own -- those live in the Agreement, which cannot be retrieved. Oldest work in the sample set (FY2016-17)."
+    ],
+    "track1_tender_link": {
+      "value": null,
+      "confidence": "UNCLEAR",
+      "source_document": null,
+      "form": null,
+      "reason": "no Tender Document attached; agreement carried no reference"
+    },
+    "track3_dlp": {
+      "value": null,
+      "months": null,
+      "confidence": "UNCLEAR",
+      "source_document": null,
+      "reason": "no DLP clause found"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": null,
+      "paid_gross_rupees": 92863504.0,
+      "source_document": null,
+      "is_pmc_contract": false,
+      "confidence": "UNCLEAR",
+      "reason": "no contract amounts found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Work Order",
+        "file": "WO-7-L3-ifms007-25908655-3-wo.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "040-23-000010",
+    "description": "Improvements of Roads and Drains at D Group Layout, Kempegowda Nagara part, Gollarahatti and Nataka Chennappa Badavane and Surrounding area in Ward No-40 Doddabidarakallu",
+    "contractor": "023038 CIVIL QUALITY CONSUL",
+    "ward_hint": "ddo007  Executive Engineer Kengeri Division Rajarajeshwari Nagar Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 1476728267.0,
+    "bill_rows": 63,
+    "documents_total": 592,
+    "documents_extracted": 2,
+    "_notes": [
+      "This is the CIVIL contract for 040-23-000010 -- the earlier-read Agreement (WO-6--60737791-Pk1-AGR.pdf) for this job number was the PMC/consultancy contract (M/s. Civil Quality Consultants & Engineers, Rs.39,75,000), recorded separately and correctly excluded from Track 3/4. Fourth work in this sample sharing tender number BBMP/EE/KEN/TEND/09/2022-23 dated 12.07.2022 (alongside 040-23-000012, 072-23-000008, 130-23-000002) -- strong confirmation this is one zone-wide tender notification covering many separate job codes in Kengeri/Rajarajeshwari Nagar zone, not a data error. DLP confirmed on page 3: same Commissioner Office Order Comm/PR/318/2020-21, 3 years -- the fourth work in this sample carrying this exact citywide standard.",
+      "PMC (consultancy) agreement, NOT the civil works contract, despite filename 'Pk1-AGR.pdf' giving no hint of this. Body text: 'Providing PMC Services including Supervision, Quality control for the Improvements of Roads and Drains at ward 40 PMC Package 1 (2 Works)'. Covers job codes 040-23-000010 AND 040-23-000011 jointly. This is the exact case that motivated switching is_pmc detection from filename to body-text regex. The CIVIL agreement for this work (two other Agreement PDFs exist: WO-6--66671651-Agr-040-23-0010.pdf, WO-6--98239065-040-23-000010_agreement.pdf) was NOT read in this batch due to time constraints -- track1/3/4 remain UNCLEAR for 040-23-000010 pending that read."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/EE/KEN/TEND/09/2022-23",
+      "form": "bbmp_prose",
+      "source_document": "WO-6--66671651-Agr-040-23-0010.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--66671651-Agr-040-23-0010.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 200000000,
+      "amount_put_to_tender_rupees": 166098507.14,
+      "amount_quoted_rupees": 174355792.0,
+      "paid_gross_rupees": 1476728267.0,
+      "source_document": "WO-6--66671651-Agr-040-23-0010.pdf",
+      "is_pmc_contract": false,
+      "variance_pct": 4.97,
+      "payout_vs_contract_pct": 746.96,
+      "confidence": "STRONG",
+      "reason": "estimate, tendered and quoted amounts all read from agreement"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--66671651-Agr-040-23-0010.pdf",
+        "method": "vision",
+        "is_pmc": false
+      },
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--60737791-Pk1-AGR.pdf",
+        "method": "vision",
+        "is_pmc": true
+      }
+    ]
+  },
+  {
+    "job_number": "011-23-000002",
+    "description": "PACKAGE NO 05 CONSISTS OF 3 WORKS",
+    "contractor": "023653 GOPI REDDY",
+    "ward_hint": "ddo220  Executive Engineer Byatarayanapura Division Yelhanka Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 305407068.0,
+    "bill_rows": 12,
+    "documents_total": 154,
+    "documents_extracted": 1,
+    "_notes": [
+      "Very clean, fully-qualified read. Work: 'Improvements to footpaths inward No: 11 Byatarayanapura'. Fee split shown: difference amount paid Rs.58,446, 3% FSD Rs.5,93,268."
+    ],
+    "track1_tender_link": {
+      "value": "EE/BTP/BBMP/E-PMT/18/2022-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--47891354-011-23-000002 Agreement.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "1 year(s) civil/asphalt<=20mm; 3 year(s) asphalt>20mm",
+      "months": 12,
+      "confidence": "STRONG",
+      "source_document": "WO-6--47891354-011-23-000002 Agreement.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 1948202.54,
+      "paid_gross_rupees": 305407068.0,
+      "source_document": "WO-6--47891354-011-23-000002 Agreement.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 15576.35,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--47891354-011-23-000002 Agreement.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "009-23-000002",
+    "description": "PACKAGE NO 04 CONSISTS OF 3 WORKS",
+    "contractor": "022217 CHIDANANDA MURTHY R.",
+    "ward_hint": "ddo220  Executive Engineer Byatarayanapura Division Yelhanka Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 179520518.0,
+    "bill_rows": 8,
+    "documents_total": 151,
+    "documents_extracted": 1,
+    "_notes": [
+      "This is the CIVIL contract for this work -- two other Agreement PDFs for 009-23-000002 (WO-6--07386551-AGREEMENT.pdf, WO-6--20815126-009-23-000002_Agreement.pdf) are both PMC/consultancy contracts with M/s. Tejus Consultants / another consultant, Rs.8,95,000 fee, NOT this civil contract; not recorded as separate entries. This resolves an earlier OCR-only read (retired text_harvest.json path) that produced a false 1-digit conflict between 'IndentNo.33744' and 'IndentNo.53744' for this work -- the correct indent, read directly off the image, is 52487, matching neither prior OCR guess. Job Number: 009-23-000002, Indent No. 52487, Budget Head P3877 Amruth Nagarothana, PACKAGE NO. 04 (CONSISTS OF 3 WORKS). DLP clause found directly on page 2 this time (clause 7): 'defect liability period is three year from the date of final bill.'"
+    ],
+    "track1_tender_link": {
+      "value": "EE/BTP/BBMP/E-PMT/10/2022-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--80419252-009-23-000002 Agreement.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--80419252-009-23-000002 Agreement.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 78418360.0,
+      "paid_gross_rupees": 179520518.0,
+      "source_document": "WO-6--80419252-009-23-000002 Agreement.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 128.93,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--80419252-009-23-000002 Agreement.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "182-23-000004",
+    "description": "Comprehensive development to Buildings, Parks, Play gound in Padmanabhanagara ward no 182 Padmanabha nagara Constituency (package-07)",
+    "contractor": "024306 R VELAYUTHAM",
+    "ward_hint": "ddo422  Executive Engineer Project - South Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 1114678621.0,
+    "bill_rows": 49,
+    "documents_total": 160,
+    "documents_extracted": 1,
+    "_notes": [
+      "Civil contract: 'Comprehensive development to Buildings, Parks, Play ground in Padmanabhanagara ward no 182 Padmanabha nagara Constituency (package-07)'. Contractor Sri R. Velayutham. Full document now read (all 8 pages) after initially stopping at the --max-pages 3 cap -- this agreement re-stamps mid-document (a second e-stamp page appears at page 5, restarting numbered clauses from 1) and the deferred fields were on pages 4 and 7 respectively: contract price Rs.13,75,51,394.00 (-0.57% below CSR 2021-22) on page 4, and clause 7 on page 7 gives 'guarantee period of One Year from the date of completion of the work' -- used as the DLP-equivalent, same phrasing style as 129-23-000009's electrical maintenance contract. A separate consultancy/PMC Agreement (WO-6--47837348-Agr_pack7_padma.pdf, M/s. Team For You, Rs.13,32,000 fee) and a third Agreement (WO-6--60410856-Agr.pdf) were not read."
+    ],
+    "track1_tender_link": {
+      "value": "EEP(S)/E-Procu/10/22-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--55015464-Agreement.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "1 year(s) (guarantee period)",
+      "months": 12,
+      "confidence": "STRONG",
+      "source_document": "WO-6--55015464-Agreement.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": 155000000,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 137551394.0,
+      "paid_gross_rupees": 1114678621.0,
+      "source_document": "WO-6--55015464-Agreement.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 710.37,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--55015464-Agreement.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "007-23-000003",
+    "description": "PACKAGE NO. 02 (CONSISTS OF 5 WORKS)",
+    "contractor": "025655 SAMBASHIVA",
+    "ward_hint": "ddo220  Executive Engineer Byatarayanapura Division Yelhanka Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 304359012.0,
+    "bill_rows": 24,
+    "documents_total": 227,
+    "documents_extracted": 1,
+    "_notes": [
+      "Full re-read of both pages after user pointed out this PDF (fetched fresh from the live URL) clearly has both a tender number and a DLP clause -- an earlier pass had only captured a bare 'IndentNo.52485' via the old regex-harvest path (since retired; see observations_running_doc.md). Work: 'PACKAGE NO.02 (CONSISTS OF 5 WORKS)', Budget Head P3636 Amruth Nagarothana. Tender number and DLP both explicit and unambiguous on page 2: 'Tender Notification No. EE/BTP/BBMP/E-PMT/10/2022-23, Dated: 04-07-2022' and 'The defect liability period is three year from the date of final bill.' Contract Rs.8,75,72,105.00, +4.98% above Issue Rate as on 07-07-2022."
+    ],
+    "track1_tender_link": {
+      "value": "EE/BTP/BBMP/E-PMT/10/2022-23",
+      "form": "eproc_notification",
+      "source_document": "WO-6--17826023-Agreement .pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--17826023-Agreement .pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 87572105.0,
+      "paid_gross_rupees": 304359012.0,
+      "source_document": "WO-6--17826023-Agreement .pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 247.55,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--17826023-Agreement .pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "003-19-000077",
+    "description": "Construction of RCC drain at Best county-III and surrounding areas in ward no 03",
+    "contractor": "036697 LAKSHMI",
+    "ward_hint": "ddo225  Assistant Executive Engineer Yelahanka New Town Yelhanka Zone",
+    "award_fy": "2019-20",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 877503.0,
+    "bill_rows": 1,
+    "documents_total": 36,
+    "documents_extracted": 1,
+    "_notes": [
+      "Contract price Rs.8,04,660 + 12% GST Rs.96,559 = total Rs.9,01,219. -9.72% below the SR-2018-19 estimate. DLP: 1 year from date of final bill for civil/asphalt <=20mm; >20mm asphalt is 3 years per boilerplate seen on other agreements from this office, but this page states 1 year generally -- read literally."
+    ],
+    "track1_tender_link": {
+      "value": "EE/YNK/BBMP/E-PMT/09/2018-19",
+      "form": "eproc_notification",
+      "source_document": "WO-6-L4-ifms221-53744402-4-AGREEMENT.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "1 year(s)",
+      "months": 12,
+      "confidence": "STRONG",
+      "source_document": "WO-6-L4-ifms221-53744402-4-AGREEMENT.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 901219,
+      "paid_gross_rupees": 877503.0,
+      "source_document": "WO-6-L4-ifms221-53744402-4-AGREEMENT.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": -2.63,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6-L4-ifms221-53744402-4-AGREEMENT.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "005-23-000001",
+    "description": "Improvements and Restoration of Roads in ward No. 05 (Package 01) (Package Consists of 6 works)",
+    "contractor": "022235 K R SANTHOSH KUMAR",
+    "ward_hint": "ddo220  Executive Engineer Byatarayanapura Division Yelhanka Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 187555380.0,
+    "bill_rows": 24,
+    "documents_total": 306,
+    "documents_extracted": 1,
+    "_notes": [
+      "Civil contract, cleanest single-page read this session: 'Improvements and Restoration of Roads in Ward No. 05 (Package 01) (Package Consists of 6 works)', Budget Head P3867 SIP-Restoration of 110 Village Roads dug up by BWSSB. DLP explicit at clause 7: 'defect liability period is three year from the date of final bill.' This work has 6 Agreement PDFs total in its document set (25 bill rows, largest paid_gross in the sample at ~Rs.147.7 cr) -- several are DPR/PMC consultancy copies (e.g. WO-6--05707251-005-23-000005_DPR_Agreement...pdf) not individually read; this civil agreement is the primary source for Track 1/3/4."
+    ],
+    "track1_tender_link": {
+      "value": "EE/BTP/BBMP/E-PMT/07/2021-22",
+      "form": "eproc_notification",
+      "source_document": "WO-6--11733562-aGREE0001.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "e-proc notification number recovered from OCR text; separators are frequently mangled (EE/MLP/TEND -> EEIMLPI) so normalise before joining"
+    },
+    "track3_dlp": {
+      "value": "3 years",
+      "months": 36,
+      "confidence": "STRONG",
+      "source_document": "WO-6--11733562-aGREE0001.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 53018393.0,
+      "paid_gross_rupees": 187555380.0,
+      "source_document": "WO-6--11733562-aGREE0001.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 253.76,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--11733562-aGREE0001.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "003-21-000032",
+    "description": "Additional Developmental works to parks at Major Sandeep Unnikrishnan Road in Attur ward no 03",
+    "contractor": "023708 SHRIYA CONSTRUCTION",
+    "ward_hint": "ddo225  Assistant Executive Engineer Yelahanka New Town Yelhanka Zone",
+    "award_fy": "2021-22",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 60714339.0,
+    "bill_rows": 9,
+    "documents_total": 111,
+    "documents_extracted": 1,
+    "_notes": [
+      "No standalone tender/notification number printed on the two pages read (page 1 = e-stamp, page 2 = contract clauses). Only the agreement number is available as a reference. A 3rd page or the Tender Documents PDF (WO-9--45189170-quotation.pdf, not yet read) may carry the notification number -- currently UNCLEAR for track 1."
+    ],
+    "track1_tender_link": {
+      "value": null,
+      "confidence": "UNCLEAR",
+      "source_document": null,
+      "form": null,
+      "reason": "no Tender Document attached; agreement carried no reference"
+    },
+    "track3_dlp": {
+      "value": "1 year(s)",
+      "months": 12,
+      "confidence": "STRONG",
+      "source_document": "WO-6--49268575-ag.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 19699394,
+      "paid_gross_rupees": 60714339.0,
+      "source_document": "WO-6--49268575-ag.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": 208.2,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--49268575-ag.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  },
+  {
+    "job_number": "129-23-000009",
+    "description": "Maintenance of electrical installation in BBMP Head Office  and Modern Council building in Ward No 129",
+    "contractor": "016130  SRI SAI ELECTRICALS",
+    "ward_hint": "ddo076  Executive Engineer Electrical East Zone",
+    "award_fy": "2023-24",
+    "billing_fy": "FY2024-25",
+    "paid_gross_rupees": 3012893.0,
+    "bill_rows": 2,
+    "documents_total": 42,
+    "documents_extracted": 1,
+    "_notes": [
+      "Electrical maintenance contract ('Maintenance of electrical installations in BBMP Head office and Modern Council building in ward no 129'), structurally different from the civil-works agreement template -- no 'Tender Notification No.' line on the Agreement PDF itself. Tender number instead recovered from the separate Tender Documents PDF (WO-9--80775918-tender.pdf), an eProcurement portal screenshot showing 'BBMP/2022-23/EL/WORK_INDENT56160' -- the strongest (kppp_work_indent) form, a direct portal printout. Confirms L1 bidder Sri Sai Electricals at -3.09% below, matching the Agreement's contract price. Clause 7 gives 'guarantee period of One Year' after final bill, used as the DLP-equivalent field. Completion: 365 days from work order (separate from guarantee period)."
+    ],
+    "track1_tender_link": {
+      "value": "BBMP/2022-23/EL/WORK_INDENT56160",
+      "form": "kppp_work_indent",
+      "source_document": "WO-6--08484955-AGEE.pdf",
+      "corroborated_across_documents": false,
+      "confidence": "STRONG",
+      "reason": "explicit well-formed tender number read from document"
+    },
+    "track3_dlp": {
+      "value": "1 year(s) (guarantee period, maintenance contract)",
+      "months": 12,
+      "confidence": "STRONG",
+      "source_document": "WO-6--08484955-AGEE.pdf",
+      "reason": "explicit defect liability period"
+    },
+    "track4_amounts": {
+      "estimate_rupees": null,
+      "amount_put_to_tender_rupees": null,
+      "amount_quoted_rupees": 3087152.0,
+      "paid_gross_rupees": 3012893.0,
+      "source_document": "WO-6--08484955-AGEE.pdf",
+      "is_pmc_contract": false,
+      "payout_vs_contract_pct": -2.41,
+      "confidence": "NEEDS_REVIEW",
+      "reason": "only part of the estimate/tender/quote triple was found"
+    },
+    "source_documents": [
+      {
+        "doctype": "Agreement",
+        "file": "WO-6--08484955-AGEE.pdf",
+        "method": "vision",
+        "is_pmc": false
+      }
+    ]
+  }
+]
