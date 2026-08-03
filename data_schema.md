@@ -239,6 +239,48 @@ false` as "looks real", not "verified to contain something".
 
 ---
 
+## `road_segments[]` — nullable, one block per source PDF
+
+Linestring geometry read off "Road History Data Sheet" PDFs
+(`data_backend/pdf/`, `doc_type: "Road History"`). A job can have several
+Road History PDFs (one per road in a multi-road package job) — each becomes
+its own block, so segments are never merged across documents into one lossy
+list.
+
+| Field | Type | Notes |
+|---|---|---|
+| `source_document` | string | Filename the segments came from |
+| `extraction_method` | string | `ocr_visual_extraction` — the *segment coordinates* are always read from a 300dpi render of the page via `tesseract`, not the PDF's text layer (~70% of this PDF corpus has no usable text layer at all — scanned images). The *job_number*, separately, is resolved primarily by filename lookup (see below), with OCR only as a fallback. |
+| `extraction_confidence` | enum | `high` \| `medium` — `high` when the job_number came from an exact filename lookup, an exact OCR read, or an OCR read corrected only via an independently-OCR'd ward number; `medium` when corrected by Hamming-distance against the ward's known job numbers (i.e. a likely but unconfirmed single-digit OCR fix) |
+| `notes` | string | How the job_number was resolved; a standing caveat that OCR digit misreads are possible in the segment coordinates regardless of how confidently the job_number itself was matched |
+| `segments[]` | array | `{ segment_number, length_m, start: {lat, lng}, end: {lat, lng} }` — one row of the PDF's "Segment Details" table |
+
+### How the job_number is resolved
+
+`download_road_history.py` saves each PDF as `{work_bill_id}__{original_name}`,
+but its own fetch request is built from `original_name` alone —
+`work_bill_id` never enters the URL, and drifts across `payments.parquet`
+snapshots besides. So the primary match is a direct, OCR-free lookup: strip
+the `{work_bill_id}__` prefix and look up `original_name` in
+`payments.parquet`'s `files` column (`type: "Road History"`) to read
+`job_number` straight off that row. Verified empirically unambiguous across
+the whole corpus (0 of 54,966 distinct Road History filenames shared by more
+than one job_number) — but checked, not assumed, on every run; an ambiguous
+or missing filename falls back to reading the job_number off the OCR'd page
+instead (regex over the rendered text, with a ward-corroborated correction
+for single-digit misreads).
+
+Produced by `data_backend/extract_road_segments.py`. Coverage is still
+limited by overlap between the PDF corpus and the `works-*.json` corpus, not
+by matching accuracy — as of the last full check, 137 downloaded Road
+History PDFs have a job_number that exists in `payments.parquet` but not in
+`works-*.json` (built from a different, apparently older snapshot,
+`2. payments-2026-07-30.xlsx`). See
+`data_backend/json/road_segments_extraction_report.json` for the full
+per-PDF breakdown.
+
+---
+
 ## `bills[]`
 
 | Field | Type | Notes |

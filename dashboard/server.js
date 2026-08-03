@@ -49,6 +49,26 @@ function loadDataset() {
   return { works, manifest };
 }
 
+// Flattened for the browser: one entry per PDF-extracted road stretch, carrying
+// just enough of data_schema.md's `road_segments[]` block (method/confidence,
+// per the project's linking rules) to draw the line and label it honestly —
+// not the full notes/source-document trail.
+function summarizeRoadSegments(work) {
+  if (!Array.isArray(work.road_segments)) return [];
+  return work.road_segments.flatMap((block) =>
+    (block.segments || [])
+      .filter((segment) => segment.start && segment.end)
+      .map((segment) => ({
+        segment_number: segment.segment_number,
+        length_m: segment.length_m,
+        start: segment.start,
+        end: segment.end,
+        confidence: block.extraction_confidence,
+        source_document: block.source_document,
+      }))
+  );
+}
+
 function summarizeWork(work) {
   const location = work.location || {};
   return {
@@ -74,6 +94,7 @@ function summarizeWork(work) {
     location_precision: location.precision || 'none',
     lat: Number.isFinite(location.lat) ? location.lat : null,
     lng: Number.isFinite(location.lng) ? location.lng : null,
+    road_segments: summarizeRoadSegments(work),
   };
 }
 

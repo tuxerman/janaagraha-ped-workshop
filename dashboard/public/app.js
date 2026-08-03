@@ -94,6 +94,13 @@ const currency = new Intl.NumberFormat('en-IN', {
 let allWorks = [];
 let leafletMap = null;
 let markerLayer = null;
+let segmentLayer = null;
+
+const SEGMENT_CONFIDENCE_LABELS = {
+  high: 'high confidence',
+  medium: 'medium confidence — OCR-corrected job number match',
+  low: 'low confidence',
+};
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -128,6 +135,21 @@ function hasPoint(work) {
   return Number.isFinite(work.lat) && Number.isFinite(work.lng);
 }
 
+function hasSegments(work) {
+  return Array.isArray(work.road_segments) && work.road_segments.length > 0;
+}
+
+function locatable(work) {
+  return hasPoint(work) || hasSegments(work);
+}
+
+function segmentLatLngs(work) {
+  return work.road_segments.flatMap((segment) => [
+    [segment.start.lat, segment.start.lng],
+    [segment.end.lat, segment.end.lng],
+  ]);
+}
+
 function statusIcon(status) {
   const color = STATUS_COLORS[status] || STATUS_COLORS.unknown;
   return L.divIcon({
@@ -139,12 +161,12 @@ function statusIcon(status) {
 }
 
 function initMap(works) {
-  const locatedWorks = works.filter(hasPoint);
+  const locatedWorks = works.filter(locatable);
   if (locatedWorks.length === 0) {
     mapElement.classList.add('map-empty');
     mapElement.textContent =
-      'No point coordinates are available in the current source data. Ward-level location labels are shown in the table.';
-    mapLegend.textContent = '0 works with point coordinates';
+      'No point coordinates or road segments are available in the current source data. Ward-level location labels are shown in the table.';
+    mapLegend.textContent = '0 works with map geometry';
     return;
   }
 
@@ -157,36 +179,78 @@ function initMap(works) {
     attribution: '&copy; OpenStreetMap contributors',
   }).addTo(leafletMap);
   markerLayer = L.layerGroup().addTo(leafletMap);
-  const bounds = L.latLngBounds(locatedWorks.map((work) => [work.lat, work.lng]));
+  segmentLayer = L.layerGroup().addTo(leafletMap);
+  const points = locatedWorks.flatMap((work) => {
+    const coords = hasPoint(work) ? [[work.lat, work.lng]] : [];
+    return hasSegments(work) ? coords.concat(segmentLatLngs(work)) : coords;
+  });
+  const bounds = L.latLngBounds(points);
   leafletMap.fitBounds(bounds, { padding: [30, 30] });
   renderLegend();
 }
 
+function goToWork(work) {
+  searchInput.value = work.job_number;
+  applyFilters();
+  document.getElementById('works-table').scrollIntoView({ behavior: 'smooth' });
+}
+
 function renderMap(works) {
-  if (!markerLayer) return;
+  if (!markerLayer || !segmentLayer) return;
   markerLayer.clearLayers();
+  segmentLayer.clearLayers();
 
   works.filter(hasPoint).forEach((work) => {
     const marker = L.marker([work.lat, work.lng], { icon: statusIcon(work.status) });
     marker.bindPopup(
       `<strong>${escapeHtml(work.job_number)}</strong><br>${escapeHtml(work.description)}<br>${escapeHtml(wardLabel(work))} &middot; ${escapeHtml(statusLabel(work.status))}<br>${currency.format(work.amount_gross)}`
     );
-    marker.on('click', () => {
-      searchInput.value = work.job_number;
-      applyFilters();
-      document.getElementById('works-table').scrollIntoView({ behavior: 'smooth' });
-    });
+    marker.on('click', () => goToWork(work));
     marker.addTo(markerLayer);
+  });
+
+  works.filter(hasSegments).forEach((work) => {
+    const color = STATUS_COLORS[work.status] || STATUS_COLORS.unknown;
+    work.road_segments.forEach((segment) => {
+      const confidenceLabel = SEGMENT_CONFIDENCE_LABELS[segment.confidence] || segment.confidence;
+      const line = L.polyline(
+        [
+          [segment.start.lat, segment.start.lng],
+          [segment.end.lat, segment.end.lng],
+        ],
+        {
+          color,
+          weight: 5,
+          opacity: 0.8,
+          // Dashed = not read with full confidence, per the "label uncertainty
+          // visibly" rule — these are OCR readings off a scanned PDF, not
+          // surveyed geometry.
+          dashArray: segment.confidence === 'high' ? null : '6 6',
+        }
+      );
+      const lengthText = Number.isFinite(segment.length_m) ? `${segment.length_m.toFixed(1)} m` : 'length unknown';
+      line.bindPopup(
+        `<strong>${escapeHtml(work.job_number)}</strong><br>${escapeHtml(work.description)}<br>` +
+          `Segment ${escapeHtml(String(segment.segment_number))} &middot; ${escapeHtml(lengthText)}<br>` +
+          `<em>${escapeHtml(confidenceLabel)}</em> &mdash; read by OCR off ${escapeHtml(segment.source_document)}, not a surveyed coordinate.`
+      );
+      line.on('click', () => goToWork(work));
+      line.addTo(segmentLayer);
+    });
   });
 }
 
 function renderLegend() {
-  mapLegend.innerHTML = Object.entries(STATUS_COLORS)
+  const statusItems = Object.entries(STATUS_COLORS)
     .map(
       ([status, color]) =>
         `<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${statusLabel(status)}</span>`
     )
     .join('');
+  const segmentNote =
+    '<span class="legend-item"><span class="legend-line legend-line-solid"></span>road segment, high confidence</span>' +
+    '<span class="legend-item"><span class="legend-line legend-line-dashed"></span>road segment, OCR-corrected match</span>';
+  mapLegend.innerHTML = statusItems + segmentNote;
 }
 
 function renderDonut(svgId, segments) {
