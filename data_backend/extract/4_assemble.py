@@ -194,7 +194,7 @@ def main() -> None:
             key = re.sub(r"\s+", "", t_val)
             corrob = sum(
                 1 for d in docs
-                if re.sub(r"\s+", "", (d.get("fields") or {}).get("tender_number", "")) == key
+                if re.sub(r"\s+", "", (d.get("fields") or {}).get("tender_number") or "") == key
             ) > 1
         if not t_val:
             if not docs:

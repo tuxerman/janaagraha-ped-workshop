@@ -2,16 +2,24 @@
 
 The pipeline is split into stages that hand off via JSON on disk, so a
 failure in fetching never costs you the selection work, and a failure in
-extraction never costs you the downloads:
+extraction never costs you the downloads. Every stage is selective (only
+touches the job numbers you point it at, default: everything in works.json)
+and idempotent (skips/merges instead of overwriting work already done), so
+re-running to pick up N new rows never redoes the first N:
 
-    1_select_works.py    ds3 CSV        -> works.json
-    2_fetch_docs.py      works.json     -> pdfs/ + fetch_log.json
-    3_prepare_pages.py   pdfs/          -> text_queue.json (text-layer PDFs)
-                                           vision_queue.json (scanned PDFs,
-                                           ALL pages rendered, no cap)
+    1_select_works.py    ds3 CSV            -> works.json (append-only: --n
+                                                 grows the set, never shrinks it)
+    2_fetch_docs.py      works.json         -> pdfs/ + fetch_log.json
+                                                 (skips files already on disk)
+    3_prepare_pages.py   pdfs/ [--jobs ...] -> text_queue.json (text-layer PDFs,
+                                                 full text extracted)
+                                                 vision_queue.json (scanned PDFs,
+                                                 read directly by the Read tool,
+                                                 no PNG rendering, no page cap)
     3.5 (EXTRACTION_PROMPT.md, run by Claude Code, no API)
                          text_queue.json + vision_queue.json
-                                        -> vision_extract.json
+                                        -> vision_extract.json (append-only;
+                                           skip job_numbers already present)
     4_assemble.py        vision_extract.json + works.json
                                         -> review_queue.json  (confidence-graded)
 """

@@ -5,7 +5,7 @@ Fetching is separated from extraction so that a network failure never costs the
 skipped.
 
 Usage:
-    python3 2_fetch_docs.py [--limit 0] [--workers 6]
+    python3 2_fetch_docs.py [--jobs 003-23-000003,...] [--limit 0] [--workers 6]
 """
 
 from __future__ import annotations
@@ -61,11 +61,16 @@ def fetch_one(job: tuple[str, str, str]) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--jobs", type=str, default=None,
+                    help="comma-separated job numbers to fetch; default: all in works.json")
     ap.add_argument("--limit", type=int, default=0, help="0 = no limit")
     ap.add_argument("--workers", type=int, default=6)
     args = ap.parse_args()
 
     works = json.loads((OUT_DIR / "works.json").read_text())
+    if args.jobs:
+        wanted = set(args.jobs.split(","))
+        works = [w for w in works if w["job_number"] in wanted]
 
     jobs: list[tuple[str, str, str]] = [
         (w["job_number"], d["url"], d["filename"])
