@@ -460,5 +460,386 @@
       "notes": "Estimate Rs.100.00 Lakhs (SR 2018-19). Ward No-198, Kengeri division. DLP confirmed on page 3 (same Kengeri-division boilerplate as 040-21-000010): '180Days' on page 2 is the completion period, not DLP. Note: this work's OTHER Agreement PDF (WO-6--40963997-Agr-Pmc-198-21-008.pdf) is a separate PMC contract per its filename -- not read in this batch, but filename strongly suggests PMC (consistent with the pattern of two Agreements per work seen across this corpus)."
     },
     "source_filename": "WO-6--14880672-Agr-198-21-0008.pdf"
+  },
+  {
+    "job_number": "025-20-000028",
+    "doctype": "Agreement",
+    "pdf": "pdfs/025-20-000028/WO-6-L4-ifms357-40622843-4-Agree.pdf",
+    "source_filename": "WO-6-L4-ifms357-40622843-4-Agree.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "68/2020-21",
+      "tender_number": "25/2019-20",
+      "tender_number_form": "bare_indent",
+      "tender_published_date": "18.10.2019",
+      "indent_number": "38782",
+      "amount_quoted_rupees": 92872925.0,
+      "dlp_raw": "3 years from date of completion",
+      "completion_period_raw": "9 months",
+      "work_code": "025-20-000028",
+      "notes": "Ward 25 (Horamavu). Tender number is a bare indent-style reference ('Tender Notification No. 25/2019-20') -- no office code embedded. Cross-referenced independently in the companion Tender Documents PDF (WO-9-L4-...tender_document_05.pdf), which corroborates both the tender number and the DLP clause verbatim."
+    }
+  },
+  {
+    "job_number": "025-20-000028",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/025-20-000028/WO-9-L4-ifms357-26099611-4-tender_document_05.pdf",
+    "source_filename": "WO-9-L4-ifms357-26099611-4-tender_document_05.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "tender_number": "EE/KRP/TN-/05/2019-20",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "18-10-2019",
+      "dlp_raw": "defect liability period for Civil works & Asphalt works maintenance period is Three year from the final bill",
+      "work_code": "025-20-000028",
+      "notes": "This is a bundled tender covering 9 packages/works; item 8 in the table matches this job's description and ward (Horamavu, Ward 25) exactly. Confirms the DLP clause independently of the Agreement -- same 3-year period, worded slightly differently ('from the final bill' vs Agreement's 'from date of completion')."
+    }
+  },
+  {
+    "job_number": "129-23-000006",
+    "doctype": "Agreement",
+    "pdf": "pdfs/129-23-000006/WO-6--39146721-AGEE.pdf",
+    "source_filename": "WO-6--39146721-AGEE.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "EE/ELE/EAST/AGMT/69/2022-23",
+      "amount_quoted_rupees": 1387825.0,
+      "amount_put_to_tender_rupees": null,
+      "variance_raw": "-3.54% Below the Estimated rates",
+      "dlp_raw": "guarantee period of One Year",
+      "completion_period_raw": "365 days",
+      "work_code": "129-23-000006",
+      "notes": "This is an AMC/maintenance contract (Maintenance of Air Conditioners at BBMP Head Office Buildings), not a civil works contract -- uses 'guarantee period' language instead of 'defect liability period', per EXTRACTION_PROMPT.md rule 4. Only pages 1-3 and 7 of a 7-page PDF were returned by the Read tool for this render; pages 4-6 were not visible in the response and could not be checked for an explicit tender-number citation -- flagged as a potential incomplete read, not a confirmed absence."
+    }
+  },
+  {
+    "job_number": "129-23-000006",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/129-23-000006/WO-9--84746804-tender.pdf",
+    "source_filename": "WO-9--84746804-tender.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "tender_number": "BBMP/EE/ELE/East/TEND/07/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "20/01/2023",
+      "eproc_notification_number": "BBMP/2022-23/EL/WORK_INDENT56158",
+      "estimate_rupees": 1219000.0,
+      "work_code": "129-23-000006",
+      "notes": "Bundled tender covering 24 unrelated small maintenance/electrical works across wards; item 15 in the table ('Maintenance of Air Conditioners at BBMP head office Buildings in Ward No 129') matches this job exactly, with estimate Rs.12.19 lakhs -- consistent with the Agreement's quoted amount of Rs.13,87,825 at -3.54% below estimate."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/002-23-000003/WO-6--77281446-AGREEMENT.pdf",
+    "source_filename": "WO-6--77281446-AGREEMENT.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "BBMP/EE/YNK/E-PMT No-06/AG/30/2022-23",
+      "agreement_date": "02.09.2022",
+      "tender_number": null,
+      "amount_quoted_rupees": 1249000.0,
+      "work_code": "002-23-000003",
+      "notes": "Newzen Consultants -- Project Management Consultancy (supervision) for PACKAGE No-02, the same package as the civil Agreement (WO-6--18676564-ag.pdf, Nandi Construction). No DLP clause -- this is a consultancy, not a works contract. is_pmc=true."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/002-23-000003/WO-6--18676564-ag.pdf",
+    "source_filename": "WO-6--18676564-ag.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "BBMP/EE/YNK/E-PMT No-06/AG/30/2022-23",
+      "agreement_date": "02.09.2022",
+      "contractor": "Nandi Construction",
+      "amount_quoted_rupees": 111567103.78,
+      "variance_raw": "+1.76% above amount put to tender",
+      "dlp_raw": "defect liability period of 3 years from the date of completion of the work",
+      "work_code": "002-23-000003",
+      "notes": "CIVIL contract for PACKAGE No-02 ('Improvements to roads, drains and other developmental works at 5th phase, Puttenahalli... ward No 02 & 04 of Yelahanka Division'). This matches works.json's description field for 002-23-000003 exactly, but works.json's contractor field says 'SRI SAI CONSULTANTS' (a DPR consultancy, see the third Agreement below) rather than Nandi Construction -- the source ds3 contractorname column appears to have captured a consultant, not the executing civil contractor, for this job number. Treated as the civil contract for grading purposes based on description match, not contractor-name match. Tender number not stated on this Agreement itself; confirmed separately as BBMP/EE/YNK.D/E-PMT/06/2022-23 dated 24-06-2022 via the companion Tender Documents PDF (item 2 in a 6-package bundled tender, tender put amount Rs.1100.00 lakhs -- consistent with the quoted amount here)."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/002-23-000003/WO-6--22248624-ag.pdf",
+    "source_filename": "WO-6--22248624-ag.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "EE/YNK.D/AG/19/2022-23",
+      "agreement_date": "04/06/2022",
+      "tender_number": null,
+      "amount_quoted_rupees": 1249000.0,
+      "work_code": "002-23-000003",
+      "notes": "Sri Sai Consultants -- DPR-preparation consultancy (Detailed Project Report, Field Survey, Basic Drawing, Detailed Cost Estimate) for the same PACKAGE No-02, a different scope than the Newzen supervision PMC contract. This is the contractor recorded in works.json for 002-23-000003, even though it is a consultancy, not the executing civil contractor. is_pmc=true. 4-week term, no DLP (not applicable to a consultancy)."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/002-23-000003/WO-6--34115296-ag.pdf",
+    "source_filename": "WO-6--34115296-ag.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "BBMP/EE/YNK.D/E-PMT-12/AG/117/2022-23",
+      "agreement_date": "10/02/2023",
+      "contractor": "Ramesh Y B",
+      "amount_quoted_rupees": 1117691.0,
+      "variance_raw": "-12.00% below amount put to tender",
+      "dlp_raw": "one year",
+      "work_code": "002-23-000003",
+      "unreadable": false,
+      "notes": "CONTRADICTION -- this Agreement is for a completely different, unrelated work ('Improvements to Roads and drains in Susheelamma layout and ISAAC layout in Chowdeshwari ward no-02'), evidently misfiled under job number 002-23-000003. Different contractor (Ramesh Y B, an individual, not Nandi Construction), different DLP (1 year vs the PACKAGE No-02 civil contract's 3 years), much smaller amount (Rs.11.17 lakhs vs Rs.11.15 crore). Per EXTRACTION_PROMPT.md rule 7, recording rather than resolving: this record should NOT be used as the civil contract for 002-23-000003's Track 3/4 grading -- WO-6--18676564-ag.pdf (Nandi Construction) is the correct civil agreement for the PACKAGE No-02 description in works.json."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/002-23-000003/WO-9--48672304-tenderdoc.pdf",
+    "source_filename": "WO-9--48672304-tenderdoc.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "tender_number": "BBMP/EE/YNK.D/E-PMT/06/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "24-06-2022",
+      "amount_put_to_tender_rupees": 110000000.0,
+      "dlp_raw": "as per Commissioner Order No: G-5317/2012-13 dated 28.09.2012",
+      "work_code": "002-23-000003",
+      "notes": "This is the CIVIL works tender (6-package bundle); item 2 = PACKAGE No-02, tender put amount Rs.1100.00 lakhs, 180-day completion period. Confirms the tender number for the Nandi Construction civil Agreement (WO-6--18676564-ag.pdf), which did not itself state a tender number. DLP is set by reference to a standing Commissioner Order rather than spelled out as a duration on this document -- consistent with the 3-year DLP stated explicitly on the Agreement."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/002-23-000003/WO-9--79552577-TENDER_NOTIFICATION.pdf",
+    "source_filename": "WO-9--79552577-TENDER_NOTIFICATION.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "tender_number": "BBMP/YNK/EE(Project)/TEND/10/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "04.08.2022",
+      "work_code": "002-23-000003",
+      "notes": "PMC (supervision) consultancy tender -- item 8 in a 21-package bundle matches PACKAGE No-02. This is the tender referenced by the Newzen PMC Agreement (WO-6--77281446-AGREEMENT.pdf), not the civil works tender."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/002-23-000003/WO-9--64704507-tender_doc123.pdf",
+    "source_filename": "WO-9--64704507-tender_doc123.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "tender_number": "BBMP/YNK-D/EE/E-PMT-02/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "27/04/2022",
+      "work_code": "002-23-000003",
+      "notes": "DPR-preparation consultancy tender -- item 2 in a 6-package bundle matches PACKAGE No-02 (Rs.12.5 lakhs approx value). This is the tender referenced by the Sri Sai Consultants DPR Agreement (WO-6--22248624-ag.pdf), not the civil works tender."
+    }
+  },
+  {
+    "job_number": "002-23-000003",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/002-23-000003/WO-9--39344840-Tender_doc12.pdf",
+    "source_filename": "WO-9--39344840-Tender_doc12.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "tender_number": "EE/YNK/BBMP/E-PMT/12/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "26-08-2022",
+      "work_code": "002-23-000003",
+      "notes": "Bundle of small independent civil works (footpaths, borewells, street name boards, RO plants) in Kempegowda ward-01 and Chowdeshwari ward-02. This is the tender that corresponds to the misfiled Ramesh Y B Agreement (WO-6--34115296-ag.pdf) -- its work description (Susheelamma/ISAAC layout, Chowdeshwari ward-02) does not appear as a distinct line item in the 8 items visible on the pages read, but the ward and office match; not confirmed as an exact line-item match. Unrelated to PACKAGE No-02, the actual civil contract for this job number."
+    }
+  },
+  {
+    "job_number": "009-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/009-23-000003/WO-6--65536333-009-23-000003_Agreement.pdf",
+    "source_filename": "WO-6--65536333-009-23-000003_Agreement.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "76/22-23",
+      "agreement_date": "21 November 2022",
+      "contractor": "SMLP Asphalts (Sri B B Umesha)",
+      "job_number_on_document": "009-23-000003",
+      "indent_number": "52489",
+      "tender_number": "EE/BTP/BBMP/E-PMT/10/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "04-07-2022",
+      "administrative_approval": "AS/EE(BTP)/34/2022-23, Date: 14-10-2022",
+      "technical_sanction": "TS/CE/(YNK)/38/2022-23, Date: 01-07-2022",
+      "govt_approval_reference": "GO 469 dated 13-10-2022",
+      "amount_quoted_rupees": 131041087.0,
+      "variance_raw": "+4.98% above Issue Rates as on 07-07-2022",
+      "dlp_raw": "three year from the date of final bill",
+      "work_code": "009-23-000003",
+      "notes": "CIVIL contract for PACKAGE NO. 06 (14 works). Exceptionally well-formed record -- job number, indent number, tender number, administrative approval, technical sanction, and government approval number are all stated explicitly on the document itself, several of which cross-reference other documents in this folder (Tender_Approval_Package-6__GO_469-13.10.2022_.pdf matches the govt approval reference exactly). Matches works.json's contractor field (S M L P Asphalts) -- unlike 002-23-000003, no misattribution here."
+    }
+  },
+  {
+    "job_number": "009-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/009-23-000003/WO-6--19008310-AGREEMENT.pdf",
+    "source_filename": "WO-6--19008310-AGREEMENT.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "EE/P-YZ/AGR/49/2022-23",
+      "agreement_date": "03/12/2022",
+      "tender_number": "BBMP/YNK/EE(P)/TEND/10/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "04/08/2022",
+      "amount_quoted_rupees": 1370000.0,
+      "work_code": "009-23-000003",
+      "notes": "Mecadez Core Technologies Pvt Ltd -- Project Management Consultancy (supervision, quality control, quantity assessment) for the same PACKAGE NO. 06 (14 works). is_pmc=true. No DLP (consultancy, not works contract)."
+    }
+  },
+  {
+    "job_number": "009-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/009-23-000003/WO-6--08935339-009-23-000003_Agreement.pdf",
+    "source_filename": "WO-6--08935339-009-23-000003_Agreement.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "EE/BBMP/BTP/AGR/86/2022-23",
+      "agreement_date": "24/06/2022",
+      "tender_number": "EE/BTP/BBMP/E-PMT/05/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "26.05.2022",
+      "amount_quoted_rupees": 1480000.0,
+      "work_code": "009-23-000003",
+      "notes": "Rudraprasad Consultants -- DPR-preparation consultancy (Detailed Project Report, Field Survey, Basic Drawing, Detailed Cost Estimate) for the same PACKAGE No. 06 (14 works), a different scope/tender than the Mecadez supervision PMC. is_pmc=true. No DLP (consultancy)."
+    }
+  },
+  {
+    "job_number": "009-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/009-23-000003/WO-6--70822925-aggreement_.pdf",
+    "source_filename": "WO-6--70822925-aggreement_.pdf",
+    "method": "text",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "10/22-23",
+      "contractor": "Sri U Suresh",
+      "indent_number": "46",
+      "tender_number": "EE/BTP/BBMP/E-PMT/16/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "16-09-2022",
+      "administrative_approval": "AS/CE(YLK)/102/2022-23, Date: 16-09-2022",
+      "technical_sanction": "TS/EE/(BTP)37/2022-23, Date: 12-10-2022",
+      "amount_quoted_rupees": 1511544.0,
+      "variance_raw": "-15.15% below",
+      "dlp_raw": "defect liability period for Civil works & Asphalt works upto 20mm thick maintenance period is one year, more than 20mm thick maintenance period is three year from the date of final bill",
+      "work_code": "009-23-000003",
+      "notes": "CONTRADICTION -- like 002-23-000003's Ramesh Y B agreement, this is a different, unrelated work misfiled under this job number: 'Engaging Tractor and labour for Daily Maintenance of Drains, Shoulder Drains, Culverts etc in ward no. 09, Amruthahalli', Indent No. 46, a different contractor (Sri U Suresh) and a much smaller amount (Rs.15.11 lakhs vs Rs.13.10 crore). Per EXTRACTION_PROMPT.md rule 7, recording rather than resolving: not used as the civil contract for Track 3/4 grading. Interesting independently: this document states a two-tier DLP by work type (1 year for asphalt <=20mm thick, 3 years for civil works and thicker asphalt) rather than a single flat period -- a form not seen elsewhere in this project so far."
+    }
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/003-23-000006/WO-9--74137930-RFP_DPR__5.pdf",
+    "source_filename": "WO-9--74137930-RFP DPR  5.pdf",
+    "method": "text",
+    "is_pmc": true,
+    "fields": {
+      "tender_number": "BBMP/YNK/EE (Project)/TEND/02/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "27-04-2022",
+      "estimate_rupees": 160000000.0,
+      "work_code": "003-23-000006",
+      "notes": "Blank RFP template for DPR-preparation consultancy, PACKAGE No-05. Estimated cost of work stated as Rs.1600.00 Lakhs (Form F-2, item 1) -- this is the estimate for the underlying civil works package, not the consultancy fee. No filled-in amounts on this document (it is the tender document, not the executed agreement). is_pmc=true."
+    }
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Agreement",
+    "pdf": "pdfs/003-23-000006/WO-6--43518619-AGREEMENT.pdf",
+    "source_filename": "WO-6--43518619-AGREEMENT.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "EE/P-YZ/AGR/ /2022-23",
+      "tender_number": "BBMP/YNK/EE(P)/TEND/10/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "04/08/2022",
+      "amount_quoted_rupees": 1590000.0,
+      "work_code": "003-23-000006",
+      "notes": "Rudraprasad Consultants -- PMC (supervision) contract for PACKAGE No-05. Agreement number and date left blank on this copy. is_pmc=true. Same firm and same tender as the DPR consultancy below -- Rudraprasad Consultants holds both the DPR and PMC contracts for this package, matching the pattern seen at 009-23-000003 (though there it was two different firms)."
+    }
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Agreement",
+    "pdf": "pdfs/003-23-000006/WO-6--73901424-agreement_alter.pdf",
+    "source_filename": "WO-6--73901424-agreement_alter.pdf",
+    "method": "vision",
+    "is_pmc": true,
+    "fields": {
+      "agreement_number": "EE/P-YZ/AGR/08/2022-23",
+      "agreement_date": "02/09/2022",
+      "tender_number": "BBMP/YNK/EE(P)/TEND/02/2022-23",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "27/04/2022",
+      "amount_quoted_rupees": 1590000.0,
+      "work_code": "003-23-000006",
+      "notes": "Rudraprasad Consultants -- DPR-preparation consultancy for PACKAGE No-05 (matches the blank RFP template read separately, WO-9--74137930-RFP_DPR__5.pdf, same tender number). is_pmc=true. No DLP (consultancy)."
+    }
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Agreement",
+    "pdf": "pdfs/003-23-000006/WO-6-L2-ifms235-53632146-2-Agreement_.pdf",
+    "source_filename": "WO-6-L2-ifms235-53632146-2-Agreement_.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "EE/Project/AG No: 11/2022-23",
+      "agreement_date": "02/09/2022",
+      "contractor": "K Gopireddy",
+      "tender_number": "BBMP/YNK/EE (Project)/TEND/06/2021-22",
+      "tender_number_form": "bbmp_prose",
+      "tender_published_date": "24/06/2022",
+      "eproc_notification_number": "BBMP/2022-23/OW/WORK_INDENT52207",
+      "govt_approval_reference": "Govt Order No. UDD 387 MNY 2022 (E), Bangalore Dt: 17-08-2022",
+      "amount_quoted_rupees": 142199579.0,
+      "variance_raw": "+1.63% above on CSR and Applicable GST Charges",
+      "completion_period_raw": "09 months including monsoon",
+      "dlp_raw": "12 months from the date of completion of the work",
+      "work_code": "003-23-000006",
+      "notes": "CIVIL contract for PACKAGE No-05 -- description matches works.json exactly. works.json's contractor field says 'RUDRAPRASAD CONSULT' (the DPR/PMC firm), not K Gopireddy, the same contractor-attribution error seen at 002-23-000003 (now a second confirmed instance -- likely systemic in the source ds3 contractorname column whenever a job has both consultancy and civil agreements). Treated as the civil contract based on description match. Note the tender-number/date inconsistency: the tender notification number cites FY 2021-22 (TEND/06/2021-22) but is dated 24/06/2022, which falls in FY 2022-23 -- recorded as-is per rule 7, not resolved."
+    }
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Agreement",
+    "pdf": "pdfs/003-23-000006/WO-6--68972898-AGREEMENT.pdf",
+    "source_filename": "WO-6--68972898-AGREEMENT.pdf",
+    "method": "vision",
+    "is_pmc": false,
+    "fields": {
+      "agreement_number": "BBMP/EE/YNK.D/E-PMT-12/AG/76/2022-23",
+      "agreement_date": "31/12/2022",
+      "contractor": "Anjan Kumar Y A",
+      "amount_quoted_rupees": 1185627.0,
+      "variance_raw": "-6.69% below amount put to tender",
+      "dlp_raw": "one year from the date of completion of the work",
+      "dlp_governing_order": "Govt Order No (P-1) 876/12/1 dated 12-10-2017, KTPP rule 27A",
+      "work_code": "003-23-000006",
+      "notes": "CONTRADICTION -- another unrelated work misfiled under this job number, following the same pattern already seen twice (002-23-000003, 009-23-000003): 'Desilting of drain removing debris at Chikkabommasandra village and surrounding area in Someshwara ward no-03', a different contractor and much smaller amount than PACKAGE No-05's civil contract. Not used as the civil contract for Track 3/4 grading. This misfiling pattern (a small unrelated maintenance/desilting/tractor-hire agreement landing in the same job-number folder as a larger roads-and-drains package) has now recurred in 3 of 5 works checked in this batch, suggesting it reflects how ds3's underlying document attachment process groups files rather than being random noise."
+    }
   }
 ]

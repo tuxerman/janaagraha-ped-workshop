@@ -1,0 +1,56 @@
+[
+  {
+    "job_number": "006-20-000179",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/006-20-000179/WO-9-L3-ifms218-87621674-3-rfp-pmc__4.pdf",
+    "source_filename": "WO-9-L3-ifms218-87621674-3-rfp-pmc  4.pdf",
+    "method": "text",
+    "text_file": "text/006-20-000179/WO-9-L3-ifms218-87621674-3-rfp-pmc__4.txt",
+    "text_chars": 34650
+  },
+  {
+    "job_number": "006-23-000001",
+    "doctype": "Agreement",
+    "pdf": "pdfs/006-23-000001/WO-6--41609821-Agreement.pdf",
+    "source_filename": "WO-6--41609821-Agreement.pdf",
+    "method": "text",
+    "text_file": "text/006-23-000001/WO-6--41609821-Agreement.txt",
+    "text_chars": 15562
+  },
+  {
+    "job_number": "006-23-000001",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/006-23-000001/WO-9--11010499-Tender_Notification-20_SC-ST__P-1878__Buildings.pdf",
+    "source_filename": "WO-9--11010499-Tender Notification-20 SC-ST (P-1878) Buildings.pdf",
+    "method": "text",
+    "text_file": "text/006-23-000001/WO-9--11010499-Tender_Notification-20_SC-ST__P-1878__Buildings.txt",
+    "text_chars": 27134
+  },
+  {
+    "job_number": "009-23-000003",
+    "doctype": "Agreement",
+    "pdf": "pdfs/009-23-000003/WO-6--70822925-aggreement_.pdf",
+    "source_filename": "WO-6--70822925-aggreement .pdf",
+    "method": "text",
+    "text_file": "text/009-23-000003/WO-6--70822925-aggreement_.txt",
+    "text_chars": 20765
+  },
+  {
+    "job_number": "307-23-000125",
+    "doctype": "Agreement",
+    "pdf": "pdfs/307-23-000125/WO-6-L2-aee1mahifms313-64094550-2-agreement__2_.pdf",
+    "source_filename": "WO-6-L2-aee1mahifms313-64094550-2-agreement (2).pdf",
+    "method": "text",
+    "text_file": "text/307-23-000125/WO-6-L2-aee1mahifms313-64094550-2-agreement__2_.txt",
+    "text_chars": 16412
+  },
+  {
+    "job_number": "003-23-000006",
+    "doctype": "Tender Documents",
+    "pdf": "pdfs/003-23-000006/WO-9--74137930-RFP_DPR__5.pdf",
+    "source_filename": "WO-9--74137930-RFP DPR  5.pdf",
+    "method": "text",
+    "text_file": "text/003-23-000006/WO-9--74137930-RFP_DPR__5.txt",
+    "text_chars": 36205
+  }
+]

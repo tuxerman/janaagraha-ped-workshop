@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Track 1/3/4 Extraction Review</title>
+<title>Extraction Review — Tender Ref / DLP Clause / Amounts</title>
 <style>
   :root {
     --strong: #1a7f37;
@@ -57,20 +57,41 @@
   }
   .toolbar .count { color: var(--muted); font-size: 13px; margin-left: auto; }
 
-  .summary-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
-  }
-  .summary-chip {
+  .summary-bar { margin-bottom: 36px; }
+  .summary-table {
+    border-collapse: collapse;
+    font-size: 13px;
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 9px 16px;
-    font-size: 13px;
+    overflow: hidden;
   }
-  .summary-chip b { font-variant-numeric: tabular-nums; }
+  .summary-table caption {
+    text-align: left;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    caption-side: top;
+  }
+  .summary-table th, .summary-table td {
+    padding: 7px 16px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-table tr:last-child th, .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table th:first-child, .summary-table td:first-child { text-align: left; font-weight: 600; }
+  .summary-table thead th {
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid var(--border);
+  }
+  .summary-table td.confident { color: #1a7f37; }
+  .summary-table td.review { color: #9a6700; }
+  .summary-table td.unclear { color: #cf222e; }
 
   .card {
     background: var(--panel);
@@ -194,7 +215,7 @@
 <body>
 <div class="page">
 
-<h1>Track 1 / 3 / 4 — Extraction Review</h1>
+<h1>Tender Ref / DLP Clause / Amounts — Extraction Review</h1>
 <div class="subtitle">
   Read-only. Loads <code>review_queue.json</code> directly &mdash; nothing here writes back to any datastore.
 </div>
@@ -204,15 +225,15 @@
 <div class="toolbar">
   <input type="text" id="search" placeholder="Search job number, description, contractor…">
   <select id="filterTrack">
-    <option value="">All tracks</option>
-    <option value="track1_tender_link">Track 1 (tender link)</option>
-    <option value="track3_dlp">Track 3 (DLP)</option>
-    <option value="track4_amounts">Track 4 (amounts)</option>
+    <option value="">All fields</option>
+    <option value="track1_tender_link">Tender Ref</option>
+    <option value="track3_dlp">DLP Clause</option>
+    <option value="track4_amounts">Amounts</option>
   </select>
   <select id="filterConf">
     <option value="">Any confidence</option>
-    <option value="STRONG">STRONG</option>
-    <option value="NEEDS_REVIEW">NEEDS_REVIEW</option>
+    <option value="STRONG">CONFIDENT</option>
+    <option value="NEEDS_REVIEW">NEEDS REVIEW</option>
     <option value="UNCLEAR">UNCLEAR</option>
   </select>
   <span class="count" id="resultCount"></span>
@@ -231,8 +252,12 @@ function fmtRupees(n) {
   return "₹" + Number(n).toLocaleString("en-IN", {maximumFractionDigits: 2});
 }
 
-function badge(conf) {
-  return `<span class="badge ${conf}">${conf.replace('_',' ')}</span>`;
+const CONF_DISPLAY = {STRONG: 'CONFIDENT', NEEDS_REVIEW: 'NEEDS REVIEW', UNCLEAR: 'UNCLEAR'};
+
+function badge(conf, label) {
+  const shown = CONF_DISPLAY[conf] || conf.replace('_',' ');
+  const text = label ? `${label}: ${shown}` : shown;
+  return `<span class="badge ${conf}">${text}</span>`;
 }
 
 function fact(label, value, isMoney) {
@@ -309,7 +334,7 @@ function renderCard(w) {
           <span class="sep">&middot;</span>${w.documents_total} attachments, ${w.documents_extracted} read
         </div>
       </div>
-      <div class="badges">${badge(t1.confidence)}${badge(t3.confidence)}${badge(t4.confidence)}</div>
+      <div class="badges">${badge(t1.confidence, 'Tender Ref')}${badge(t3.confidence, 'DLP Clause')}${badge(t4.confidence, 'Amounts')}</div>
     </div>
     <div class="card-body">
       <div class="top-facts">
@@ -319,9 +344,9 @@ function renderCard(w) {
         ${fact("Estimate", t4.estimate_rupees, true)}
       </div>
       <div class="tracks">
-        ${trackBlock("Track 1 — Tender link", t1, t1rows)}
-        ${trackBlock("Track 3 — DLP", t3, t3rows)}
-        ${trackBlock("Track 4 — Amounts", t4, t4rows)}
+        ${trackBlock("Tender Ref", t1, t1rows)}
+        ${trackBlock("DLP Clause", t3, t3rows)}
+        ${trackBlock("Amounts", t4, t4rows)}
       </div>
       ${anyNote ? `<div class="notes-box"><b>Notes:</b> ${anyNote}</div>` : ''}
       <div class="docs">
@@ -340,16 +365,23 @@ function renderSummary(data) {
       tally[k][c] = (tally[k][c]||0) + 1;
     });
   });
-  const labels = {track1_tender_link: 'Track 1', track3_dlp: 'Track 3', track4_amounts: 'Track 4'};
-  let html = `<div class="summary-chip"><b>${data.length}</b> works total</div>`;
+  const labels = {track1_tender_link: 'Tender Ref', track3_dlp: 'DLP Clause', track4_amounts: 'Amounts'};
+  let rows = '';
   Object.keys(labels).forEach(k => {
     const t = tally[k];
-    html += `<div class="summary-chip">${labels[k]}:
-      <b style="color:#1a7f37">${t.STRONG||0}</b> strong ·
-      <b style="color:#9a6700">${t.NEEDS_REVIEW||0}</b> review ·
-      <b style="color:#cf222e">${t.UNCLEAR||0}</b> unclear</div>`;
+    rows += `<tr>
+      <th scope="row">${labels[k]}</th>
+      <td class="confident">${t.STRONG||0}</td>
+      <td class="review">${t.NEEDS_REVIEW||0}</td>
+      <td class="unclear">${t.UNCLEAR||0}</td>
+    </tr>`;
   });
-  document.getElementById('summaryBar').innerHTML = html;
+  document.getElementById('summaryBar').innerHTML = `
+    <table class="summary-table">
+      <caption>${data.length} works total</caption>
+      <thead><tr><th scope="col"></th><th scope="col">Confident</th><th scope="col">Needs review</th><th scope="col">Unclear</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
 }
 
 function applyFilters() {

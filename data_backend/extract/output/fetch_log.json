@@ -926,5 +926,788 @@
     "path": "pdfs/129-23-000009/WO-9--80775918-tender.pdf",
     "status": "cached",
     "bytes": 10244665
+  },
+  {
+    "job_number": "129-23-000006",
+    "filename": "WO-6--39146721-AGEE.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--39146721-AGEE.pdf",
+    "path": "pdfs/129-23-000006/WO-6--39146721-AGEE.pdf",
+    "status": "ok",
+    "bytes": 2924915,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "129-23-000006",
+    "filename": "WO-9--84746804-tender.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--84746804-tender.pdf",
+    "path": "pdfs/129-23-000006/WO-9--84746804-tender.pdf",
+    "status": "ok",
+    "bytes": 10085014,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-6--08935339-009-23-000003 Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--08935339-009-23-000003%20Agreement.pdf",
+    "path": "pdfs/009-23-000003/WO-6--08935339-009-23-000003_Agreement.pdf",
+    "status": "ok",
+    "bytes": 2588231,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-6--19008310-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--19008310-AGREEMENT.pdf",
+    "path": "pdfs/009-23-000003/WO-6--19008310-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 297252,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-6--65536333-009-23-000003 Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--65536333-009-23-000003%20Agreement.pdf",
+    "path": "pdfs/009-23-000003/WO-6--65536333-009-23-000003_Agreement.pdf",
+    "status": "ok",
+    "bytes": 1005400,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-6--70822925-aggreement .pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--70822925-aggreement%20.pdf",
+    "path": "pdfs/009-23-000003/WO-6--70822925-aggreement_.pdf",
+    "status": "ok",
+    "bytes": 1583223,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--00279099-Notification 10-(22-23).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--00279099-Notification%2010-%2822-23%29.pdf",
+    "path": "pdfs/009-23-000003/WO-9--00279099-Notification_10-_22-23_.pdf",
+    "status": "ok",
+    "bytes": 3315802,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--13192200-Notification 16-(22-23).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--13192200-Notification%2016-%2822-23%29.pdf",
+    "path": "pdfs/009-23-000003/WO-9--13192200-Notification_16-_22-23_.pdf",
+    "status": "ok",
+    "bytes": 3718723,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--34003029-Tender Approval Package-6 (GO 469-13.10.2022).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--34003029-Tender%20Approval%20Package-6%20%28GO%20469-13.10.2022%29.pdf",
+    "path": "pdfs/009-23-000003/WO-9--34003029-Tender_Approval_Package-6__GO_469-13.10.2022_.pdf",
+    "status": "ok",
+    "bytes": 1823770,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--53859679-Notification 05-(22-23).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--53859679-Notification%2005-%2822-23%29.pdf",
+    "path": "pdfs/009-23-000003/WO-9--53859679-Notification_05-_22-23_.pdf",
+    "status": "ok",
+    "bytes": 1603082,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--68187831-009-23-000003 Online Tender Approval.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--68187831-009-23-000003%20Online%20Tender%20Approval.pdf",
+    "path": "pdfs/009-23-000003/WO-9--68187831-009-23-000003_Online_Tender_Approval.pdf",
+    "status": "ok",
+    "bytes": 315046,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "009-23-000003",
+    "filename": "WO-9--73194655-PAPER NOTIFICATION.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--73194655-PAPER%20NOTIFICATION.pdf",
+    "path": "pdfs/009-23-000003/WO-9--73194655-PAPER_NOTIFICATION.pdf",
+    "status": "ok",
+    "bytes": 472680,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-6--18676564-ag.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--18676564-ag.pdf",
+    "path": "pdfs/002-23-000003/WO-6--18676564-ag.pdf",
+    "status": "ok",
+    "bytes": 1542039,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-6--22248624-ag.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--22248624-ag.pdf",
+    "path": "pdfs/002-23-000003/WO-6--22248624-ag.pdf",
+    "status": "ok",
+    "bytes": 1994751,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-6--34115296-ag.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--34115296-ag.pdf",
+    "path": "pdfs/002-23-000003/WO-6--34115296-ag.pdf",
+    "status": "ok",
+    "bytes": 923284,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-6--77281446-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--77281446-AGREEMENT.pdf",
+    "path": "pdfs/002-23-000003/WO-6--77281446-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 1199143,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-9--39344840-Tender doc12.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--39344840-Tender%20doc12.pdf",
+    "path": "pdfs/002-23-000003/WO-9--39344840-Tender_doc12.pdf",
+    "status": "ok",
+    "bytes": 7127113,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-9--48672304-tenderdoc.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--48672304-tenderdoc.pdf",
+    "path": "pdfs/002-23-000003/WO-9--48672304-tenderdoc.pdf",
+    "status": "ok",
+    "bytes": 4159740,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-9--64704507-tender doc123.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--64704507-tender%20doc123.pdf",
+    "path": "pdfs/002-23-000003/WO-9--64704507-tender_doc123.pdf",
+    "status": "ok",
+    "bytes": 2302968,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "002-23-000003",
+    "filename": "WO-9--79552577-TENDER NOTIFICATION.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--79552577-TENDER%20NOTIFICATION.pdf",
+    "path": "pdfs/002-23-000003/WO-9--79552577-TENDER_NOTIFICATION.pdf",
+    "status": "ok",
+    "bytes": 2201697,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "025-20-000028",
+    "filename": "WO-6-L4-ifms357-40622843-4-Agree.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L4-ifms357-40622843-4-Agree.pdf",
+    "path": "pdfs/025-20-000028/WO-6-L4-ifms357-40622843-4-Agree.pdf",
+    "status": "ok",
+    "bytes": 1181321,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "025-20-000028",
+    "filename": "WO-9-L4-ifms357-26099611-4-tender document 05.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L4-ifms357-26099611-4-tender%20document%2005.pdf",
+    "path": "pdfs/025-20-000028/WO-9-L4-ifms357-26099611-4-tender_document_05.pdf",
+    "status": "ok",
+    "bytes": 3828715,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--15206701-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--15206701-AGREEMENT.pdf",
+    "path": "pdfs/006-23-000001/WO-6--15206701-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 1197708,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--15595462-006-23-000001 DPR Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--15595462-006-23-000001%20DPR%20Agreement.pdf",
+    "path": "pdfs/006-23-000001/WO-6--15595462-006-23-000001_DPR_Agreement.pdf",
+    "status": "ok",
+    "bytes": 2414711,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--29655535-006-23-000001 PMC Agreement W-6 (3).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--29655535-006-23-000001%20PMC%20Agreement%20W-6%20%283%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--29655535-006-23-000001_PMC_Agreement_W-6__3_.pdf",
+    "status": "ok",
+    "bytes": 2990634,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--32531260-006-23-000001 DPR Agreement W-6(3).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--32531260-006-23-000001%20DPR%20Agreement%20W-6%283%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--32531260-006-23-000001_DPR_Agreement_W-6_3_.pdf",
+    "status": "ok",
+    "bytes": 2022228,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--33229122-006-23-000001 PMC Agreement W-6(1).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--33229122-006-23-000001%20PMC%20Agreement%20W-6%281%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--33229122-006-23-000001_PMC_Agreement_W-6_1_.pdf",
+    "status": "ok",
+    "bytes": 3342577,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--41609821-Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--41609821-Agreement.pdf",
+    "path": "pdfs/006-23-000001/WO-6--41609821-Agreement.pdf",
+    "status": "ok",
+    "bytes": 1580546,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--58103341-006-23-000001 Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--58103341-006-23-000001%20Agreement.pdf",
+    "path": "pdfs/006-23-000001/WO-6--58103341-006-23-000001_Agreement.pdf",
+    "status": "ok",
+    "bytes": 1341389,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--64054867-006-23-000001 DPR Agreement W-6(2).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--64054867-006-23-000001%20DPR%20Agreement%20W-6%282%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--64054867-006-23-000001_DPR_Agreement_W-6_2_.pdf",
+    "status": "ok",
+    "bytes": 2046313,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--69552980-006-23-000001 PMC Agreement W-6 (2).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--69552980-006-23-000001%20PMC%20Agreement%20W-6%20%282%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--69552980-006-23-000001_PMC_Agreement_W-6__2_.pdf",
+    "status": "ok",
+    "bytes": 3357376,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--85808328-Agreement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--85808328-Agreement.pdf",
+    "path": "pdfs/006-23-000001/WO-6--85808328-Agreement.pdf",
+    "status": "ok",
+    "bytes": 722107,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-6--96631924-006-23-000001 DPR Agreement W-6(1).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--96631924-006-23-000001%20DPR%20Agreement%20W-6%281%29.pdf",
+    "path": "pdfs/006-23-000001/WO-6--96631924-006-23-000001_DPR_Agreement_W-6_1_.pdf",
+    "status": "ok",
+    "bytes": 2331407,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--05587658-process-history (12).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--05587658-process-history%20%2812%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--05587658-process-history__12_.pdf",
+    "status": "ok",
+    "bytes": 26097231,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--11010499-Tender Notification-20 SC-ST (P-1878) Buildings.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--11010499-Tender%20Notification-20%20SC-ST%20%28P-1878%29%20Buildings.pdf",
+    "path": "pdfs/006-23-000001/WO-9--11010499-Tender_Notification-20_SC-ST__P-1878__Buildings.pdf",
+    "status": "ok",
+    "bytes": 3232681,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--32218530-006-23-000001 DPR Tender Doc W-6(2).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--32218530-006-23-000001%20DPR%20Tender%20Doc%20W-6%282%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--32218530-006-23-000001_DPR_Tender_Doc_W-6_2_.pdf",
+    "status": "ok",
+    "bytes": 2654150,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--38216495-006-23-000001 Govt. AS & Tender Approved order.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--38216495-006-23-000001%20Govt.%20AS%20%26%20Tender%20Approved%20order.pdf",
+    "path": "pdfs/006-23-000001/WO-9--38216495-006-23-000001_Govt._AS___Tender_Approved_order.pdf",
+    "status": "ok",
+    "bytes": 1817097,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--38216495-006-23-000001 Tender Technical approval Note.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--38216495-006-23-000001%20Tender%20Technical%20approval%20Note.pdf",
+    "path": "pdfs/006-23-000001/WO-9--38216495-006-23-000001_Tender_Technical_approval_Note.pdf",
+    "status": "ok",
+    "bytes": 1208551,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--38344511-Notification 07-21-22 for IT Advisor.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--38344511-Notification%2007-21-22%20for%20IT%20Advisor.pdf",
+    "path": "pdfs/006-23-000001/WO-9--38344511-Notification_07-21-22_for_IT_Advisor.pdf",
+    "status": "ok",
+    "bytes": 1580615,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--39894765-006-23-000001 DPR Tender Doc W-6(3).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--39894765-006-23-000001%20DPR%20Tender%20Doc%20W-6%283%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--39894765-006-23-000001_DPR_Tender_Doc_W-6_3_.pdf",
+    "status": "ok",
+    "bytes": 2549284,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--46623550-006-23-000001 Bank Guarantee (FSD).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--46623550-006-23-000001%20Bank%20Guarantee%20%28FSD%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--46623550-006-23-000001_Bank_Guarantee__FSD_.pdf",
+    "status": "ok",
+    "bytes": 1836779,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--48564445-Notification 04-(22-23).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--48564445-Notification%2004-%2822-23%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--48564445-Notification_04-_22-23_.pdf",
+    "status": "ok",
+    "bytes": 2832489,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--50117685-006-23-000001 PMC Tender Doc W-6 (3).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--50117685-006-23-000001%20PMC%20Tender%20Doc%20W-6%20%283%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--50117685-006-23-000001_PMC_Tender_Doc_W-6__3_.pdf",
+    "status": "ok",
+    "bytes": 2739191,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--53717901-Comparatvie Statement.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--53717901-Comparatvie%20Statement.pdf",
+    "path": "pdfs/006-23-000001/WO-9--53717901-Comparatvie_Statement.pdf",
+    "status": "ok",
+    "bytes": 2501895,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--62174539-006-23-000001 PMC Tender Doc W-6 (2).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--62174539-006-23-000001%20PMC%20Tender%20Doc%20W-6%20%282%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--62174539-006-23-000001_PMC_Tender_Doc_W-6__2_.pdf",
+    "status": "ok",
+    "bytes": 2871987,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--65113426-006-23-000001 PMC Tender Doc W-6(1).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--65113426-006-23-000001%20PMC%20Tender%20Doc%20W-6%281%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--65113426-006-23-000001_PMC_Tender_Doc_W-6_1_.pdf",
+    "status": "ok",
+    "bytes": 2673258,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--80203253-006-23-000001 DPR Tender Doc W-6(1).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--80203253-006-23-000001%20DPR%20Tender%20Doc%20W-6%281%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--80203253-006-23-000001_DPR_Tender_Doc_W-6_1_.pdf",
+    "status": "ok",
+    "bytes": 2691925,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--85149813-Notification 10-(22-23).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--85149813-Notification%2010-%2822-23%29.pdf",
+    "path": "pdfs/006-23-000001/WO-9--85149813-Notification_10-_22-23_.pdf",
+    "status": "ok",
+    "bytes": 3315802,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--91421231-PAPER NOTIFICATION.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--91421231-PAPER%20NOTIFICATION.pdf",
+    "path": "pdfs/006-23-000001/WO-9--91421231-PAPER_NOTIFICATION.pdf",
+    "status": "ok",
+    "bytes": 472680,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-23-000001",
+    "filename": "WO-9--95984766-006-23-000001 Tender Technical & Financial bid approval note.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--95984766-006-23-000001%20Tender%20Technical%20%26%20Financial%20bid%20approval%20note.pdf",
+    "path": "pdfs/006-23-000001/WO-9--95984766-006-23-000001_Tender_Technical___Financial_bid_approval_note.pdf",
+    "status": "ok",
+    "bytes": 3661146,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-6--07038347-ag.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--07038347-ag.pdf",
+    "path": "pdfs/003-23-000003/WO-6--07038347-ag.pdf",
+    "status": "ok",
+    "bytes": 1373529,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-6--65245335-agreement mohan.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--65245335-agreement%20mohan.pdf",
+    "path": "pdfs/003-23-000003/WO-6--65245335-agreement_mohan.pdf",
+    "status": "ok",
+    "bytes": 3184836,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-6-L2-ifms235-14116411-2-AGREEMENT ALTER.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L2-ifms235-14116411-2-AGREEMENT%20ALTER.pdf",
+    "path": "pdfs/003-23-000003/WO-6-L2-ifms235-14116411-2-AGREEMENT_ALTER.pdf",
+    "status": "ok",
+    "bytes": 960922,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-6-L2-ifms235-37090856-2-PMC AGREEMENT ALTER.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L2-ifms235-37090856-2-PMC%20AGREEMENT%20ALTER.pdf",
+    "path": "pdfs/003-23-000003/WO-6-L2-ifms235-37090856-2-PMC_AGREEMENT_ALTER.pdf",
+    "status": "ok",
+    "bytes": 1320522,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-6-L2-ifms235-42685372-2-AGREEMENT ALTER.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L2-ifms235-42685372-2-AGREEMENT%20ALTER.pdf",
+    "path": "pdfs/003-23-000003/WO-6-L2-ifms235-42685372-2-AGREEMENT_ALTER.pdf",
+    "status": "ok",
+    "bytes": 2041763,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9--09449013-Tender doc.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--09449013-Tender%20doc.pdf",
+    "path": "pdfs/003-23-000003/WO-9--09449013-Tender_doc.pdf",
+    "status": "ok",
+    "bytes": 7127113,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9--99183381-notification 04.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--99183381-notification%2004.pdf",
+    "path": "pdfs/003-23-000003/WO-9--99183381-notification_04.pdf",
+    "status": "ok",
+    "bytes": 6461686,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9-L2-ifms235-16923839-2-Tender document.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L2-ifms235-16923839-2-Tender%20document.pdf",
+    "path": "pdfs/003-23-000003/WO-9-L2-ifms235-16923839-2-Tender_document.pdf",
+    "status": "ok",
+    "bytes": 6241789,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9-L2-ifms235-33888228-2-PAPER TENDER NOTIFICATION.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L2-ifms235-33888228-2-PAPER%20TENDER%20NOTIFICATION.pdf",
+    "path": "pdfs/003-23-000003/WO-9-L2-ifms235-33888228-2-PAPER_TENDER_NOTIFICATION.pdf",
+    "status": "ok",
+    "bytes": 1835604,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9-L2-ifms235-34816918-2-Tender document (1).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L2-ifms235-34816918-2-Tender%20document%20%281%29.pdf",
+    "path": "pdfs/003-23-000003/WO-9-L2-ifms235-34816918-2-Tender_document__1_.pdf",
+    "status": "ok",
+    "bytes": 5248510,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000003",
+    "filename": "WO-9-L2-ifms235-80216513-2-RFP document_merged.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L2-ifms235-80216513-2-RFP%20document_merged.pdf",
+    "path": "pdfs/003-23-000003/WO-9-L2-ifms235-80216513-2-RFP_document_merged.pdf",
+    "status": "ok",
+    "bytes": 16619848,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-6--43518619-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--43518619-AGREEMENT.pdf",
+    "path": "pdfs/003-23-000006/WO-6--43518619-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 1333727,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-6--68972898-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--68972898-AGREEMENT.pdf",
+    "path": "pdfs/003-23-000006/WO-6--68972898-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 496741,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-6--73901424-agreement alter.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--73901424-agreement%20alter.pdf",
+    "path": "pdfs/003-23-000006/WO-6--73901424-agreement_alter.pdf",
+    "status": "ok",
+    "bytes": 1906212,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-6-L2-ifms235-53632146-2-Agreement .pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L2-ifms235-53632146-2-Agreement%20.pdf",
+    "path": "pdfs/003-23-000006/WO-6-L2-ifms235-53632146-2-Agreement_.pdf",
+    "status": "ok",
+    "bytes": 2036284,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-9--01494186-TENDER NOTIFICATION.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--01494186-TENDER%20NOTIFICATION.pdf",
+    "path": "pdfs/003-23-000006/WO-9--01494186-TENDER_NOTIFICATION.pdf",
+    "status": "ok",
+    "bytes": 7127113,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-9--74137930-RFP DPR  5.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--74137930-RFP%20DPR%20%205.pdf",
+    "path": "pdfs/003-23-000006/WO-9--74137930-RFP_DPR__5.pdf",
+    "status": "ok",
+    "bytes": 397437,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-9-L2-ifms235-64895789-2-tender document .pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L2-ifms235-64895789-2-tender%20document%20.pdf",
+    "path": "pdfs/003-23-000006/WO-9-L2-ifms235-64895789-2-tender_document_.pdf",
+    "status": "ok",
+    "bytes": 5251760,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "003-23-000006",
+    "filename": "WO-9-L3-ifms218-60683465-3-Tender document.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L3-ifms218-60683465-3-Tender%20document.pdf",
+    "path": "pdfs/003-23-000006/WO-9-L3-ifms218-60683465-3-Tender_document.pdf",
+    "status": "ok",
+    "bytes": 9065233,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-6--84454715-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--84454715-AGREEMENT.pdf",
+    "path": "pdfs/307-23-000127/WO-6--84454715-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 2941608,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-6--84689051-agg.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--84689051-agg.pdf",
+    "path": "pdfs/307-23-000127/WO-6--84689051-agg.pdf",
+    "status": "ok",
+    "bytes": 2299614,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-9--03431735-tender document.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--03431735-tender%20document.pdf",
+    "path": "pdfs/307-23-000127/WO-9--03431735-tender_document.pdf",
+    "status": "ok",
+    "bytes": 26861475,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-9--10766198-KW4.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--10766198-KW4.pdf",
+    "path": "pdfs/307-23-000127/WO-9--10766198-KW4.pdf",
+    "status": "ok",
+    "bytes": 11362984,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-9--75209953-PPC.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--75209953-PPC.pdf",
+    "path": "pdfs/307-23-000127/WO-9--75209953-PPC.pdf",
+    "status": "ok",
+    "bytes": 822137,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000127",
+    "filename": "WO-9--75209953-TN.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--75209953-TN.pdf",
+    "path": "pdfs/307-23-000127/WO-9--75209953-TN.pdf",
+    "status": "ok",
+    "bytes": 2139236,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-6--27047172-AGR.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--27047172-AGR.pdf",
+    "path": "pdfs/006-20-000179/WO-6--27047172-AGR.pdf",
+    "status": "ok",
+    "bytes": 1232952,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-6--65348784-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--65348784-AGREEMENT.pdf",
+    "path": "pdfs/006-20-000179/WO-6--65348784-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 2304826,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-6--83132781-AGREEMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--83132781-AGREEMENT.pdf",
+    "path": "pdfs/006-20-000179/WO-6--83132781-AGREEMENT.pdf",
+    "status": "ok",
+    "bytes": 4117014,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-9-L3-ifms218-36631632-3-TENDER DOCUMENT 1.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L3-ifms218-36631632-3-TENDER%20DOCUMENT%201.pdf",
+    "path": "pdfs/006-20-000179/WO-9-L3-ifms218-36631632-3-TENDER_DOCUMENT_1.pdf",
+    "status": "ok",
+    "bytes": 9610290,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-9-L3-ifms218-52926618-3-TENDER DOCUMENT.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L3-ifms218-52926618-3-TENDER%20DOCUMENT.pdf",
+    "path": "pdfs/006-20-000179/WO-9-L3-ifms218-52926618-3-TENDER_DOCUMENT.pdf",
+    "status": "ok",
+    "bytes": 9642715,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-9-L3-ifms218-87621674-3-rfp-pmc  4.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L3-ifms218-87621674-3-rfp-pmc%20%204.pdf",
+    "path": "pdfs/006-20-000179/WO-9-L3-ifms218-87621674-3-rfp-pmc__4.pdf",
+    "status": "ok",
+    "bytes": 390400,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "006-20-000179",
+    "filename": "WO-9-L4-ifms218-08650669-4-RFP Document alter.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9-L4-ifms218-08650669-4-RFP%20Document%20alter.pdf",
+    "path": "pdfs/006-20-000179/WO-9-L4-ifms218-08650669-4-RFP_Document_alter.pdf",
+    "status": "ok",
+    "bytes": 4414112,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000125",
+    "filename": "WO-6--02063590-Agreement 12.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--02063590-Agreement%2012.pdf",
+    "path": "pdfs/307-23-000125/WO-6--02063590-Agreement_12.pdf",
+    "status": "ok",
+    "bytes": 3000643,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000125",
+    "filename": "WO-6-L2-aee1mahifms313-64094550-2-agreement (2).pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6-L2-aee1mahifms313-64094550-2-agreement%20%282%29.pdf",
+    "path": "pdfs/307-23-000125/WO-6-L2-aee1mahifms313-64094550-2-agreement__2_.pdf",
+    "status": "ok",
+    "bytes": 1826772,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000125",
+    "filename": "WO-9--29811086-KW4-12.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--29811086-KW4-12.pdf",
+    "path": "pdfs/307-23-000125/WO-9--29811086-KW4-12.pdf",
+    "status": "ok",
+    "bytes": 47904705,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000125",
+    "filename": "WO-9--32309739-tender document.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--32309739-tender%20document.pdf",
+    "path": "pdfs/307-23-000125/WO-9--32309739-tender_document.pdf",
+    "status": "ok",
+    "bytes": 7115342,
+    "content_type": "application/pdf"
+  },
+  {
+    "job_number": "307-23-000125",
+    "filename": "WO-9--36193909-kw 4 tender document.pdf",
+    "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--36193909-kw%204%20tender%20document.pdf",
+    "path": "pdfs/307-23-000125/WO-9--36193909-kw_4_tender_document.pdf",
+    "status": "ok",
+    "bytes": 5721910,
+    "content_type": "application/pdf"
   }
 ]
