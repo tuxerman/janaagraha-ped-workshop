@@ -1,0 +1,1546 @@
+[
+  {
+    "slno": "1",
+    "wcname": "190-23-000007",
+    "wbid": "735022",
+    "nameofwork": "Depot Collection for Ward No 190 Madiwala",
+    "amount": "674107.00",
+    "jobcode": "<br/><b>190-23-000007</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 06-Mar-2023 &nbsp;&nbsp;&nbsp; End : 23-Jun-2025</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 022589 KAVITHA H S",
+    "remarks": "",
+    "brdetails": "Order : 000166 / 06-Mar-2023<br/>SBR : 000007 / 24-Jul-2025<br/>BR : 000039 / 28-Jul-2025<br/><br/>Payment : 000131 / 03-Feb-2026 RTGS",
+    "documents": [
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--67279050-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--67279050-Notification.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--95750564-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--95750564-Est.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--61158666-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--61158666-T%20S.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--64922545-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--64922545-A%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--06694628-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--06694628-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--20880097-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--20880097-Agre.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--78577636-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--78577636-Job%20Code.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--41678686-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--41678686-work%20order.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--21655864-pwd license kavitha.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--21655864-pwd%20license%20kavitha.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--99484296-gst(1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--99484296-gst%281%29.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--77024770-pan (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--77024770-pan%20%282%29.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--41259280-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--41259280-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--53340067-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--53340067-Letter.jpg"
+      }
+    ],
+    "jobcode_text": "190-23-000007   Feedback     All Details     Download\nStart : 06-Mar-2023     End : 23-Jun-2025\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 022589 KAVITHA H S",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000007",
+      "start_date": "06-Mar-2023",
+      "end_date": "23-Jun-2025",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "022589 KAVITHA H S"
+    },
+    "brdetails_text": "Order : 000166 / 06-Mar-2023\nSBR : 000007 / 24-Jul-2025\nBR : 000039 / 28-Jul-2025\nPayment : 000131 / 03-Feb-2026 RTGS",
+    "brdetails_parsed": {
+      "order": "000166 / 06-Mar-2023",
+      "sbr": "000007 / 24-Jul-2025",
+      "br": "000039 / 28-Jul-2025",
+      "payment": "000131 / 03-Feb-2026 RTGS"
+    }
+  },
+  {
+    "slno": "2",
+    "wcname": "190-23-000004",
+    "wbid": "740380",
+    "nameofwork": "Annual Maintenance of Outdoor Gym Equipments and childrens play Equipments and Other Miscellaneous Works in ward No 190 Madiwala",
+    "amount": "938500.00",
+    "jobcode": "<br/><b>190-23-000004</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 04-Mar-2023 &nbsp;&nbsp;&nbsp; End : 30-May-2025</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 027642 G PRABHAKAR",
+    "remarks": "",
+    "brdetails": "Order : 000161 / 04-Mar-2023<br/>SBR : 000013 / 30-Aug-2025<br/>BR : 000053 / 30-Aug-2025<br/><br/>Payment :  Addl. Commr. Finance",
+    "documents": [
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--16557310-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--16557310-Notification.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--65114096-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--65114096-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--39594291-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--39594291-Letter.jpg"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--30465228-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--30465228-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--39911047-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--39911047-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--40559974-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--40559974-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--18698575-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--18698575-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--51672897-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--51672897-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--05238576-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--05238576-work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--06877107-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--06877107-Job%20Code.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--16639299-license.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--16639299-license.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--32517423-gst gangadhara.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--32517423-gst%20gangadhara.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--09478668-pancard.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--09478668-pancard.jpg"
+      }
+    ],
+    "jobcode_text": "190-23-000004   Feedback     All Details     Download\nStart : 04-Mar-2023     End : 30-May-2025\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 027642 G PRABHAKAR",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000004",
+      "start_date": "04-Mar-2023",
+      "end_date": "30-May-2025",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "027642 G PRABHAKAR"
+    },
+    "brdetails_text": "Order : 000161 / 04-Mar-2023\nSBR : 000013 / 30-Aug-2025\nBR : 000053 / 30-Aug-2025\nPayment : Addl. Commr. Finance",
+    "brdetails_parsed": {
+      "order": "000161 / 04-Mar-2023",
+      "sbr": "000013 / 30-Aug-2025",
+      "br": "000053 / 30-Aug-2025",
+      "payment": "Addl. Commr. Finance"
+    }
+  },
+  {
+    "slno": "3",
+    "wcname": "190-23-000006",
+    "wbid": "587391",
+    "nameofwork": "Providing cobble stone to Bad reaches in Maruthinagara in ward 190  Madiwala",
+    "amount": "1716836.00",
+    "jobcode": "<br/><b>190-23-000006</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 04-Mar-2023 &nbsp;&nbsp;&nbsp; End : 25-Apr-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 012429 R  S N ENTERPRISES  ",
+    "remarks": "",
+    "brdetails": "Order : 000162 / 04-Mar-2023<br/>SBR : 000014 / 21-Jun-2023<br/>BR : 000024 / 28-Jun-2023<br/><br/>Payment : 003612 / 18-Aug-2025 RTGS",
+    "documents": [
+      {
+        "type": "Estimates",
+        "filename": "WO-1--41691668-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--41691668-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--92108844-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--92108844-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--66402873-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--66402873-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--01331561-Schedule B.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--01331561-Schedule%20B.jpg"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--70346893-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--70346893-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--81679408-work oder.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--81679408-work%20oder.jpg"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--38373577-Job Code.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--38373577-Job%20Code.jpg"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--23440165-kpwd license.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--23440165-kpwd%20license.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--58856174-07 gst.jpeg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--58856174-07%20gst.jpeg"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--96771947-pan.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--96771947-pan.jpg"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--03326957-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--03326957-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--29700311-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--29700311-Letter.jpg"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--01606324-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--01606324-Notification.pdf"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--76368132-Images (6).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--76368132-Images%20%286%29.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--76368132-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--76368132-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--28490301-QC (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--28490301-QC%20%284%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--96603940-Notesheet (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--96603940-Notesheet%20%282%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--96603940-online certificates (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--96603940-online%20certificates%20%283%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--96845357-job code (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--96845357-job%20code%20%283%29.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--01375246-Images (6).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--01375246-Images%20%286%29.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--03118704-Images (6).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--03118704-Images%20%286%29.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--03118704-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--03118704-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--49523442-MB (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--49523442-MB%20%284%29.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--68373487-CR (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--68373487-CR%20%284%29.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--81088556-Bill form (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--81088556-Bill%20form%20%283%29.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--98030812-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--98030812-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--20006656-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--20006656-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--20662402-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--20662402-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH-L3-ifms426-56329130-3-Road History.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH-L3-ifms426-56329130-3-Road%20History.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-25611817-4-New Doc 08-13-2025 12.56.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-25611817-4-New%20Doc%2008-13-2025%2012.56.pdf",
+        "remarks": "10% fsd"
+      }
+    ],
+    "jobcode_text": "190-23-000006   Feedback     All Details     Download\nStart : 04-Mar-2023     End : 25-Apr-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 012429 R S N ENTERPRISES",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000006",
+      "start_date": "04-Mar-2023",
+      "end_date": "25-Apr-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "012429 R S N ENTERPRISES"
+    },
+    "brdetails_text": "Order : 000162 / 04-Mar-2023\nSBR : 000014 / 21-Jun-2023\nBR : 000024 / 28-Jun-2023\nPayment : 003612 / 18-Aug-2025 RTGS",
+    "brdetails_parsed": {
+      "order": "000162 / 04-Mar-2023",
+      "sbr": "000014 / 21-Jun-2023",
+      "br": "000024 / 28-Jun-2023",
+      "payment": "003612 / 18-Aug-2025 RTGS"
+    }
+  },
+  {
+    "slno": "4",
+    "wcname": "190-23-000009",
+    "wbid": "705651",
+    "nameofwork": "Improvements and Ward Development Works in Ward No 190 Madiwala",
+    "amount": "1231533.00",
+    "jobcode": "<br/><b>190-23-000009</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 03-Mar-2023 &nbsp;&nbsp;&nbsp; End : 30-Oct-2024</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 023224 P SHASHI KUMAR      ",
+    "remarks": "1st and Final Bill ",
+    "brdetails": "Order : 000156 / 03-Mar-2023<br/>SBR : 000028 / 29-Jan-2025<br/>BR : 000050 / 31-Jan-2025<br/><br/>Payment :  Addl. Commr. Finance",
+    "documents": [
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--10505612-regg copy new.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--10505612-regg%20copy%20new.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--84831228-PRC_29AMZPP7035K1Z0.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--84831228-PRC_29AMZPP7035K1Z0.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--78337789-Pan card.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--78337789-Pan%20card.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--17669263-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--17669263-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--50632111-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--50632111-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--78741936-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--78741936-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--78383165-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--78383165-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--79604194-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--79604194-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--86266706-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--86266706-work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--32564059-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--32564059-Job%20Code.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--02747911-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--02747911-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--37141943-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--37141943-Letter.jpg"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--67664038-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--67664038-Notification.pdf"
+      }
+    ],
+    "jobcode_text": "190-23-000009   Feedback     All Details     Download\nStart : 03-Mar-2023     End : 30-Oct-2024\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 023224 P SHASHI KUMAR",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000009",
+      "start_date": "03-Mar-2023",
+      "end_date": "30-Oct-2024",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "023224 P SHASHI KUMAR"
+    },
+    "brdetails_text": "Order : 000156 / 03-Mar-2023\nSBR : 000028 / 29-Jan-2025\nBR : 000050 / 31-Jan-2025\nPayment : Addl. Commr. Finance",
+    "brdetails_parsed": {
+      "order": "000156 / 03-Mar-2023",
+      "sbr": "000028 / 29-Jan-2025",
+      "br": "000050 / 31-Jan-2025",
+      "payment": "Addl. Commr. Finance"
+    }
+  },
+  {
+    "slno": "5",
+    "wcname": "190-23-000011",
+    "wbid": "692139",
+    "nameofwork": "Maintenance of CCTV Cameras in ward No 190 Madiwala",
+    "amount": "1991104.00",
+    "jobcode": "<br/><b>190-23-000011</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 27-Feb-2023 &nbsp;&nbsp;&nbsp; End : 31-Oct-2024</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 008373 KRUTHIKA ENTERPRISES",
+    "remarks": "",
+    "brdetails": "Order : 000142 / 27-Feb-2023<br/>SBR : 000027 / 29-Jan-2025<br/>BR : 000049 / 31-Jan-2025<br/><br/>Payment : 000287 / 10-Mar-2026 RTGS",
+    "documents": [
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--94788394-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--94788394-Notification.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--92913524-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--92913524-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--50106973-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--50106973-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--59749400-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--59749400-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--38857906-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--38857906-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--13050995-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--13050995-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--12712971-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--12712971-work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--13494540-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--13494540-Job%20Code.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--54185504-license registration certificate.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--54185504-license%20registration%20certificate.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--92937842-gst certificate.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--92937842-gst%20certificate.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--79201146-pan card shivaraja k s.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--79201146-pan%20card%20shivaraja%20k%20s.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--59956690-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--59956690-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--09632638-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--09632638-Letter.jpg"
+      }
+    ],
+    "jobcode_text": "190-23-000011   Feedback     All Details     Download\nStart : 27-Feb-2023     End : 31-Oct-2024\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 008373 KRUTHIKA ENTERPRISES",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000011",
+      "start_date": "27-Feb-2023",
+      "end_date": "31-Oct-2024",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "008373 KRUTHIKA ENTERPRISES"
+    },
+    "brdetails_text": "Order : 000142 / 27-Feb-2023\nSBR : 000027 / 29-Jan-2025\nBR : 000049 / 31-Jan-2025\nPayment : 000287 / 10-Mar-2026 RTGS",
+    "brdetails_parsed": {
+      "order": "000142 / 27-Feb-2023",
+      "sbr": "000027 / 29-Jan-2025",
+      "br": "000049 / 31-Jan-2025",
+      "payment": "000287 / 10-Mar-2026 RTGS"
+    }
+  },
+  {
+    "slno": "6",
+    "wcname": "190-23-000003",
+    "wbid": "635164",
+    "nameofwork": "Digging of New Borewell and Maintenance of Borewells and RO Plants in ward No 190 Madiwala",
+    "amount": "2069480.00",
+    "jobcode": "<br/><b>190-23-000003</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 27-Feb-2023 &nbsp;&nbsp;&nbsp; End : 05-Dec-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 022298 H S HEMAVATHI",
+    "remarks": "",
+    "brdetails": "Order : 000141 / 27-Feb-2023<br/>SBR : 000058 / 29-Jan-2024<br/>BR : 000116 / 29-Jan-2024<br/><br/>Payment :  EE (Acts. Supdt.)",
+    "documents": [
+      {
+        "type": "DPR",
+        "filename": "WO-8--07129730-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--07129730-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--21323249-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--21323249-Letter.jpg"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--89507147-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--89507147-Notification.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--04325161-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--04325161-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--76746334-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--76746334-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--93004609-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--93004609-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--31096546-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--31096546-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--06049831-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--06049831-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--05191150-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--05191150-work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--67099889-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--67099889-Job%20Code.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--36621033-registration certificate.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--36621033-registration%20certificate.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--80128004-pan card.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--80128004-pan%20card.jpg"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--74917497-gst hs.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--74917497-gst%20hs.pdf"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--28662817-190-23-03 photos.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--28662817-190-23-03%20photos.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--28662817-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--28662817-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--74570203-190-23-03 qc.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--74570203-190-23-03%20qc.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--10954891-190-23-03 warrenty.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--10954891-190-23-03%20warrenty.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--83845406-190-23-03 sketch.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--83845406-190-23-03%20sketch.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--77409113-190-23-03 notesheet.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--77409113-190-23-03%20notesheet.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--75170896-190-23-03 electrical deposit.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--75170896-190-23-03%20electrical%20deposit.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--31482748-190-23-03 EOT.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--31482748-190-23-03%20EOT.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--26365814-190-23-03 check listt (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--26365814-190-23-03%20check%20listt%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--67106660-190-23-03 certificate.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--67106660-190-23-03%20certificate.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--32625237-190-23-03 photos.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--32625237-190-23-03%20photos.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--32625237-190-23-03 photos.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--32625237-190-23-03%20photos.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--91517234-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--91517234-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--00992795-190-23-03 MB.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--00992795-190-23-03%20MB.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--66900125-190-23-03 completion.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--66900125-190-23-03%20completion.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--21108074-190-23-03 billform.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--21108074-190-23-03%20billform.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--92281442-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--92281442-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--83855784-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--83855784-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--49319568-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--49319568-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-80587585-4-certificateee.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-80587585-4-certificateee.pdf",
+        "remarks": "certificates"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-63504879-4-billll.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-63504879-4-billll.pdf",
+        "remarks": "bill"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-78838356-4-MB pass order(2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-78838356-4-MB%20pass%20order%282%29.pdf",
+        "remarks": "mb pass order"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-01398561-4-completion new.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-01398561-4-completion%20new.pdf",
+        "remarks": "completion report"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-64651593-4-190-23-03 EOT.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-64651593-4-190-23-03%20EOT.pdf",
+        "remarks": "EOT"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-00042488-4-190-23-03.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-00042488-4-190-23-03.pdf",
+        "remarks": "10% fsd"
+      }
+    ],
+    "jobcode_text": "190-23-000003   Feedback     All Details     Download\nStart : 27-Feb-2023     End : 05-Dec-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 022298 H S HEMAVATHI",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000003",
+      "start_date": "27-Feb-2023",
+      "end_date": "05-Dec-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "022298 H S HEMAVATHI"
+    },
+    "brdetails_text": "Order : 000141 / 27-Feb-2023\nSBR : 000058 / 29-Jan-2024\nBR : 000116 / 29-Jan-2024\nPayment : EE (Acts. Supdt.)",
+    "brdetails_parsed": {
+      "order": "000141 / 27-Feb-2023",
+      "sbr": "000058 / 29-Jan-2024",
+      "br": "000116 / 29-Jan-2024",
+      "payment": "EE (Acts. Supdt.)"
+    }
+  },
+  {
+    "slno": "7",
+    "wcname": "190-23-000008",
+    "wbid": "602395",
+    "nameofwork": "Improvements and Maintenance for Burial Ground at Chikkadugodi in ward No 190 Madiwala",
+    "amount": "471643.00",
+    "jobcode": "<br/><b>190-23-000008</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 16-Feb-2023 &nbsp;&nbsp;&nbsp; End : 13-Apr-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 023634 NAGARAJ A",
+    "remarks": "",
+    "brdetails": "Order : 000104 / 16-Feb-2023<br/>SBR : 000027 / 14-Sep-2023<br/>BR : 000054 / 14-Sep-2023<br/><br/>Payment : 003708 / 29-Aug-2025 RTGS",
+    "documents": [
+      {
+        "type": "Estimates",
+        "filename": "WO-1--14603063-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--14603063-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--25757227-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--25757227-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--94367606-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--94367606-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--34413074-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--34413074-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--87415176-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--87415176-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--78189138-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--78189138-work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--07533407-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--07533407-Job%20Code.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--31793529-reg copy.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--31793529-reg%20copy.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--16861670-gst.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--16861670-gst.jpg"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--37893248-pan card.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--37893248-pan%20card.jpg"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--06735007-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--06735007-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--05172258-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--05172258-Letter.jpg"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--04242831-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--04242831-Notification.pdf"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--86394494-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--86394494-images%20%283%29.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--40267029-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--40267029-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--22079533-QC (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--22079533-QC%20%284%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--20661823-Royalty (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--20661823-Royalty%20%283%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--56734318-online certificates (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--56734318-online%20certificates%20%284%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--52286280-notesheet (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--52286280-notesheet%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--21243967-jobcode (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--21243967-jobcode%20%282%29.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--28440553-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--28440553-images%20%283%29.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--97182957-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--97182957-images%20%283%29.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--97182957-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--97182957-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--57068695-MB (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--57068695-MB%20%283%29.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--48951180-CR (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--48951180-CR%20%284%29.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--48951180-Bill form (4).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--48951180-Bill%20form%20%284%29.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--18727244-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--18727244-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--83854073-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--83854073-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--41983706-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--41983706-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Additional Documents",
+        "filename": "BA-L3-L3-ifms426-07930177-3-Certificates.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L3-L3-ifms426-07930177-3-Certificates.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-84366986-4-New Doc 09-14-2023 16.35.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-84366986-4-New%20Doc%2009-14-2023%2016.35.pdf",
+        "remarks": "completion report"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-75098782-4-New Doc 09-14-2023 16.36.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-75098782-4-New%20Doc%2009-14-2023%2016.36.pdf",
+        "remarks": "pre measurements"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-82319353-4-New Doc 08-26-2025 14.46.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-82319353-4-New%20Doc%2008-26-2025%2014.46.pdf",
+        "remarks": "10% fsd"
+      }
+    ],
+    "jobcode_text": "190-23-000008   Feedback     All Details     Download\nStart : 16-Feb-2023     End : 13-Apr-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 023634 NAGARAJ A",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000008",
+      "start_date": "16-Feb-2023",
+      "end_date": "13-Apr-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "023634 NAGARAJ A"
+    },
+    "brdetails_text": "Order : 000104 / 16-Feb-2023\nSBR : 000027 / 14-Sep-2023\nBR : 000054 / 14-Sep-2023\nPayment : 003708 / 29-Aug-2025 RTGS",
+    "brdetails_parsed": {
+      "order": "000104 / 16-Feb-2023",
+      "sbr": "000027 / 14-Sep-2023",
+      "br": "000054 / 14-Sep-2023",
+      "payment": "003708 / 29-Aug-2025 RTGS"
+    }
+  },
+  {
+    "slno": "8",
+    "wcname": "190-23-000005",
+    "wbid": "593668",
+    "nameofwork": "Additional works to  Garadimane, Dialysis Center, DWCC Center & Toilet Building  in ward No 190 Madiwala",
+    "amount": "1974670.00",
+    "jobcode": "<br/><b>190-23-000005</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 10-Feb-2023 &nbsp;&nbsp;&nbsp; End : 22-May-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 027642 G PRABHAKAR",
+    "remarks": "",
+    "brdetails": "Order : 000087 / 10-Feb-2023<br/>SBR : 000021 / 25-Jul-2023<br/>BR : 000042 / 25-Jul-2023<br/><br/>Payment : 003375 / 10-Jul-2025 RTGS",
+    "documents": [
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--20414100-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--20414100-Notification.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--77020259-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--77020259-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--47765380-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--47765380-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--83235221-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--83235221-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--98300305-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--98300305-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--43205526-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--43205526-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--16073748-Work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--16073748-Work%20order.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--58335230-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--58335230-Job%20Code.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--82642107-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--82642107-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--40157891-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--40157891-Letter.jpg"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--55561938-license.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--55561938-license.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--26372190-gst gangadhara.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--26372190-gst%20gangadhara.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--02348504-pancard.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--02348504-pancard.jpg"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--63456135-Images (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--63456135-Images%20%282%29.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--16653538-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--16653538-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--01447433-QC (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--01447433-QC%20%283%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--73539156-royalty (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--73539156-royalty%20%282%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--23588067-online certificates (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--23588067-online%20certificates%20%282%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--14939673-note (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--14939673-note%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--14281704-Job code (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--14281704-Job%20code%20%281%29.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--86176067-Images (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--86176067-Images%20%282%29.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--86176067-Images (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--86176067-Images%20%282%29.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--83429641-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--83429641-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--26316944-MB (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--26316944-MB%20%282%29.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--08287710-CR (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--08287710-CR%20%283%29.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--66491198-Bill form (2).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--66491198-Bill%20form%20%282%29.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--30926155-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--30926155-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--79684676-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--79684676-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--57271565-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--57271565-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--78295940-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--78295940-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-81449988-4-Adobe Scan 10 Jul 2025 (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-81449988-4-Adobe%20Scan%2010%20Jul%202025%20%281%29.pdf",
+        "remarks": "10 % FSD APPROVAL"
+      }
+    ],
+    "jobcode_text": "190-23-000005   Feedback     All Details     Download\nStart : 10-Feb-2023     End : 22-May-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 027642 G PRABHAKAR",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000005",
+      "start_date": "10-Feb-2023",
+      "end_date": "22-May-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "027642 G PRABHAKAR"
+    },
+    "brdetails_text": "Order : 000087 / 10-Feb-2023\nSBR : 000021 / 25-Jul-2023\nBR : 000042 / 25-Jul-2023\nPayment : 003375 / 10-Jul-2025 RTGS",
+    "brdetails_parsed": {
+      "order": "000087 / 10-Feb-2023",
+      "sbr": "000021 / 25-Jul-2023",
+      "br": "000042 / 25-Jul-2023",
+      "payment": "003375 / 10-Jul-2025 RTGS"
+    }
+  },
+  {
+    "slno": "9",
+    "wcname": "190-23-000010",
+    "wbid": "583586",
+    "nameofwork": "Improvements to roads, drains and Footpath at Tavarekere 2nd cross, 3rd cross, chnnamma Layout and Surrounding area in ward No 190 Madiwala",
+    "amount": "10172387.00",
+    "jobcode": "<br/><b>190-23-000010</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 10-Feb-2023 &nbsp;&nbsp;&nbsp; End : 15-Apr-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 022364 MAHADEVATS",
+    "remarks": "",
+    "brdetails": "Order : 000085 / 10-Feb-2023<br/>SBR : 000009 / 24-May-2023<br/>BR : 000010 / 24-May-2023<br/><br/>Payment : 003365 / 10-Jul-2025 RTGS",
+    "documents": [
+      {
+        "type": "DPR",
+        "filename": "WO-8--81823437-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--81823437-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--98555137-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--98555137-Letter.jpg"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--33963292-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--33963292-Est.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--37960121-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--37960121-A%20S.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--46927145-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--46927145-T%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--21525480-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--21525480-Schedule%20B.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--29844618-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--29844618-Agre.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--74457261-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--74457261-work%20order.pdf"
+      },
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--02454435-Registration Certificate--bbmp class i license.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--02454435-Registration%20Certificate--bbmp%20class%20i%20license.pdf"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--65946126-GST Certificate--gst.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--65946126-GST%20Certificate--gst.pdf"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--95841066-GST Certificate--gst.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--95841066-GST%20Certificate--gst.pdf"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--75562722-Nofitication.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--75562722-Nofitication.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--58569426-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--58569426-Job%20Code.pdf"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--86106646-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--86106646-images%20%283%29.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--86106646-Chandrareddy Roadhistory.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--86106646-Chandrareddy%20Roadhistory.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--93632655-QC (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--93632655-QC%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--93632655-Royalty (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--93632655-Royalty%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--95559576-online certificates.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--95559576-online%20certificates.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--23974024-Note (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--23974024-Note%20%281%29.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--23974024-Jobcode.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--23974024-Jobcode.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--78237099-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--78237099-images%20%283%29.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--56016387-images (3).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--56016387-images%20%283%29.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--56016387-QAP.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--56016387-QAP.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--93081088-Emb (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--93081088-Emb%20%281%29.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--93081088-MB (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--93081088-MB%20%281%29.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--27813383-CR (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--27813383-CR%20%281%29.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--25968766-bill form (1).pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--25968766-bill%20form%20%281%29.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--33832697-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--33832697-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--60005206-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--60005206-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--76516473-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--76516473-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-91512653-4-cm.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-91512653-4-cm.pdf",
+        "remarks": "EE CHECK MEASUREMENTS"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-92499653-4-New Doc 07-10-2025 13.23.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-92499653-4-New%20Doc%2007-10-2025%2013.23.pdf",
+        "remarks": "10% FSD APPROVAL"
+      }
+    ],
+    "jobcode_text": "190-23-000010   Feedback     All Details     Download\nStart : 10-Feb-2023     End : 15-Apr-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 022364 MAHADEVATS",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000010",
+      "start_date": "10-Feb-2023",
+      "end_date": "15-Apr-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "022364 MAHADEVATS"
+    },
+    "brdetails_text": "Order : 000085 / 10-Feb-2023\nSBR : 000009 / 24-May-2023\nBR : 000010 / 24-May-2023\nPayment : 003365 / 10-Jul-2025 RTGS",
+    "brdetails_parsed": {
+      "order": "000085 / 10-Feb-2023",
+      "sbr": "000009 / 24-May-2023",
+      "br": "000010 / 24-May-2023",
+      "payment": "003365 / 10-Jul-2025 RTGS"
+    }
+  },
+  {
+    "slno": "10",
+    "wcname": "190-23-000001",
+    "wbid": "580655",
+    "nameofwork": "Maintenance of footpaths and other improvements Works in Ward No 190 Madiwala",
+    "amount": "2549665.00",
+    "jobcode": "<br/><b>190-23-000001</b>&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadFeedBack();'>Feedback</a> &nbsp;&nbsp;&nbsp; <a id='details1' href='#' onclick='vssLoadMore()'>All Details</a> &nbsp;&nbsp;&nbsp; <a id='details2' href='#' onclick='vssPrintDocument()'> Download </a> <br/><br/><b>Start : 10-Feb-2023 &nbsp;&nbsp;&nbsp; End : 30-Mar-2023</b><br/>Ward : o190 Madivala<br/>Division : Executive Engineer B T M Layout South Zone<br/>Budget : P3726 Zonal Public Works - POW Works -60per for  Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards<br/>Contractor : 022349 N CHANDRA REDDY",
+    "remarks": "",
+    "brdetails": "Order : 000086 / 10-Feb-2023<br/>SBR : 000003 / 26-Apr-2023<br/>BR : 000004 / 26-Apr-2023<br/><br/>Payment : 003362 / 10-Jul-2025 RTGS",
+    "documents": [
+      {
+        "type": "BBMP License Copy",
+        "filename": "WO-13--69282133-license class 2.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-13--69282133-license%20class%202.pdf"
+      },
+      {
+        "type": "Estimates",
+        "filename": "WO-1--29194623-Est.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-1--29194623-Est.pdf"
+      },
+      {
+        "type": "TS",
+        "filename": "WO-3--02187073-T S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-3--02187073-T%20S.pdf"
+      },
+      {
+        "type": "AS",
+        "filename": "WO-2--64134417-A S.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-2--64134417-A%20S.pdf"
+      },
+      {
+        "type": "Schedule B",
+        "filename": "WO-4--53101279-Schedule B.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-4--53101279-Schedule%20B.pdf"
+      },
+      {
+        "type": "Work Order",
+        "filename": "WO-7--77943621-work order.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-7--77943621-work%20order.pdf"
+      },
+      {
+        "type": "Agreement",
+        "filename": "WO-6--20067995-Agre.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-6--20067995-Agre.pdf"
+      },
+      {
+        "type": "Job Certificate",
+        "filename": "WO-JC--16013155-Job Code.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-JC--16013155-Job%20Code.pdf"
+      },
+      {
+        "type": "DPR",
+        "filename": "WO-8--07753444-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-8--07753444-Letter.jpg"
+      },
+      {
+        "type": "PMC Work Order",
+        "filename": "WO-10--18199611-Letter.jpg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-10--18199611-Letter.jpg"
+      },
+      {
+        "type": "PAN Card Copy",
+        "filename": "WO-11--07526852-Pan card.jpeg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-11--07526852-Pan%20card.jpeg"
+      },
+      {
+        "type": "GSTIN Certificate",
+        "filename": "WO-12--59184737-GST.jpeg",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-12--59184737-GST.jpeg"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--51043653-tender corrigendum.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--51043653-tender%20corrigendum.pdf"
+      },
+      {
+        "type": "Tender Documents",
+        "filename": "WO-9--70427806-Notification.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WO-9--70427806-Notification.pdf"
+      },
+      {
+        "type": "Photo - Before Work",
+        "filename": "WB-photo1--21168047-Images.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo1--21168047-Images.pdf"
+      },
+      {
+        "type": "Road History",
+        "filename": "WB-RH--21168047-193-23-000001Road History.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-RH--21168047-193-23-000001Road%20History.pdf"
+      },
+      {
+        "type": "Quality Certificate",
+        "filename": "WB-QC--11310826-QC30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-QC--11310826-QC30.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--11310826-Ward map.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--11310826-Ward%20map.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--44628567-Royalty30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--44628567-Royalty30.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--24299689-Note30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--24299689-Note30.pdf"
+      },
+      {
+        "type": "Others",
+        "filename": "WB-Ot--77180940-Certificates30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Ot--77180940-Certificates30.pdf"
+      },
+      {
+        "type": "Photo - Work In Progress",
+        "filename": "WB-photo2--54496257-Images.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo2--54496257-Images.pdf"
+      },
+      {
+        "type": "Inspection Report",
+        "filename": "WB-IR--82848103-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-IR--82848103-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Photo - After Work",
+        "filename": "WB-photo3--13786631-Images.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-photo3--13786631-Images.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--49662536-EMB30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--49662536-EMB30.pdf"
+      },
+      {
+        "type": "M.B.",
+        "filename": "WB-MB--49662536-MB30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-MB--49662536-MB30.pdf"
+      },
+      {
+        "type": "Completion Certificate",
+        "filename": "WB-CC--33332145-CR30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-CC--33332145-CR30.pdf"
+      },
+      {
+        "type": "Bill Form",
+        "filename": "WB-Bill--94905706-Bill form 30.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Bill--94905706-Bill%20form%2030.pdf"
+      },
+      {
+        "type": "PMC",
+        "filename": "Pmc--94905706-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/Pmc--94905706-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Contractor GST Invoice",
+        "filename": "WB-GSTInv--29536052-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-GSTInv--29536052-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Bar / PERT Chart",
+        "filename": "WB-Chart--14510483-NOT APPLICABLE.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/WB-Chart--14510483-NOT%20APPLICABLE.pdf"
+      },
+      {
+        "type": "Additional Documents.",
+        "filename": "BA-L4L4-ifms426-52609688-4-Adobe Scan 10 Jul 2025.pdf",
+        "url": "https://account.bbmpgov.in/vssIFMS/Files1/BA-L4L4-ifms426-52609688-4-Adobe%20Scan%2010%20Jul%202025.pdf",
+        "remarks": "10% FSD APPROVAL"
+      }
+    ],
+    "jobcode_text": "190-23-000001   Feedback     All Details     Download\nStart : 10-Feb-2023     End : 30-Mar-2023\nWard : o190 Madivala\nDivision : Executive Engineer B T M Layout South Zone\nBudget : P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards\nContractor : 022349 N CHANDRA REDDY",
+    "jobcode_parsed": {
+      "work_order_number": "190-23-000001",
+      "start_date": "10-Feb-2023",
+      "end_date": "30-Mar-2023",
+      "ward": "o190 Madivala",
+      "division": "Executive Engineer B T M Layout South Zone",
+      "budget": "P3726 Zonal Public Works - POW Works -60per for Annual Maintenance and Re-asphalting of roads in Ward jurisdiction -Escrow Account - Old Ward Rs.1.20 Cr per ward and Rs.1.80 Cr for new wards",
+      "contractor": "022349 N CHANDRA REDDY"
+    },
+    "brdetails_text": "Order : 000086 / 10-Feb-2023\nSBR : 000003 / 26-Apr-2023\nBR : 000004 / 26-Apr-2023\nPayment : 003362 / 10-Jul-2025 RTGS",
+    "brdetails_parsed": {
+      "order": "000086 / 10-Feb-2023",
+      "sbr": "000003 / 26-Apr-2023",
+      "br": "000004 / 26-Apr-2023",
+      "payment": "003362 / 10-Jul-2025 RTGS"
+    }
+  }
+]
